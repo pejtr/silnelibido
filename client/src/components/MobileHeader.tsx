@@ -25,7 +25,7 @@ export function MobileHeader() {
       <div className="bg-white px-4 py-3 flex items-center justify-between relative z-50">
         <button className="flex flex-col items-center gap-1 text-[#2A2A5A]">
           <Menu className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase">Menu</span>
+
         </button>
         
         <a href={affiliateLink} className="flex-shrink-0">
@@ -41,7 +41,7 @@ export function MobileHeader() {
             <ShoppingCart className="w-6 h-6 fill-[#D32F2F] animate-pulse" />
             <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold animate-bounce">0</span>
           </div>
-          <span className="text-[10px] font-bold uppercase">Košík</span>
+
         </a>
       </div>
 
