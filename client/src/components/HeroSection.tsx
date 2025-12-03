@@ -1,4 +1,4 @@
-import { ShoppingCart, Gift } from "lucide-react";
+import { ShoppingCart, Gift, HelpCircle } from "lucide-react";
 
 import { useState, useEffect } from "react";
 
@@ -6,6 +6,7 @@ export function HeroSection() {
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
   const [ctaText, setCtaText] = useState("Probudit libido");
   const [showGift, setShowGift] = useState(true);
+  const [showQuiz, setShowQuiz] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +17,10 @@ export function HeroSection() {
         // Using window.innerHeight * 0.8 to hide it a bit before it fully enters view
         if (rect.top < window.innerHeight * 0.8) {
           setShowGift(false);
+          setShowQuiz(true);
         } else {
           setShowGift(true);
+          setShowQuiz(false);
         }
       }
     };
@@ -118,6 +121,19 @@ export function HeroSection() {
               >
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
                     <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
+                 </div>
+              </a>
+
+              {/* Sticky Quiz Icon (Mobile & Desktop) - Appears when Gift disappears */}
+              <a 
+                href="#quiz" 
+                className={`fixed bottom-[calc(2rem+22px)] left-0 z-[100] transition-all duration-500 active:scale-95 hover:scale-105 group ${showQuiz ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+              >
+                 <div className="bg-[#2A2A5A]/90 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#2A2A5A]">
+                    <HelpCircle className="w-8 h-8 text-white animate-bounce group-hover:animate-none" />
+                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white text-[#2A2A5A] text-xs font-bold px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                      Kvíz: Vyberte si produkt
+                    </span>
                  </div>
               </a>
 

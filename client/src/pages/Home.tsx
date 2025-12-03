@@ -4,6 +4,7 @@ import { MobileHeader } from "@/components/MobileHeader";
 import { IngredientsSection } from "@/components/IngredientsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { ProductsSection } from "@/components/ProductsSection";
+import { ProductQuiz } from "@/components/ProductQuiz";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
@@ -57,6 +58,7 @@ export default function Home() {
             </div>
           </div>
 
+          <ProductQuiz />
           <ProductsSection />
           <div id="reference">
             <TestimonialsSection />
