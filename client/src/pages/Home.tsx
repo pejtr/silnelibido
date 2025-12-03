@@ -40,7 +40,7 @@ export default function Home() {
           <FeaturesSection />
           
           {/* Stylish Down Arrow Divider */}
-          <div className="bg-white flex justify-center py-8 -mb-12 relative z-10">
+          <div className="bg-white flex justify-center pt-0 pb-8 -mb-12 relative z-10">
             <div className="relative">
               <div className="absolute -inset-4 bg-red-100/50 rounded-full blur-xl animate-pulse"></div>
               <svg 
