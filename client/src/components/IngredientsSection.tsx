@@ -29,7 +29,7 @@ export function IngredientsSection() {
           <div className="md:hidden grid grid-cols-1 gap-4 mt-8">
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img src="/images/tribulus-icon.png" alt="Tribulus" className="w-full h-full object-cover" />
+                <img src="/images/tribulus-icon.png" alt="Tribulus" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Tribulus Terrestris</h3>
@@ -39,7 +39,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/maca.png" alt="Maca" className="w-8 h-8 object-contain" />
+                <img src="/images/maca.png" alt="Maca" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Maca Peruánská</h3>
@@ -49,7 +49,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/zensen.png" alt="Ženšen" className="w-8 h-8 object-contain" />
+                <img src="/images/zensen.png" alt="Ženšen" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Ženšen Pravý</h3>
@@ -59,7 +59,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/hrozny.png" alt="Hrozny" className="w-8 h-8 object-contain" />
+                <img src="/images/hrozny.png" alt="Hrozny" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Extrakt z hroznů</h3>

@@ -155,6 +155,7 @@ export function RecentPurchases() {
                 src={product.image} 
                 alt={product.name} 
                 className="w-full h-full object-contain p-1 group-hover:scale-110 transition-transform duration-500" 
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-1 -right-1 bg-green-100 p-1 rounded-full border border-white">
