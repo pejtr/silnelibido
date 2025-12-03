@@ -22,7 +22,7 @@ export function ProductCard({ name, price, currency, image, description, feature
     <Card className={`flex flex-col h-full relative overflow-hidden transition-all duration-300 hover:shadow-lg ${popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
       {badge && (
         <div 
-          className="absolute top-4 left-4 text-white text-[10px] font-bold px-3 py-3 rounded-full z-20 shadow-md flex items-center justify-center text-center leading-tight w-[60px] h-[60px] transform -rotate-12"
+          className="absolute top-4 left-4 text-white text-base font-bold px-4 py-4 rounded-full z-20 shadow-md flex items-center justify-center text-center leading-tight w-[120px] h-[120px] transform -rotate-12"
           style={{ backgroundColor: badge.color }}
         >
           {badge.text}
