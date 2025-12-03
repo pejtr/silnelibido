@@ -1,5 +1,6 @@
 import { TopBar } from "../components/TopBar";
 import { HeroSection } from "@/components/HeroSection";
+import { MobileHeader } from "@/components/MobileHeader";
 import { IngredientsSection } from "@/components/IngredientsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { ProductsSection } from "@/components/ProductsSection";
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
       <TopBar />
+      <MobileHeader />
       <main className="flex-grow">
         <HeroSection />
         

@@ -1,65 +1,10 @@
-import { ShoppingCart, Gift, Menu } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ShoppingCart, Gift } from "lucide-react";
 
 export function HeroSection() {
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="bg-white relative pb-0 md:pb-0">
-      {/* Mobile Header (Menu - Logo - Cart) */}
-      <div className={`md:hidden bg-white px-4 py-3 flex items-center justify-between relative z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 w-full shadow-md' : ''}`}>
-        <button className="flex flex-col items-center gap-1 text-[#2A2A5A]">
-          <Menu className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase">Menu</span>
-        </button>
-        
-        <a href={affiliateLink} className="flex-shrink-0">
-          <img 
-            src="/images/logo.svg" 
-            alt="Proerecta" 
-            className="h-6"
-          />
-        </a>
-
-        {isSticky ? (
-          <a 
-            href={affiliateLink}
-            className="bg-[#D32F2F] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg hover:bg-[#B71C1C] transition-colors uppercase tracking-wide"
-          >
-            Probudit libido <span className="text-xl animate-flicker ml-1">🔥</span>
-          </a>
-        ) : (
-          <a href={affiliateLink} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
-            <div className="relative">
-              <ShoppingCart className="w-6 h-6 fill-[#D32F2F] animate-pulse" />
-              <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold animate-bounce">0</span>
-            </div>
-            <span className="text-[10px] font-bold uppercase">Košík</span>
-          </a>
-        )}
-      </div>
-
-      {/* Red Bar with Gender Buttons (Mobile Only) */}
-      {/* Red Bar with Gender Buttons (Mobile Only) */}
-      <div className="md:hidden w-full bg-[#D32F2F] sticky top-0 z-[60] flex justify-center items-center gap-8 py-3 px-4 shadow-md">
-         <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
-           <span className="text-sm font-normal">♂</span> PRO MUŽE <span className="text-[10px]">›</span>
-         </a>
-         <div className="w-px h-4 bg-white/30"></div>
-         <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
-           <span className="text-sm font-normal">♀</span> PRO ŽENY <span className="text-[10px]">›</span>
-         </a>
-      </div>
-
       {/* Desktop Header Navigation */}
       <div className="hidden md:flex container mx-auto px-4 md:px-8 py-6 items-center justify-between relative z-20">
         {/* Logo */}
@@ -150,32 +95,32 @@ export function HeroSection() {
               {/* Icons Row */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-8 md:pt-8">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-red-500 flex items-center justify-center shadow-sm border-2 border-white/20 md:border-none">
-                     {/* Czech Flag Icon Placeholder */}
-                     <div className="w-full h-full rounded-full overflow-hidden relative border-2 border-white">
-                       <div className="absolute top-0 left-0 w-full h-1/2 bg-white"></div>
-                       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[#D32F2F]"></div>
-                       <div className="absolute top-0 left-0 w-1/2 h-full bg-[#1E88E5] clip-triangle"></div>
-                     </div>
+                  <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
+                     <img src="/images/flag-cz.svg" alt="Česká vlajka" className="w-10 h-10 object-contain drop-shadow-md" onError={(e) => {
+                       e.currentTarget.style.display = 'none';
+                       e.currentTarget.parentElement!.innerHTML = '<div class="w-10 h-10 rounded-full overflow-hidden relative border-2 border-white"><div class="absolute top-0 left-0 w-full h-1/2 bg-white"></div><div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#D32F2F]"></div><div class="absolute top-0 left-0 w-1/2 h-full bg-[#1E88E5] clip-triangle"></div></div>';
+                     }} />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Česká<br/>značka</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 text-green-400 md:text-green-500 bg-white/10 md:bg-transparent rounded-full p-1 md:p-0 backdrop-blur-sm md:backdrop-blur-none">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-sm">
-                      <path d="M12 22c4.97 0 9-4.03 9-9c0-4.97-9-13-9-13S3 8.03 3 13c0 4.97 4.03 9 9 9z" />
-                    </svg>
+                  <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
+                    <div className="w-10 h-10 bg-[#00C853] rounded-full flex items-center justify-center shadow-lg">
+                      <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
+                        <path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3C21,5,14,5.25,9,6.25C4,7.25,2,11.5,2,13.5C2,15.5,3.75,17.25,3.75,17.25C7,8,17,8,17,8Z" />
+                      </svg>
+                    </div>
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Bylinné<br/>produkty</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 text-slate-200 md:text-slate-300 bg-white/10 md:bg-transparent rounded-full p-1 md:p-0 backdrop-blur-sm md:backdrop-blur-none">
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full drop-shadow-sm">
-                      <rect x="3" y="5" width="18" height="14" rx="2" />
-                      <path d="M3 10h18" stroke="white" strokeWidth="2" />
-                    </svg>
+                  <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
+                    <div className="w-10 h-10 bg-slate-200 rounded-md flex items-center justify-center shadow-lg relative overflow-hidden">
+                      <div className="absolute top-2 left-0 w-full h-1 bg-slate-400"></div>
+                      <div className="absolute bottom-2 right-2 w-4 h-2 bg-slate-300 rounded-sm"></div>
+                    </div>
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Diskrétní<br/>balení</span>
                 </div>
