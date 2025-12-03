@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 interface ProductProps {
   name: string;
@@ -54,11 +54,11 @@ export function ProductCard({ name, price, currency, image, description, feature
         </div>
         
         <Button 
-          className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all" 
+          className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all group" 
           variant={popular ? "default" : "outline"}
           onClick={() => window.open(url, '_blank')}
         >
-          Koupit nyní
+          Zjistit více <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </CardFooter>
     </Card>

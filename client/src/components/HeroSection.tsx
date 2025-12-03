@@ -121,7 +121,7 @@ export function HeroSection() {
               <img 
                 src="/images/hero-couple.jpg" 
                 alt="Happy Couple" 
-                className="w-full h-full object-cover object-[center_30%] scale-110"
+                className="w-full h-full object-cover object-[center_20%] scale-110"
               />
             </div>
 
