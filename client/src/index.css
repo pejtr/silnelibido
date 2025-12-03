@@ -214,3 +214,13 @@ body {
 .animate-flicker {
   animation: flicker 2.5s ease-in-out infinite;
 }
+
+@keyframes zoom-in-out {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate-zoom-in-out {
+  animation: zoom-in-out 1s ease-in-out;
+}
