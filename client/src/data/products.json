@@ -1,0 +1,58 @@
+[
+  {
+    "id": "proerecta-klasik",
+    "name": "Proerecta KLASIK",
+    "price": 399,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/proerecta-klasik.png",
+    "description": "Tobolky pro okamžité použití s bylinnými extrakty. Okamžitá podpora mikrocirkulace a libida. Užijte 60 minut před sexem.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-klasik/",
+    "features": [
+      "Okamžitý účinek do 60 minut",
+      "Bylinné složení",
+      "Podpora mikrocirkulace"
+    ],
+    "ingredients_images": [
+      {
+        "name": "Hroznová jádra",
+        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/hroznove-jadra.png"
+      },
+      {
+        "name": "Panax Ginseng",
+        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/rhodiola-rosea-extrakt.png"
+      },
+      {
+        "name": "Guarana",
+        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/guarana.png"
+      }
+    ]
+  },
+  {
+    "id": "proerecta-shot",
+    "name": "Proerecta SHOT",
+    "price": 106,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2020/05/proerecta-shot-new.png",
+    "description": "Nápoj pro zrychlený nástup účinku. Užijte 30 minut před sexem.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-shot/",
+    "features": [
+      "Extra rychlý nástup (30 min)",
+      "Tekutá forma",
+      "Vysoká vstřebatelnost"
+    ]
+  },
+  {
+    "id": "proerecta-long",
+    "name": "Proerecta LONG",
+    "price": 399,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/proerecta-long-product.png",
+    "description": "Tobolky pro dlouhodobé užívání. Podpora vitality a mikrocirkulace pro muže nad 40 let.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-long/",
+    "features": [
+      "Dlouhodobá péče",
+      "Pro muže 40+",
+      "Podpora vitality"
+    ]
+  }
+]
