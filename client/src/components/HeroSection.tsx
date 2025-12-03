@@ -128,7 +128,7 @@ export function HeroSection() {
             {/* Product Image (Overlay) */}
             <div className="absolute bottom-0 right-0 md:right-12 w-[200px] md:w-[280px] z-20 transform translate-y-10">
               <img 
-                src="/images/proerecta-shot.png" 
+                src="/images/proerecta-shot-trans.png" 
                 alt="Proerecta Shot" 
                 className="w-full h-auto drop-shadow-2xl"
               />

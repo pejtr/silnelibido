@@ -4,7 +4,7 @@
     "name": "Proerecta KLASIK",
     "price": 399,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/proerecta-klasik.png",
+    "image": "/images/proerecta-klasik-trans.png",
     "description": "Tobolky pro okamžité použití s bylinnými extrakty. Okamžitá podpora mikrocirkulace a libida. Užijte 60 minut před sexem.",
     "url": "https://www.proerecta.cz/produkt/proerecta-klasik/",
     "features": [
@@ -15,15 +15,15 @@
     "ingredients_images": [
       {
         "name": "Hroznová jádra",
-        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/hroznove-jadra.png"
+        "image": "/images/ingredients/grape.png"
       },
       {
         "name": "Panax Ginseng",
-        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/rhodiola-rosea-extrakt.png"
+        "image": "/images/ingredients/ginseng.png"
       },
       {
         "name": "Guarana",
-        "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/guarana.png"
+        "image": "/images/ingredients/guarana.png"
       }
     ]
   },
@@ -32,7 +32,7 @@
     "name": "Proerecta SHOT",
     "price": 106,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2020/05/proerecta-shot-new.png",
+    "image": "/images/proerecta-shot-trans.png",
     "description": "Nápoj pro zrychlený nástup účinku. Užijte 30 minut před sexem.",
     "url": "https://www.proerecta.cz/produkt/proerecta-shot/",
     "features": [
@@ -46,7 +46,7 @@
     "name": "Proerecta LONG",
     "price": 399,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2019/10/proerecta-long-product.png",
+    "image": "/images/proerecta-long-trans.png",
     "description": "Tobolky pro dlouhodobé užívání. Podpora vitality a mikrocirkulace pro muže nad 40 let.",
     "url": "https://www.proerecta.cz/produkt/proerecta-long/",
     "features": [
@@ -60,7 +60,7 @@
     "name": "Proerecta WOMEN",
     "price": 599,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2020/10/pw-product.png",
+    "image": "/images/proerecta-women-real.jpg",
     "description": "Rostlinné tobolky pro menstruační a menopauzální komfort. Udržují normální libido a plodnost.",
     "url": "https://www.proerecta.cz/produkt/proerecta-women/",
     "features": [
@@ -74,7 +74,7 @@
     "name": "Proerecta PROSTATE",
     "price": 369,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2021/06/proerecta-prostate-product.png",
+    "image": "/images/proerecta-prostate-real.png",
     "description": "Dlouhodobá rostlinná péče o kondici a vitalitu prostaty a močových cest.",
     "url": "https://www.proerecta.cz/produkt/proerecta-prostate/",
     "features": [
@@ -88,7 +88,7 @@
     "name": "Proerecta GUMÍDCI",
     "price": 499,
     "currency": "CZK",
-    "image": "https://www.proerecta.cz/wp-content/uploads/2022/05/proerecta-gumidci-product.png",
+    "image": "/images/proerecta-gumidci-real.jpg",
     "description": "Želatinové bonbony pro podporu sexuálního výkonu, výdrže a pevné erekce.",
     "url": "https://www.proerecta.cz/produkt/proerecta-gumidci/",
     "features": [
