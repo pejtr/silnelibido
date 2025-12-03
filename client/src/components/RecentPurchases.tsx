@@ -133,8 +133,6 @@ export function RecentPurchases() {
     >
       <a 
         href={product.url}
-        target="_blank"
-        rel="noopener noreferrer"
         className="block bg-white rounded-lg shadow-xl border border-slate-100 p-4 max-w-xs relative overflow-hidden hover:shadow-2xl hover:border-slate-200 transition-all group cursor-pointer"
       >
         {/* Close button - stopPropagation to prevent link click */}
