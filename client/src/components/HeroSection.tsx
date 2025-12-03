@@ -5,6 +5,26 @@ import { useState, useEffect } from "react";
 export function HeroSection() {
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
   const [ctaText, setCtaText] = useState("Probudit libido");
+  const [showGift, setShowGift] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const productsSection = document.getElementById('products');
+      if (productsSection) {
+        const rect = productsSection.getBoundingClientRect();
+        // Hide if the top of products section is near or above the viewport bottom
+        // Using window.innerHeight * 0.8 to hide it a bit before it fully enters view
+        if (rect.top < window.innerHeight * 0.8) {
+          setShowGift(false);
+        } else {
+          setShowGift(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     // Simple A/B test: 50% chance for each variant
@@ -90,7 +110,10 @@ export function HeroSection() {
               </p>
 
               {/* Sticky Gift Icon (Mobile & Desktop) */}
-              <a href="#products" className="fixed bottom-[calc(2rem+11px)] left-0 z-[100] transition-transform active:scale-95 hover:scale-105 group">
+              <a 
+                href="#products" 
+                className={`fixed bottom-[calc(2rem+22px)] left-0 z-[100] transition-all duration-500 active:scale-95 hover:scale-105 group ${showGift ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+              >
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
                     <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
                  </div>

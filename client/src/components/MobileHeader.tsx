@@ -40,7 +40,7 @@ export function MobileHeader() {
       </div>
 
       {/* Red Bar with Gender Buttons (Sticky) */}
-      <div className={`w-full bg-[#D32F2F] flex justify-center items-center gap-8 py-3 px-4 shadow-md transition-all duration-300 z-[60] ${isSticky ? 'fixed top-0 left-0 scale-122 origin-top' : 'sticky top-0'}`}>
+      <div className={`w-full bg-[#D32F2F] flex justify-center items-center gap-8 py-3 px-4 shadow-md transition-all duration-300 z-[40] ${isSticky ? 'fixed top-0 left-0 scale-122 origin-top' : 'sticky top-0'}`}>
          <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
            <svg viewBox="0 0 24 24" fill="none" stroke="#2A2A5A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 drop-shadow-sm"><circle cx="10" cy="14" r="5"/><path d="M15 9l5-5"/><path d="M15 4h5v5"/></svg> PRO MUŽE <span className="text-[10px]">›</span>
          </a>
