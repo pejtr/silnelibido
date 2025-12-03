@@ -38,6 +38,25 @@ export default function Home() {
         <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
           <IngredientsSection />
           <FeaturesSection />
+          
+          {/* Stylish Down Arrow Divider */}
+          <div className="bg-white flex justify-center py-8 -mb-12 relative z-10">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-red-100/50 rounded-full blur-xl animate-pulse"></div>
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="#D32F2F" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="w-12 h-12 animate-bounce relative z-10 drop-shadow-sm"
+              >
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+
           <ProductsSection />
           <div id="reference">
             <TestimonialsSection />
