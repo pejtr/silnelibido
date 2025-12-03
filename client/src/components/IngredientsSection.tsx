@@ -12,7 +12,7 @@ export function IngredientsSection() {
             Síla přírody pro vaši erekci
           </h2>
           <p className="text-lg text-slate-600">
-            Proerecta obsahuje pouze ověřené bylinné extrakty, aminokyseliny a vitamíny. Žádná chemie, jen čistá příroda.
+            Proerecta obsahuje pouze ověřené bylinné extrakty, aminokyseliny a vitamíny. <span className="font-bold text-[#2A2A5A] bg-green-50 px-2 py-1 rounded-md border border-green-100 inline-block mt-2 md:mt-0">Žádná chemie, jen čistá příroda.</span>
           </p>
         </div>
 
