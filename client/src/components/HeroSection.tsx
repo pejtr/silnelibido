@@ -1,12 +1,22 @@
 import { ShoppingCart, Gift, Menu } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="bg-white relative overflow-hidden pb-0 md:pb-0">
       {/* Mobile Header (Menu - Logo - Cart) */}
-      <div className="md:hidden bg-white px-4 py-3 flex items-center justify-between relative z-30">
+      <div className={`md:hidden bg-white px-4 py-3 flex items-center justify-between relative z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 w-full shadow-md' : ''}`}>
         <button className="flex flex-col items-center gap-1 text-[#2A2A5A]">
           <Menu className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase">Menu</span>
@@ -20,13 +30,22 @@ export function HeroSection() {
           />
         </a>
 
-        <a href={affiliateLink} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
-          <div className="relative">
-            <ShoppingCart className="w-6 h-6 fill-[#D32F2F]" />
-            <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold">0</span>
-          </div>
-          <span className="text-[10px] font-bold uppercase">Košík</span>
-        </a>
+        {isSticky ? (
+          <a 
+            href={affiliateLink}
+            className="bg-[#D32F2F] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg hover:bg-[#B71C1C] transition-colors uppercase tracking-wide"
+          >
+            Koupit
+          </a>
+        ) : (
+          <a href={affiliateLink} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
+            <div className="relative">
+              <ShoppingCart className="w-6 h-6 fill-[#D32F2F] animate-pulse" />
+              <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold animate-bounce">0</span>
+            </div>
+            <span className="text-[10px] font-bold uppercase">Košík</span>
+          </a>
+        )}
       </div>
 
       {/* Red Curve Separator (Mobile Only) */}

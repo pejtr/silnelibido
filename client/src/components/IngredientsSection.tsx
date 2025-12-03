@@ -22,6 +22,7 @@ export function IngredientsSection() {
             src="/images/ingredients-comparison.png" 
             alt="Srovnání složení Proerecta produktů" 
             className="w-full h-auto object-contain"
+            loading="lazy"
           />
           
           {/* Mobile-only text fallback (if image text is too small) */}
