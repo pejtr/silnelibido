@@ -1,4 +1,6 @@
+import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
+import { IngredientsSection } from "@/components/IngredientsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { ProductsSection } from "@/components/ProductsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -25,19 +27,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-white">
+    <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
+      <Header />
       <main className="flex-grow">
         <HeroSection />
-        <FeaturesSection />
-        <ProductsSection />
-        <TestimonialsSection />
-        <FAQSection />
+        
+        {/* Content Wrapper for White Card Effect */}
+        <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
+          <IngredientsSection />
+          <FeaturesSection />
+          <ProductsSection />
+          <TestimonialsSection />
+          <FAQSection />
+        </div>
       </main>
       <Footer />
 
       {/* Scroll to Top Button */}
       <Button
-        className={`fixed bottom-8 right-8 rounded-full w-12 h-12 p-0 shadow-xl transition-all duration-300 z-50 ${
+        className={`fixed bottom-8 right-8 rounded-full w-12 h-12 p-0 shadow-xl transition-all duration-300 z-50 bg-[#D32F2F] hover:bg-[#B71C1C] text-white ${
           showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
         }`}
         onClick={scrollToTop}

@@ -54,5 +54,47 @@
       "Pro muže 40+",
       "Podpora vitality"
     ]
+  },
+  {
+    "id": "proerecta-women",
+    "name": "Proerecta WOMEN",
+    "price": 599,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2020/10/pw-product.png",
+    "description": "Rostlinné tobolky pro menstruační a menopauzální komfort. Udržují normální libido a plodnost.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-women/",
+    "features": [
+      "Hormonální rovnováha",
+      "Menstruační komfort",
+      "Pro ženy každého věku"
+    ]
+  },
+  {
+    "id": "proerecta-prostate",
+    "name": "Proerecta PROSTATE",
+    "price": 369,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2021/06/proerecta-prostate-product.png",
+    "description": "Dlouhodobá rostlinná péče o kondici a vitalitu prostaty a močových cest.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-prostate/",
+    "features": [
+      "Normální funkce prostaty",
+      "Zdraví močových cest",
+      "Serenoa plazivá"
+    ]
+  },
+  {
+    "id": "proerecta-gumidci",
+    "name": "Proerecta GUMÍDCI",
+    "price": 499,
+    "currency": "CZK",
+    "image": "https://www.proerecta.cz/wp-content/uploads/2022/05/proerecta-gumidci-product.png",
+    "description": "Želatinové bonbony pro podporu sexuálního výkonu, výdrže a pevné erekce.",
+    "url": "https://www.proerecta.cz/produkt/proerecta-gumidci/",
+    "features": [
+      "Chutná forma (bonbony)",
+      "Podpora výkonu",
+      "Vitamíny a minerály"
+    ]
   }
 ]
