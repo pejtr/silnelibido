@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 import { NewsletterSection } from "@/components/NewsletterSection";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -33,6 +34,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
       <TopBar />
       <MobileHeader />
+      <ExitIntentPopup />
       <main className="flex-grow">
         <HeroSection />
         
