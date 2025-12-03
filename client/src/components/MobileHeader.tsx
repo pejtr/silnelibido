@@ -6,6 +6,12 @@ export function MobileHeader() {
   const [isSticky, setIsSticky] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  const vibrate = () => {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(10);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
@@ -23,7 +29,7 @@ export function MobileHeader() {
     <div className="md:hidden">
       {/* White Header (Menu - Logo - Cart) */}
       <div className="bg-white px-4 py-3 flex items-center justify-between relative z-50">
-        <button className="flex flex-col items-center gap-1 text-[#2A2A5A]">
+        <button onClick={vibrate} className="flex flex-col items-center gap-1 text-[#2A2A5A]">
           <Menu className="w-6 h-6" />
 
         </button>
@@ -36,7 +42,7 @@ export function MobileHeader() {
           />
         </a>
 
-        <a href={affiliateLink} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
+        <a href={affiliateLink} onClick={vibrate} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
           <div className="relative">
             <ShoppingCart className="w-6 h-6 fill-[#D32F2F] animate-pulse" />
             <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[9px] w-3.5 h-3.5 flex items-center justify-center rounded-full font-bold animate-bounce">0</span>
@@ -48,11 +54,11 @@ export function MobileHeader() {
       {/* Red Bar with Gender Buttons (Sticky) */}
       <div className={`w-full bg-[#D32F2F] flex flex-col justify-center items-center shadow-md transition-all duration-300 z-[40] ${isSticky ? 'fixed top-0 left-0 w-full' : 'sticky top-0'}`}>
          <div className="w-full flex justify-center items-center gap-8 py-3 px-4">
-           <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
+           <a href="https://www.proerecta.cz/produkty/" onClick={vibrate} className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
              <svg viewBox="0 0 24 24" fill="none" stroke="#2A2A5A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 drop-shadow-sm"><circle cx="10" cy="14" r="5"/><path d="M15 9l5-5"/><path d="M15 4h5v5"/></svg> PRO MUŽE <span className="text-[10px]">›</span>
            </a>
            <div className="w-px h-4 bg-white/30"></div>
-           <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
+           <a href="https://www.proerecta.cz/produkt/proerecta-women/" onClick={vibrate} className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
              <svg viewBox="0 0 24 24" fill="none" stroke="#2A2A5A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 drop-shadow-sm"><circle cx="12" cy="10" r="5"/><path d="M12 15v6"/><path d="M9 18h6"/></svg> PRO ŽENY <span className="text-[10px]">›</span>
            </a>
          </div>
