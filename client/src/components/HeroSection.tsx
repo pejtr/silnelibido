@@ -117,11 +117,11 @@ export function HeroSection() {
             <div className="absolute top-0 right-0 w-[120%] h-full bg-gradient-to-l from-slate-50 to-transparent rounded-l-[10rem] -z-10"></div>
 
             {/* Couple Image (Masked) */}
-            <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-0 mr-12 md:mr-24">
+            <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-0 mr-12 md:mr-24 flex items-center">
               <img 
                 src="/images/hero-couple.jpg" 
                 alt="Happy Couple" 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_30%] scale-110"
               />
             </div>
 
