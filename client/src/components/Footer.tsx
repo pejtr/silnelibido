@@ -17,7 +17,7 @@ export function Footer() {
               alt="Proerecta" 
               className="h-8"
             />
-            <p className="text-sm text-slate-500 font-medium">the all natural solution</p>
+            <p className="text-sm text-slate-500 font-medium">the all natural solution for your sexual health</p>
             
             <div className="flex gap-4 text-[#D32F2F]">
               <Facebook className="w-6 h-6 cursor-pointer hover:opacity-80" />

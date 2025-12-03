@@ -69,7 +69,7 @@ export function ProductCard({ name, price, currency, image, description, feature
         <Button 
           className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all group" 
           variant={popular ? "default" : "outline"}
-          onClick={() => window.open(url, '_blank')}
+          onClick={() => window.location.href = url}
         >
           Zjistit více <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Button>
