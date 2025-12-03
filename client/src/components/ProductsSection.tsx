@@ -3,7 +3,7 @@ import productsData from "../data/products.json";
 
 export function ProductsSection() {
   return (
-    <section id="products" className="py-24 bg-slate-50">
+    <section id="products" className="pt-12 pb-24 bg-slate-50">
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           {/* Stylish Down Arrow */}
