@@ -93,7 +93,7 @@ export function HeroSection() {
               </div>
 
               {/* Text-based Rating */}
-              <div className="flex justify-center lg:justify-start pt-3 pb-1">
+              <div className="flex justify-center lg:justify-start pt-1 pb-1">
                 <div className="flex items-center gap-1.5">
                   <div className="flex text-[#FFC107]">
                     {[...Array(5)].map((_, i) => (
