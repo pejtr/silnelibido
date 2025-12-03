@@ -26,22 +26,45 @@ export function IngredientsSection() {
           />
           
           {/* Mobile-only text fallback (if image text is too small) */}
-          <div className="md:hidden grid grid-cols-1 gap-6 mt-8">
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <h3 className="font-bold text-[#D32F2F] mb-2">Tribulus Terrestris</h3>
-              <p className="text-sm text-slate-600">Podporuje normální funkci pohlavních orgánů a hormonální aktivitu.</p>
+          <div className="md:hidden grid grid-cols-1 gap-4 mt-8">
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <img src="/images/proerecta-klasik-trans.png" alt="Tribulus" className="w-8 h-8 object-contain" />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Tribulus Terrestris</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">Podporuje normální funkci pohlavních orgánů a hormonální aktivitu.</p>
+              </div>
             </div>
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <h3 className="font-bold text-[#D32F2F] mb-2">Maca Peruánská</h3>
-              <p className="text-sm text-slate-600">Udržuje sexualitu, plodnost, vitalitu a vytrvalost.</p>
+
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <img src="/images/maca.png" alt="Maca" className="w-8 h-8 object-contain" />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Maca Peruánská</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">Udržuje sexualitu, plodnost, vitalitu a vytrvalost.</p>
+              </div>
             </div>
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <h3 className="font-bold text-[#D32F2F] mb-2">Ženšen Pravý</h3>
-              <p className="text-sm text-slate-600">Přispívá k sexuálnímu zdraví, vitalitě a krevnímu oběhu.</p>
+
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <img src="/images/zensen.png" alt="Ženšen" className="w-8 h-8 object-contain" />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Ženšen Pravý</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">Přispívá k sexuálnímu zdraví, vitalitě a krevnímu oběhu.</p>
+              </div>
             </div>
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-              <h3 className="font-bold text-[#D32F2F] mb-2">Extrakt z hroznů</h3>
-              <p className="text-sm text-slate-600">Silný antioxidant podporující normální funkci oběhové soustavy.</p>
+
+            <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+                <img src="/images/hrozny.png" alt="Hrozny" className="w-8 h-8 object-contain" />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Extrakt z hroznů</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">Silný antioxidant podporující normální funkci oběhové soustavy.</p>
+              </div>
             </div>
           </div>
         </div>

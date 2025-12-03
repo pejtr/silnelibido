@@ -35,7 +35,7 @@ export function HeroSection() {
             href={affiliateLink}
             className="bg-[#D32F2F] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg hover:bg-[#B71C1C] transition-colors uppercase tracking-wide"
           >
-            Koupit
+            Probudit libido 🔥
           </a>
         ) : (
           <a href={affiliateLink} className="flex flex-col items-center gap-1 text-[#D32F2F] relative">
@@ -118,8 +118,8 @@ export function HeroSection() {
               </p>
 
               {/* Mobile Gift Icon */}
-              <div className="md:hidden absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4">
-                 <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm">
+              <div className="md:hidden fixed top-[45%] left-0 z-40">
+                 <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg">
                     <Gift className="w-8 h-8 text-[#FFC107]" />
                  </div>
               </div>
@@ -129,7 +129,7 @@ export function HeroSection() {
                   href="#products" 
                   className="inline-block bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-12 py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-full md:w-auto"
                 >
-                  Vybrat produkt
+                  Probudit libido 🔥
                 </a>
               </div>
 
