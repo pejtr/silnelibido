@@ -118,7 +118,7 @@ export function HeroSection() {
               </p>
 
               {/* Mobile Gift Icon */}
-              <a href="#products" className="md:hidden fixed top-[30%] left-0 z-40 transition-transform active:scale-95">
+              <a href="#products" className="md:hidden fixed top-[calc(30%-11px)] left-0 z-40 transition-transform active:scale-95">
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10">
                     <Gift className="w-8 h-8 text-[#FFC107] animate-pulse" />
                  </div>
