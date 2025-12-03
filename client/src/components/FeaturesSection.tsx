@@ -48,7 +48,7 @@ export function FeaturesSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-start p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
+            <div key={index} className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition-shadow">
               <div className="p-3 rounded-xl bg-primary/10 text-primary mb-4">
                 <feature.icon className="w-6 h-6" />
               </div>

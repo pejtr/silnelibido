@@ -104,6 +104,7 @@
 body {
   background-color: var(--proerecta-frame);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 .dark {
