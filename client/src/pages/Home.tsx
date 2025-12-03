@@ -8,6 +8,7 @@ import { ProductQuiz } from "@/components/ProductQuiz";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
+import { NewsletterSection } from "@/components/NewsletterSection";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -65,6 +66,7 @@ export default function Home() {
           <FAQSection />
           <ProductQuiz />
         </div>
+        <NewsletterSection />
       </main>
       <Footer />
 
