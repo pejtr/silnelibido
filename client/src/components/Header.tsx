@@ -1,4 +1,5 @@
 import { ShoppingCart, ChevronDown, Phone, Check } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 export function Header() {
@@ -34,7 +35,7 @@ export function Header() {
         {/* Navigation - Desktop */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-slate-800 text-sm uppercase tracking-wide">
           <a href={affiliateLink} className="hover:text-primary transition-colors">Produkty</a>
-          <a href={affiliateLink} className="hover:text-primary transition-colors">Reference</a>
+          <Link href="/recenze" className="hover:text-primary transition-colors">Recenze</Link>
           <a href={affiliateLink} className="hover:text-primary transition-colors">O nás</a>
           <a href={affiliateLink} className="hover:text-primary transition-colors">Kontakty</a>
           <div className="relative group cursor-pointer flex items-center gap-1 hover:text-primary transition-colors">
