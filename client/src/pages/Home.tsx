@@ -37,7 +37,9 @@ export default function Home() {
           <IngredientsSection />
           <FeaturesSection />
           <ProductsSection />
-          <TestimonialsSection />
+          <div id="reference">
+            <TestimonialsSection />
+          </div>
           <FAQSection />
         </div>
       </main>

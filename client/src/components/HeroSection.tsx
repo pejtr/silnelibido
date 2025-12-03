@@ -67,7 +67,7 @@ export function HeroSection() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
             <a href="https://www.proerecta.cz/obchod/" className="hover:text-[#D32F2F] transition-colors">Produkty</a>
-          <a href="https://www.proerecta.cz/reference/" className="hover:text-[#D32F2F] transition-colors">Reference</a>
+          <a href="#reference" className="hover:text-[#D32F2F] transition-colors">Reference</a>
           <a href="https://www.proerecta.cz/o-nas/" className="hover:text-[#D32F2F] transition-colors">O nás</a>
           <a href="https://www.proerecta.cz/kontakty/" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
           <a href="https://www.proerecta.cz/blog/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">

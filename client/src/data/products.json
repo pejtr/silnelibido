@@ -39,7 +39,11 @@
       "Extra rychlý nástup (30 min)",
       "Tekutá forma",
       "Vysoká vstřebatelnost"
-    ]
+    ],
+    "badge": {
+      "text": "BESTSELLER",
+      "color": "#D32F2F"
+    }
   },
   {
     "id": "proerecta-long",
@@ -67,7 +71,11 @@
       "Hormonální rovnováha",
       "Menstruační komfort",
       "Pro ženy každého věku"
-    ]
+    ],
+    "badge": {
+      "text": "PRO ŽENY",
+      "color": "#E91E63"
+    }
   },
   {
     "id": "proerecta-prostate",
