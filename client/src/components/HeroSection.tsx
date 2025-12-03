@@ -1,7 +1,20 @@
 import { ShoppingCart, Gift } from "lucide-react";
 
+import { useState, useEffect } from "react";
+
 export function HeroSection() {
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
+  const [ctaText, setCtaText] = useState("Probudit libido");
+
+  useEffect(() => {
+    // Simple A/B test: 50% chance for each variant
+    const variant = Math.random() > 0.5 ? "A" : "B";
+    if (variant === "B") {
+      setCtaText("Rozproudit libido");
+    }
+    // In a real app, we would log this exposure to analytics here
+    console.log(`A/B Test Variant: ${variant}`);
+  }, []);
 
   return (
     <div className="bg-white relative pb-0 md:pb-0">
@@ -88,7 +101,7 @@ export function HeroSection() {
                   href="#products" 
                   className="inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-12 py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-full md:w-auto"
                 >
-                  Probudit libido <span className="text-4xl animate-flicker ml-1">🔥</span>
+                  {ctaText} <span className="text-4xl animate-flicker ml-1">🔥</span>
                 </a>
               </div>
 

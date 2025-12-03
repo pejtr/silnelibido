@@ -1,11 +1,42 @@
-import { Phone, Check } from "lucide-react";
+import { Phone, Check, Clock } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export function TopBar() {
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    // Set deadline to December 20th, 2025 at 12:00 PM (Last shipping date)
+    const deadline = new Date("2025-12-20T12:00:00").getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+
+      if (distance < 0) {
+        setTimeLeft("Garance doručení do Vánoc vypršela!");
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      setTimeLeft(`Do konce garance doručení zbývá: ${days}d ${hours}h ${minutes}m`);
+    };
+
+    updateTimer();
+    const interval = setInterval(updateTimer, 60000); // Update every minute
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="w-full font-sans">
       {/* Christmas Bar */}
-      <div className="bg-gradient-to-r from-[#990000] via-[#D32F2F] to-[#990000] text-white text-center py-2 text-sm font-medium px-4 shadow-inner">
-        🎄 Vánoce se blíží — neponechte nic náhodě. 🎁
+      <div className="bg-gradient-to-r from-[#990000] via-[#D32F2F] to-[#990000] text-white text-center py-2 text-sm font-bold px-4 shadow-inner flex justify-center items-center gap-2 animate-pulse">
+        <span>🎄</span>
+        <span>{timeLeft || "Vánoce se blíží — neponechte nic náhodě."}</span>
+        <span>🎁</span>
       </div>
 
       {/* Info Bar - Desktop Only */}
