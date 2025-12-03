@@ -219,12 +219,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Gift Icon (Desktop Left) */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 z-30 hidden xl:block">
-        <div className="bg-[#333] text-white p-3 rounded-r-xl shadow-lg cursor-pointer hover:bg-[#D32F2F] transition-colors">
-          <Gift className="w-8 h-8 text-[#FFC107]" />
-        </div>
-      </div>
+
     </div>
   );
 }
