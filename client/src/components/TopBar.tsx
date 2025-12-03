@@ -21,7 +21,7 @@ export function TopBar() {
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-      setTimeLeft(`Do konce garance doručení zbývá: ${days}d ${hours}h ${minutes}m`);
+      setTimeLeft(`${days}d ${hours}h ${minutes}m`);
     };
 
     updateTimer();
@@ -33,10 +33,13 @@ export function TopBar() {
   return (
     <div className="w-full font-sans">
       {/* Christmas Bar */}
-      <div className="bg-gradient-to-r from-[#990000] via-[#D32F2F] to-[#990000] text-white text-center py-2 text-sm font-bold px-4 shadow-inner flex justify-center items-center gap-2 animate-pulse">
-        <span>🎄</span>
-        <span>{timeLeft || "Vánoce se blíží — neponechte nic náhodě."}</span>
-        <span>🎁</span>
+      <div className="bg-gradient-to-r from-[#990000] via-[#D32F2F] to-[#990000] text-white text-center py-2 text-sm font-bold px-4 shadow-inner flex justify-center items-center gap-3 animate-pulse">
+        <span className="text-xl">🎄</span>
+        <div className="flex flex-col items-center leading-tight">
+          <span>Do konce garance doručení zbývá:</span>
+          <span className="text-base">{timeLeft || "..."}</span>
+        </div>
+        <span className="text-xl">🎁</span>
       </div>
 
       {/* Info Bar - Desktop Only */}

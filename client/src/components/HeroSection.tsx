@@ -90,7 +90,7 @@ export function HeroSection() {
               </p>
 
               {/* Sticky Gift Icon (Mobile & Desktop) */}
-              <a href="#products" className="fixed bottom-8 left-0 z-[100] transition-transform active:scale-95 hover:scale-105 group">
+              <a href="#products" className="fixed bottom-[calc(2rem+11px)] left-0 z-[100] transition-transform active:scale-95 hover:scale-105 group">
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
                     <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
                  </div>
