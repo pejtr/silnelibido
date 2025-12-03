@@ -49,13 +49,13 @@ export function HeroSection() {
       </div>
 
       {/* Red Bar with Gender Buttons (Mobile Only) */}
-      <div className="md:hidden w-full bg-[#D32F2F] relative z-20 flex justify-center items-center gap-8 py-2 px-4 shadow-md">
-         <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
-           Pro muže <span className="text-[10px]">›</span>
+      <div className="md:hidden w-full bg-[#D32F2F] sticky top-0 z-50 flex justify-center items-center gap-8 py-3 px-4 shadow-md">
+         <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
+           <span className="text-sm">♂</span> Pro muže <span className="text-[10px]">›</span>
          </a>
          <div className="w-px h-4 bg-white/30"></div>
-         <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
-           Pro ženy <span className="text-[10px]">›</span>
+         <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
+           <span className="text-sm">♀</span> Pro ženy <span className="text-[10px]">›</span>
          </a>
       </div>
 
