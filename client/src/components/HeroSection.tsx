@@ -66,11 +66,11 @@ export function HeroSection() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
-          <a href="#products" className="hover:text-[#D32F2F] transition-colors">Produkty</a>
-          <a href="#testimonials" className="hover:text-[#D32F2F] transition-colors">Reference</a>
-          <a href="#about" className="hover:text-[#D32F2F] transition-colors">O nás</a>
-          <a href="#contact" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
-          <a href="#other" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+            <a href="https://www.proerecta.cz/obchod/" className="hover:text-[#D32F2F] transition-colors">Produkty</a>
+          <a href="https://www.proerecta.cz/reference/" className="hover:text-[#D32F2F] transition-colors">Reference</a>
+          <a href="https://www.proerecta.cz/o-nas/" className="hover:text-[#D32F2F] transition-colors">O nás</a>
+          <a href="https://www.proerecta.cz/kontakty/" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
+          <a href="https://www.proerecta.cz/blog/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
             Ostatní <span className="text-[10px]">▼</span>
           </a>
         </nav>
