@@ -163,7 +163,7 @@ export function ExitIntentPopup() {
                 </div>
 
                 <Button 
-                  onClick={handleClose}
+                  onClick={() => window.location.href = "https://www.proerecta.cz/produkty/"}
                   className="w-full bg-[#2A2A5A] hover:bg-[#1a1a3a] text-white h-12 rounded-xl font-bold"
                 >
                   Použít slevu
