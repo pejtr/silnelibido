@@ -11,7 +11,17 @@ const RECENT_CUSTOMERS = [
   { name: "Jaroslav", city: "Olomouce", time: "před 3 minutami" },
   { name: "Miroslav", city: "Českých Budějovic", time: "před 20 minutami" },
   { name: "Zdeněk", city: "Hradce Králové", time: "před 7 minutami" },
-  { name: "Václav", city: "Pardubic", time: "před 10 minutami" }
+  { name: "Václav", city: "Pardubic", time: "před 10 minutami" },
+  { name: "Michal", city: "Zlína", time: "před 4 minutami" },
+  { name: "David", city: "Kladna", time: "před 9 minutami" },
+  { name: "Jakub", city: "Mostu", time: "před 14 minutami" },
+  { name: "Lukáš", city: "Karviné", time: "před 6 minutami" },
+  { name: "Jiří", city: "Opavy", time: "před 18 minutami" },
+  { name: "František", city: "Jihlavy", time: "před 11 minutami" },
+  { name: "Karel", city: "Teplic", time: "před 25 minutami" },
+  { name: "Milan", city: "Děčína", time: "před 16 minutami" },
+  { name: "Vladimír", city: "Chomutova", time: "před 22 minutami" },
+  { name: "Roman", city: "Přerova", time: "před 13 minutami" }
 ];
 
 export function RecentPurchases() {
@@ -36,9 +46,9 @@ export function RecentPurchases() {
         const randomCustomer = RECENT_CUSTOMERS[Math.floor(Math.random() * RECENT_CUSTOMERS.length)];
         setCustomer(randomCustomer);
         setIsVisible(true);
-      }, 2000); // Wait 2s before showing next one
+      }, 8000); // Wait 8s before showing next one (longer pause)
       
-    }, 15000); // Show new one every 15s
+    }, 30000); // Show new one every 30s (less frequent)
 
     return () => {
       clearTimeout(initialTimeout);
