@@ -49,6 +49,7 @@ export function ProductCard({ name, price, currency, image, description, feature
       
       <CardFooter className="p-6 pt-0 flex flex-col gap-4">
         <div className="flex items-baseline gap-1 w-full">
+          <span className="text-sm font-medium text-muted-foreground mr-1">od</span>
           <span className="text-3xl font-bold text-primary">{price}</span>
           <span className="text-sm font-medium text-muted-foreground">{currency}</span>
         </div>
