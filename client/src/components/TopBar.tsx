@@ -3,6 +3,19 @@ import { useState, useEffect } from "react";
 
 export function TopBar() {
   const [timeLeft, setTimeLeft] = useState("");
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      setScrollProgress(Number(scroll));
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     // Set deadline to December 20th, 2025 at 12:00 PM (Last shipping date)
@@ -67,6 +80,14 @@ export function TopBar() {
       <div className="md:hidden bg-white text-[#2A2A5A] py-3 px-4 text-sm font-medium border-b border-slate-100 flex justify-center items-center gap-2">
         <Phone className="w-4 h-4 fill-[#2A2A5A]" /> 
         <a href="tel:+420607657370">+420 607 657 370 (Po-Pá 8:00–16:30)</a>
+      </div>
+
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 z-[100]">
+        <div 
+          className="h-full bg-[#D32F2F] transition-all duration-150 ease-out shadow-[0_0_10px_rgba(211,47,47,0.5)]"
+          style={{ width: `${scrollProgress * 100}%` }}
+        ></div>
       </div>
     </div>
   );
