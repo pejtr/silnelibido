@@ -50,7 +50,7 @@ export function HeroSection() {
 
       {/* Red Bar with Gender Buttons (Mobile Only) */}
       <div className="md:hidden w-full bg-[#D32F2F] relative z-20 flex justify-center items-center gap-8 py-2 px-4 shadow-md">
-         <a href="https://www.proerecta.cz/obchod/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
+         <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
            Pro muže <span className="text-[10px]">›</span>
          </a>
          <div className="w-px h-4 bg-white/30"></div>
@@ -73,7 +73,7 @@ export function HeroSection() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
           <div className="flex items-center gap-6">
-            <a href="https://www.proerecta.cz/obchod/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+            <a href="https://www.proerecta.cz/produkty/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
               Pro muže <span className="text-xs">›</span>
             </a>
             <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
