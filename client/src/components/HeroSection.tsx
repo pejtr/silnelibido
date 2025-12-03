@@ -88,6 +88,8 @@ export function HeroSection() {
             src="/images/hero-couple.jpg" 
             alt="Background" 
             className="w-full h-full object-cover object-[center_20%]"
+            fetchPriority="high"
+            decoding="async"
           />
           {/* Blue Overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-[#2A2A5A]/60 mix-blend-multiply"></div>
@@ -173,7 +175,7 @@ export function HeroSection() {
               {/* Media Logos - Desktop Only */}
               <div className="hidden md:flex flex-wrap justify-center lg:justify-start items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
                 <span className="text-sm font-bold text-[#2A2A5A] mr-2">Napsali o nás:</span>
-                <img src="/images/idnes-logo.png" alt="iDNES.cz" className="h-16 object-contain" />
+                <img src="/images/idnes-logo.png" alt="iDNES.cz" className="h-16 object-contain" loading="lazy" />
                 <span className="font-serif font-bold text-slate-400 text-xl">doma<span className="text-red-400">.cz</span></span>
                 <span className="font-sans font-black text-slate-400 text-xl tracking-tighter">EREKCE.cz</span>
               </div>
