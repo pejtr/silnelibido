@@ -60,11 +60,11 @@ export default function Home() {
           </div>
 
           <ProductsSection />
+          <ProductQuiz />
           <div id="reference">
             <TestimonialsSection />
           </div>
           <FAQSection />
-          <ProductQuiz />
         </div>
         <NewsletterSection />
       </main>
