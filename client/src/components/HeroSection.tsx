@@ -92,8 +92,13 @@ export function HeroSection() {
                 </a>
               </div>
 
+              {/* Rating Image */}
+              <div className="flex justify-center lg:justify-start pt-6 pb-2">
+                <img src="/images/rating-stars.png" alt="4.8/5 (1500+ recenzí)" className="h-6 object-contain" />
+              </div>
+
               {/* Icons Row */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-8 md:pt-8">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-4 md:pt-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
                      <img src="/images/ceska-znacka.png" alt="Česká značka" className="w-10 h-10 object-contain drop-shadow-md" />
