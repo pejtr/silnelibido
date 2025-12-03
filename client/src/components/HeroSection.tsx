@@ -48,9 +48,15 @@ export function HeroSection() {
         )}
       </div>
 
-      {/* Red Curve Separator (Mobile Only) */}
-      <div className="md:hidden w-full h-4 bg-white relative z-20">
-         <div className="absolute top-0 left-0 w-full h-full bg-[#D32F2F] rounded-b-[50%] scale-x-150"></div>
+      {/* Red Bar with Gender Buttons (Mobile Only) */}
+      <div className="md:hidden w-full bg-[#D32F2F] relative z-20 flex justify-center items-center gap-8 py-2 px-4 shadow-md">
+         <a href="https://www.proerecta.cz/obchod/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
+           Pro muže <span className="text-[10px]">›</span>
+         </a>
+         <div className="w-px h-4 bg-white/30"></div>
+         <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-1 hover:underline">
+           Pro ženy <span className="text-[10px]">›</span>
+         </a>
       </div>
 
       {/* Desktop Header Navigation */}
@@ -66,7 +72,14 @@ export function HeroSection() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
-            <a href="https://www.proerecta.cz/obchod/" className="hover:text-[#D32F2F] transition-colors">Produkty</a>
+          <div className="flex items-center gap-6">
+            <a href="https://www.proerecta.cz/obchod/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+              Pro muže <span className="text-xs">›</span>
+            </a>
+            <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+              Pro ženy <span className="text-xs">›</span>
+            </a>
+          </div>
           <a href="#reference" className="hover:text-[#D32F2F] transition-colors">Reference</a>
           <a href="https://www.proerecta.cz/o-nas/" className="hover:text-[#D32F2F] transition-colors">O nás</a>
           <a href="https://www.proerecta.cz/kontakty/" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
@@ -129,7 +142,7 @@ export function HeroSection() {
                   href="#products" 
                   className="inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-12 py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-full md:w-auto"
                 >
-                  Probudit libido <span className="text-4xl animate-flicker ml-2">🔥</span>
+                  Probudit libido <span className="text-4xl animate-flicker ml-1">🔥</span>
                 </a>
               </div>
 
