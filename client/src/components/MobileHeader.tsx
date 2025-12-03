@@ -32,7 +32,7 @@ export function MobileHeader() {
           <img 
             src="/images/logo.svg" 
             alt="Proerecta" 
-            className="h-6"
+            className="h-8"
           />
         </a>
 
