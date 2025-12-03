@@ -22,14 +22,14 @@ const features = [
     description: "Podporuje mikrocirkulaci krve pro maximální tvrdost a výdrž."
   },
   {
-    icon: Heart,
-    title: "Vyšší libido",
-    description: "Afrodiziakální byliny přirozeně zvyšují chuť na sex a vitalitu."
-  },
-  {
     icon: Lock,
     title: "100% Diskrétní",
     description: "Balíček bez loga a reklam. Nikdo nepozná, co jste si objednali."
+  },
+  {
+    icon: Heart,
+    title: "Vyšší libido",
+    description: "Afrodiziakální byliny přirozeně zvyšují chuť na sex a vitalitu."
   }
 ];
 
