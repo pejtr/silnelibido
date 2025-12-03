@@ -92,9 +92,20 @@ export function HeroSection() {
                 </a>
               </div>
 
-              {/* Rating Image */}
-              <div className="flex justify-center lg:justify-start pt-6 pb-2">
-                <img src="/images/rating-stars.png" alt="4.8/5 (1500+ recenzí)" className="h-6 object-contain" />
+              {/* Text-based Rating */}
+              <div className="flex justify-center lg:justify-start pt-3 pb-1">
+                <div className="flex items-center gap-1.5">
+                  <div className="flex text-[#FFC107]">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                        <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-white md:text-[#2A2A5A] font-bold text-sm drop-shadow-md md:drop-shadow-none">
+                    4.8/5 <span className="font-normal opacity-90">(1500+ recenzí)</span>
+                  </span>
+                </div>
               </div>
 
               {/* Icons Row */}
