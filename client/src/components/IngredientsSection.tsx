@@ -9,7 +9,7 @@ export function IngredientsSection() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] hidden lg:flex items-center justify-center z-10">
           <div className="relative w-full h-full">
             <img 
-              src="https://www.proerecta.cz/wp-content/uploads/2020/05/proerecta-shot-new.png" 
+              src="/images/proerecta-shot.png" 
               alt="Proerecta Shot" 
               className="w-full h-full object-contain drop-shadow-2xl"
             />
@@ -25,7 +25,7 @@ export function IngredientsSection() {
             {/* Maca */}
             <div className="flex flex-col items-center text-center lg:items-end lg:text-right space-y-4 relative group">
               <div className="w-32 h-32 rounded-full bg-white shadow-lg p-4 flex items-center justify-center border border-slate-100 group-hover:border-[#D32F2F] transition-colors">
-                <img src="/images/maca.png" alt="Maca" className="w-full h-full object-contain" />
+                <img src="/images/zensen.png" alt="Maca" className="w-full h-full object-contain" />
               </div>
               <div className="max-w-xs">
                 <h3 className="text-[#D32F2F] font-bold text-xl mb-2">Maca</h3>
@@ -42,7 +42,7 @@ export function IngredientsSection() {
             {/* Ženšen */}
             <div className="flex flex-col items-center text-center lg:items-end lg:text-right space-y-4 relative group">
               <div className="w-32 h-32 rounded-full bg-white shadow-lg p-4 flex items-center justify-center border border-slate-100 group-hover:border-[#D32F2F] transition-colors">
-                <img src="https://www.proerecta.cz/wp-content/uploads/2019/10/rhodiola-rosea-extrakt.png" alt="Ženšen" className="w-full h-full object-contain" />
+                <img src="/images/zensen.png" alt="Ženšen" className="w-full h-full object-contain" />
               </div>
               <div className="max-w-xs">
                 <h3 className="text-[#D32F2F] font-bold text-xl mb-2">Extrakt ženšenu</h3>
@@ -65,7 +65,7 @@ export function IngredientsSection() {
             {/* Rozchodnice */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 relative group">
               <div className="w-32 h-32 rounded-full bg-white shadow-lg p-4 flex items-center justify-center border border-slate-100 group-hover:border-[#D32F2F] transition-colors">
-                <img src="https://www.proerecta.cz/wp-content/uploads/2019/10/rhodiola-rosea-extrakt.png" alt="Rozchodnice" className="w-full h-full object-contain" />
+                <img src="/images/rozchodnice.png" alt="Rozchodnice" className="w-full h-full object-contain" />
               </div>
               <div className="max-w-xs">
                 <h3 className="text-[#D32F2F] font-bold text-xl mb-2">Rozchodnice růžová</h3>
@@ -82,7 +82,7 @@ export function IngredientsSection() {
             {/* Hroznová jádra */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 relative group">
               <div className="w-32 h-32 rounded-full bg-white shadow-lg p-4 flex items-center justify-center border border-slate-100 group-hover:border-[#D32F2F] transition-colors">
-                <img src="https://www.proerecta.cz/wp-content/uploads/2019/10/hroznove-jadra.png" alt="Hroznová jádra" className="w-full h-full object-contain" />
+                <img src="/images/hrozny.png" alt="Hroznová jádra" className="w-full h-full object-contain" />
               </div>
               <div className="max-w-xs">
                 <h3 className="text-[#D32F2F] font-bold text-xl mb-2">Extrakt ze semen hroznů</h3>

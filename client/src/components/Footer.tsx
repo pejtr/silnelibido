@@ -13,7 +13,7 @@ export function Footer() {
           {/* Column 1: Logo & Contact */}
           <div className="space-y-6">
             <img 
-              src="https://www.proerecta.cz/wp-content/themes/proerecta/assets/img/logo.svg" 
+              src="/images/logo.svg" 
               alt="Proerecta" 
               className="h-8"
             />

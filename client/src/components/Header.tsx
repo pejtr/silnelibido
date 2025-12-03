@@ -25,7 +25,7 @@ export function Header() {
         {/* Logo */}
         <a href={affiliateLink} className="flex-shrink-0">
           <img 
-            src="https://www.proerecta.cz/wp-content/themes/proerecta/assets/img/logo.svg" 
+            src="/images/logo.svg" 
             alt="Proerecta" 
             className="h-8 md:h-10"
           />

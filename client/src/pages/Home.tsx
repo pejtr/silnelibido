@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header";
+import { TopBar } from "../components/TopBar";
 import { HeroSection } from "@/components/HeroSection";
 import { IngredientsSection } from "@/components/IngredientsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
-      <Header />
+      <TopBar />
       <main className="flex-grow">
         <HeroSection />
         
