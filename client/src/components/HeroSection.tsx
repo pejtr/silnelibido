@@ -14,7 +14,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div className="bg-white relative overflow-hidden pb-0 md:pb-0">
+    <div className="bg-white relative pb-0 md:pb-0">
       {/* Mobile Header (Menu - Logo - Cart) */}
       <div className={`md:hidden bg-white px-4 py-3 flex items-center justify-between relative z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 w-full shadow-md' : ''}`}>
         <button className="flex flex-col items-center gap-1 text-[#2A2A5A]">
@@ -49,13 +49,14 @@ export function HeroSection() {
       </div>
 
       {/* Red Bar with Gender Buttons (Mobile Only) */}
-      <div className="md:hidden w-full bg-[#D32F2F] sticky top-0 z-50 flex justify-center items-center gap-8 py-3 px-4 shadow-md">
+      {/* Red Bar with Gender Buttons (Mobile Only) */}
+      <div className="md:hidden w-full bg-[#D32F2F] sticky top-0 z-[60] flex justify-center items-center gap-8 py-3 px-4 shadow-md">
          <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
-           <span className="text-sm">♂</span> Pro muže <span className="text-[10px]">›</span>
+           <span className="text-sm font-normal">♂</span> PRO MUŽE <span className="text-[10px]">›</span>
          </a>
          <div className="w-px h-4 bg-white/30"></div>
          <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:underline">
-           <span className="text-sm">♀</span> Pro ženy <span className="text-[10px]">›</span>
+           <span className="text-sm font-normal">♀</span> PRO ŽENY <span className="text-[10px]">›</span>
          </a>
       </div>
 
