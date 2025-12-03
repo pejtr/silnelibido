@@ -58,11 +58,11 @@ export default function Home() {
             </div>
           </div>
 
-          <ProductQuiz />
           <ProductsSection />
           <div id="reference">
             <TestimonialsSection />
           </div>
+          <ProductQuiz />
           <FAQSection />
         </div>
       </main>
