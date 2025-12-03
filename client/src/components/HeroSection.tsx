@@ -112,21 +112,21 @@ export function HeroSection() {
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-4 md:pt-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                     <img src="/images/ceska-znacka.png" alt="Česká značka" className="w-10 h-10 object-contain drop-shadow-md" />
+                     <img src="/images/icon-czech-flag-round.png" alt="Česká značka" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Česká<br/>značka</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <img src="/images/bylinne-produkty.png" alt="Bylinné produkty" className="w-10 h-10 object-contain drop-shadow-md" />
+                    <img src="/images/icon-herbal-leaf-round.png" alt="Bylinné produkty" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Bylinné<br/>produkty</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <img src="/images/diskretni-baleni.png" alt="Diskrétní balení" className="w-10 h-10 object-contain drop-shadow-md" />
+                    <img src="/images/icon-discrete-box-round.png" alt="Diskrétní balení" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Diskrétní<br/>balení</span>
                 </div>
