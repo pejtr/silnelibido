@@ -118,7 +118,7 @@ export function HeroSection() {
               </p>
 
               {/* Mobile Gift Icon */}
-              <div className="md:hidden fixed top-[45%] left-0 z-40">
+              <div className="md:hidden fixed top-[70%] left-0 z-40">
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg">
                     <Gift className="w-8 h-8 text-[#FFC107]" />
                  </div>
