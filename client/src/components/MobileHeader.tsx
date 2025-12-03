@@ -42,11 +42,11 @@ export function MobileHeader() {
       {/* Red Bar with Gender Buttons (Sticky) */}
       <div className={`w-full bg-[#D32F2F] flex justify-center items-center gap-8 py-3 px-4 shadow-md transition-all duration-300 z-[60] ${isSticky ? 'fixed top-0 left-0 scale-122 origin-top' : 'sticky top-0'}`}>
          <a href="https://www.proerecta.cz/produkty/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
-           <span className="text-xl font-black text-[#2A2A5A] drop-shadow-sm">♂</span> PRO MUŽE <span className="text-[10px]">›</span>
+           <svg viewBox="0 0 24 24" fill="none" stroke="#2A2A5A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 drop-shadow-sm"><circle cx="10" cy="14" r="5"/><path d="M15 9l5-5"/><path d="M15 4h5v5"/></svg> PRO MUŽE <span className="text-[10px]">›</span>
          </a>
          <div className="w-px h-4 bg-white/30"></div>
          <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="text-white font-bold text-xs uppercase tracking-wide flex items-center gap-2 hover:scale-110 transition-transform">
-           <span className="text-xl font-black text-[#2A2A5A] drop-shadow-sm">♀</span> PRO ŽENY <span className="text-[10px]">›</span>
+           <svg viewBox="0 0 24 24" fill="none" stroke="#2A2A5A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 drop-shadow-sm"><circle cx="12" cy="10" r="5"/><path d="M12 15v6"/><path d="M9 18h6"/></svg> PRO ŽENY <span className="text-[10px]">›</span>
          </a>
       </div>
     </div>
