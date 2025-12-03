@@ -9,7 +9,7 @@ export function TopBar() {
       </div>
 
       {/* Info Bar - Desktop Only */}
-      <div className="hidden md:block bg-[#1E1E4E] text-white py-2.5 px-4 md:px-8 text-[13px] font-normal tracking-wide">
+      <div className="hidden md:block bg-[#1E1E4E] text-white py-3 px-4 md:px-8 text-[13px] font-normal tracking-wide">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             <span className="flex items-center gap-2">
