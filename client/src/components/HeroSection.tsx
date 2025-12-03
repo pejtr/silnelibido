@@ -173,7 +173,7 @@ export function HeroSection() {
               {/* Media Logos - Desktop Only */}
               <div className="hidden md:flex flex-wrap justify-center lg:justify-start items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
                 <span className="text-sm font-bold text-[#2A2A5A] mr-2">Napsali o nás:</span>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IDNES.cz_logo.svg/2560px-IDNES.cz_logo.svg.png" alt="iDNES.cz" className="h-5" />
+                <img src="/images/idnes-logo.png" alt="iDNES.cz" className="h-6 object-contain" />
                 <span className="font-serif font-bold text-slate-400 text-xl">doma<span className="text-red-400">.cz</span></span>
                 <span className="font-sans font-black text-slate-400 text-xl tracking-tighter">EREKCE.cz</span>
               </div>
