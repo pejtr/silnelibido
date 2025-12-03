@@ -96,31 +96,21 @@ export function HeroSection() {
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-8 md:pt-8">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                     <img src="/images/flag-cz.svg" alt="Česká vlajka" className="w-10 h-10 object-contain drop-shadow-md" onError={(e) => {
-                       e.currentTarget.style.display = 'none';
-                       e.currentTarget.parentElement!.innerHTML = '<div class="w-10 h-10 rounded-full overflow-hidden relative border-2 border-white"><div class="absolute top-0 left-0 w-full h-1/2 bg-white"></div><div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#D32F2F]"></div><div class="absolute top-0 left-0 w-1/2 h-full bg-[#1E88E5] clip-triangle"></div></div>';
-                     }} />
+                     <img src="/images/ceska-znacka.png" alt="Česká značka" className="w-10 h-10 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Česká<br/>značka</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <div className="w-10 h-10 bg-[#00C853] rounded-full flex items-center justify-center shadow-lg">
-                      <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                        <path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3C21,5,14,5.25,9,6.25C4,7.25,2,11.5,2,13.5C2,15.5,3.75,17.25,3.75,17.25C7,8,17,8,17,8Z" />
-                      </svg>
-                    </div>
+                    <img src="/images/bylinne-produkty.png" alt="Bylinné produkty" className="w-10 h-10 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Bylinné<br/>produkty</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <div className="w-10 h-10 bg-slate-200 rounded-md flex items-center justify-center shadow-lg relative overflow-hidden">
-                      <div className="absolute top-2 left-0 w-full h-1 bg-slate-400"></div>
-                      <div className="absolute bottom-2 right-2 w-4 h-2 bg-slate-300 rounded-sm"></div>
-                    </div>
+                    <img src="/images/diskretni-baleni.png" alt="Diskrétní balení" className="w-10 h-10 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Diskrétní<br/>balení</span>
                 </div>
