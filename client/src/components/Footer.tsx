@@ -63,6 +63,7 @@ export function Footer() {
           <div>
             <h3 className="font-extrabold text-lg mb-6">Proerecta</h3>
             <ul className="space-y-3 text-sm font-medium underline decoration-slate-300 underline-offset-4">
+              <li><a href="/blog" className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all font-bold text-[#D32F2F]">Magazín Silné Libido</a></li>
               <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Reference</a></li>
               <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Produkty</a></li>
               <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">O nás</a></li>
