@@ -77,6 +77,20 @@ export function ProductQuiz() {
     return (
       <section className="py-16 bg-slate-50">
         <div className="container px-4 md:px-6">
+          {/* Bouncing Arrow */}
+          <div className="flex justify-center mb-4">
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="#D32F2F" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="w-8 h-8 animate-bounce"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+          </div>
           <Card className="max-w-3xl mx-auto overflow-hidden border-none shadow-xl bg-white">
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-2/5 bg-[#2A2A5A] p-8 flex flex-col justify-center items-center text-center text-white">
