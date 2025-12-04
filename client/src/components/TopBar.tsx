@@ -85,7 +85,7 @@ export function TopBar() {
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 z-[100]">
         <div 
-          className="h-full bg-[#D32F2F] transition-all duration-150 ease-out shadow-[0_0_10px_rgba(211,47,47,0.5)]"
+          className="h-full bg-white/90 shadow-[0_0_15px_rgba(255,255,255,0.8)] backdrop-blur-sm"
           style={{ width: `${scrollProgress * 100}%` }}
         ></div>
       </div>

@@ -66,7 +66,7 @@ export function MobileHeader() {
          {isSticky && (
            <div className="w-full h-1 bg-red-900/30">
              <div 
-               className="h-full bg-white transition-all duration-150 ease-out"
+               className="h-full bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
                style={{ width: `${scrollProgress * 100}%` }}
              />
            </div>

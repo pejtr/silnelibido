@@ -76,7 +76,7 @@ export default function Home() {
 
       {/* Scroll to Top Button */}
       <Button
-        className={`fixed bottom-12 md:bottom-8 right-2 md:right-8 rounded-full w-12 h-12 p-0 shadow-xl transition-all duration-300 z-50 bg-[#D32F2F] hover:bg-[#B71C1C] text-white ${
+        className={`fixed bottom-12 md:bottom-8 right-2 md:right-8 rounded-full w-12 h-12 p-0 shadow-xl transition-all duration-300 z-50 bg-[#D32F2F] md:hover:bg-[#B71C1C] text-white ${
           showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
         }`}
         onClick={scrollToTop}
