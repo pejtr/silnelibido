@@ -48,7 +48,7 @@ export function HeroSection() {
           <img 
             src="/images/logo.svg" 
             alt="Proerecta" 
-            className="h-8 md:h-16"
+            className="h-8 md:h-24"
           />
         </a>
 
