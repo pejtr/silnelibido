@@ -117,34 +117,33 @@ export function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative">
-        {/* Mobile Background Image */}
-        <div className="md:hidden absolute top-0 left-0 w-full h-full z-0">
+      <div className="relative md:bg-none">
+        {/* Mobile Background Image (Full Screen) */}
+        <div className="md:hidden absolute top-0 left-0 w-full h-[110%] z-0">
           <img 
             src="/images/hero-couple.jpg" 
             alt="Background" 
-            className="w-full h-full object-cover object-[center_20%]"
+            className="w-full h-full object-cover object-[center_top]"
             fetchPriority="high"
             decoding="async"
           />
-          {/* Blue Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[#2A2A5A]/60 mix-blend-multiply"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#2A2A5A]/80 via-transparent to-[#2A2A5A]/90"></div>
+          {/* Dark Overlay for readability */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[#2A2A5A]/40 mix-blend-multiply"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#2A2A5A]/60 via-transparent to-[#2A2A5A]/90"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 mt-0 md:mt-16 relative z-10 pt-12 pb-24 md:py-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 md:px-8 mt-0 md:mt-16 relative z-10 pt-8 pb-0 md:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
             
             {/* Left Column: Text */}
-            <div className="max-w-xl space-y-6 md:space-y-8 text-center lg:text-left relative z-10">
-              <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.2] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none">
+            <div className="max-w-xl space-y-4 md:space-y-8 text-left relative z-10">
+              <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.1] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none">
                 Přírodní péče o váš <br/>
                 <span className="text-white md:text-[#2A2A5A]">milostný život</span>
               </h1>
               
-              <p className="text-base md:text-xl text-white/90 md:text-slate-600 leading-relaxed drop-shadow-md md:drop-shadow-none max-w-xs mx-auto md:max-w-none">
-                <span className="text-xl md:text-2xl font-serif italic font-medium text-white md:text-[#2A2A5A] drop-shadow-[0_1px_1px_rgba(255,215,0,0.4)] md:drop-shadow-[0_1px_1px_rgba(218,165,32,0.3)]">Kvalitní koitus</span> udržuje milostný vztah.<br className="hidden md:block"/>
-                Nenechte se o něj obrat.
+              <p className="text-base md:text-xl text-white md:text-slate-600 leading-snug drop-shadow-md md:drop-shadow-none max-w-[90%] md:max-w-none">
+                Sex udržuje milostný vztah. Nenechte se o něj obrat.
               </p>
 
               
@@ -154,14 +153,14 @@ export function HeroSection() {
               <div className="pt-4">
                 <a 
                   href="#products" 
-                  className="inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-12 py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-full md:w-auto animate-zoom-in-out"
+                  className="inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-8 py-3 md:px-12 md:py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-auto md:w-auto animate-zoom-in-out"
                 >
-                  {ctaText} <span className="text-4xl animate-flicker ml-1">🔥</span>
+                  {ctaText} <span className="text-3xl md:text-4xl animate-flicker ml-1">🔥</span>
                 </a>
               </div>
 
               {/* Text-based Rating */}
-              <div className="flex justify-center lg:justify-start pt-1 pb-1">
+              <div className="flex justify-start pt-1 pb-1">
                 <div className="flex items-center gap-1.5">
                   <div className="flex text-[#FFC107]">
                     {[...Array(5)].map((_, i) => (
@@ -171,13 +170,13 @@ export function HeroSection() {
                     ))}
                   </div>
                   <span className="text-white md:text-[#2A2A5A] font-bold text-sm drop-shadow-md md:drop-shadow-none">
-                    4.8/5 <span className="font-normal opacity-90">(1500+ recenzí)</span>
+                    4.8/5
                   </span>
                 </div>
               </div>
 
               {/* Icons Row */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-12 pt-4 md:pt-4">
+              <div className="flex flex-wrap justify-start gap-6 md:gap-12 pt-2 md:pt-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
                      <img src="/images/icon-czech-flag-round.png" alt="Česká značka" className="w-12 h-12 object-contain drop-shadow-md" />
@@ -197,6 +196,24 @@ export function HeroSection() {
                     <img src="/images/icon-discrete-box-round.png" alt="Diskrétní balení" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Diskrétní<br/>balení</span>
+                </div>
+              </div>
+
+              {/* Mobile Product Image (Bottom Right) */}
+              <div className="md:hidden absolute bottom-[-40px] right-[-20px] w-[220px] z-20 flex items-end">
+                <div className="w-[40%] relative z-10 translate-x-4">
+                  <img 
+                    src="/images/proerecta-shot-trans.png" 
+                    alt="Proerecta Shot" 
+                    className="w-full h-auto drop-shadow-2xl"
+                  />
+                </div>
+                <div className="w-[60%] -ml-4 mb-2 relative z-0">
+                  <img 
+                    src="/images/proerecta-long-new.png" 
+                    alt="Proerecta Long" 
+                    className="w-full h-auto drop-shadow-xl"
+                  />
                 </div>
               </div>
 
@@ -225,8 +242,6 @@ export function HeroSection() {
                   className="w-full h-full object-cover object-[center_20%] scale-125 -scale-x-100"
                 />
               </div>
-
-
 
               {/* Product Image (Overlay - Left - Small Shot) */}
               <div className="absolute bottom-0 left-[-100px] md:left-[-280px] w-[350px] md:w-[550px] z-20 transform translate-y-10 flex items-end">
@@ -265,13 +280,13 @@ export function HeroSection() {
       </div>
 
 
-      {/* Sticky Gift Icon (Mobile & Desktop) - Moved to root for z-index fix */}
+      {/* Sticky Gift Icon (Desktop Only) - Moved to root for z-index fix */}
       <a 
         href="#products" 
-        className={`fixed top-[calc(56%+2px)] md:top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 md:hover:scale-105 group touch-manipulation opacity-100 md:opacity-80 md:hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`hidden md:block fixed top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 hover:scale-105 group touch-manipulation opacity-80 hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
       >
-         <div className="bg-[#333]/80 p-2 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 md:group-hover:bg-[#333]">
-            <Gift className="w-7 h-7 text-[#FFC107] animate-pulse md:group-hover:animate-none" />
+         <div className="bg-[#333]/80 p-2 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
+            <Gift className="w-7 h-7 text-[#FFC107] animate-pulse group-hover:animate-none" />
          </div>
       </a>
 
