@@ -64,10 +64,10 @@ export default function Home() {
 
           <ProductsSection />
           <ComparisonTable />
-          <ProductQuiz />
           <div id="reference">
             <TestimonialsSection />
           </div>
+          <ProductQuiz />
           <FAQSection />
         </div>
         <NewsletterSection />
