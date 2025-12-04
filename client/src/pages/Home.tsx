@@ -66,12 +66,12 @@ export default function Home() {
 
           <ComparisonTable />
           <ProductsSection />
-          <div id="reference">
-            <TestimonialsSection />
-          </div>
           <FeaturesSection />
           <ProductQuiz />
           <FAQSection />
+          <div id="reference">
+            <TestimonialsSection />
+          </div>
           <BenefitsSection />
         </div>
 
