@@ -51,8 +51,21 @@ export function RecentPurchases() {
   const [isVisible, setIsVisible] = useState(false);
   const [customer, setCustomer] = useState(CUSTOMER_DATABASE[0]);
   const [product, setProduct] = useState(productsData[0]);
-  const [isClosed, setIsClosed] = useState(false);
+  const [isClosed, setIsClosed] = useState(true); // Default to true to prevent flash
   const [userRegion, setUserRegion] = useState<string | null>(null);
+
+  // Check localStorage for suppression
+  useEffect(() => {
+    const suppressionTime = localStorage.getItem('notification_suppressed_until');
+    if (suppressionTime) {
+      const now = new Date().getTime();
+      if (now < parseInt(suppressionTime)) {
+        setIsClosed(true);
+        return;
+      }
+    }
+    setIsClosed(false);
+  }, []);
 
   // Simulate geolocation detection
   useEffect(() => {
@@ -174,6 +187,10 @@ export function RecentPurchases() {
             e.preventDefault();
             e.stopPropagation();
             setIsClosed(true);
+            // Suppress for 8 hours
+            const eightHours = 8 * 60 * 60 * 1000;
+            const suppressionUntil = new Date().getTime() + eightHours;
+            localStorage.setItem('notification_suppressed_until', suppressionUntil.toString());
           }}
           className="absolute top-1 right-1 text-slate-300 hover:text-slate-500 p-1 z-10 transition-colors"
         >
