@@ -143,7 +143,7 @@ export function HeroSection() {
               </h1>
               
               <p className="text-base md:text-xl text-white/90 md:text-slate-600 leading-relaxed drop-shadow-md md:drop-shadow-none max-w-xs mx-auto md:max-w-none">
-                <span className="text-xl md:text-2xl font-serif italic font-medium text-white md:text-[#2A2A5A] drop-shadow-[0_1px_1px_rgba(255,215,0,0.4)] md:drop-shadow-[0_1px_1px_rgba(218,165,32,0.3)]">Koitus</span> udržuje milostný vztah.<br className="hidden md:block"/>
+                <span className="text-xl md:text-2xl font-serif italic font-medium text-white md:text-[#2A2A5A] drop-shadow-[0_1px_1px_rgba(255,215,0,0.4)] md:drop-shadow-[0_1px_1px_rgba(218,165,32,0.3)]">Kvalitní koitus</span> udržuje milostný vztah.<br className="hidden md:block"/>
                 Nenechte se o něj obrat.
               </p>
 
@@ -227,7 +227,7 @@ export function HeroSection() {
               </div>
 
               {/* Product Image (Overlay - Right - Large Women) */}
-              <div className="absolute bottom-0 right-0 md:right-12 w-[200px] md:w-[280px] z-20 transform translate-y-10">
+              <div className="absolute bottom-0 right-0 md:right-12 w-[240px] md:w-[340px] z-20 transform translate-y-10">
                 <img 
                   src="/images/proerecta-women-hero.png" 
                   alt="Proerecta Women" 
