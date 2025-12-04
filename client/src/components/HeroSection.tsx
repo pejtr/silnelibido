@@ -226,14 +226,7 @@ export function HeroSection() {
                 />
               </div>
 
-              {/* Product Image (Overlay - Right - Large Women) */}
-              <div className="absolute bottom-0 right-0 md:right-12 w-[240px] md:w-[340px] z-20 transform translate-y-10">
-                <img 
-                  src="/images/proerecta-women-hero.png" 
-                  alt="Proerecta Women" 
-                  className="w-full h-auto drop-shadow-2xl"
-                />
-              </div>
+
 
               {/* Product Image (Overlay - Left - Small Shot) */}
               <div className="absolute bottom-0 left-[-100px] md:left-[-280px] w-[350px] md:w-[550px] z-20 transform translate-y-10 flex items-end">
