@@ -49,16 +49,15 @@ export default function BlogListing() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-            <Link href="/blog">
-              <a className="hover:text-[#D32F2F] transition-colors">Menu</a>
+            <Link href="/">
+              <a className="hover:text-[#D32F2F] transition-colors">Domů</a>
             </Link>
             <Link href="/blog">
               <a className="hover:text-[#D32F2F] transition-colors">Odborné články</a>
             </Link>
-            <span className="text-slate-500">Doprava zdarma od 1500 Kč</span>
-            <div className="flex items-center gap-1 cursor-pointer hover:text-[#D32F2F] transition-colors">
-              Česky (Kč) <ChevronDown className="w-4 h-4" />
-            </div>
+            <a href="https://www.proerecta.cz" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
+              Doprava zdarma od 1500 Kč
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
