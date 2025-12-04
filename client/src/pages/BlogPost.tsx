@@ -95,15 +95,33 @@ export default function BlogPost() {
               </div>
               
               <div className="flex items-center gap-2">
-                <button className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-200 transition-colors">
+                <a 
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-200 transition-colors"
+                  aria-label="Sdílet na Facebooku"
+                >
                   <Facebook className="w-4 h-4" />
-                </button>
-                <button className="w-8 h-8 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center hover:bg-sky-200 transition-colors">
+                </a>
+                <a 
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center hover:bg-sky-200 transition-colors"
+                  aria-label="Sdílet na Twitteru"
+                >
                   <Twitter className="w-4 h-4" />
-                </button>
-                <button className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-200 transition-colors">
+                </a>
+                <a 
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-200 transition-colors"
+                  aria-label="Sdílet na LinkedIn"
+                >
                   <Linkedin className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -139,37 +157,21 @@ export default function BlogPost() {
               </figure>
             )}
 
-            {/* Placeholder content - will be replaced by actual content */}
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            
-            <h2>Proč je to důležité?</h2>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
-            <div className="bg-red-50 border-l-4 border-[#D32F2F] p-6 my-8 rounded-r-xl">
-              <h3 className="text-[#D32F2F] font-bold mt-0">Tip odborníka</h3>
-              <p className="mb-0">
-                Pravidelné užívání přírodních doplňků může výrazně zlepšit vaše výsledky. Nečekejte na zázrak, začněte s prevencí ještě dnes.
-              </p>
-            </div>
-
-            <h2>Jak to řešit?</h2>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-            
-            <ul>
-              <li>Bod číslo jedna pro lepší zdraví</li>
-              <li>Druhý důležitý krok, který nesmíte vynechat</li>
-              <li>Třetí tip pro maximální efekt</li>
-            </ul>
-
-            <p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-            </p>
+            {/* Dynamic Content */}
+            {post.content ? (
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            ) : (
+              <>
+                {/* Fallback content if no dynamic content exists */}
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <h2>Proč je to důležité?</h2>
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </>
+            )}
 
             {/* Sources Section */}
             {post.sources && post.sources.length > 0 && (
