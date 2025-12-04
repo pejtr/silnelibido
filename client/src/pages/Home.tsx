@@ -8,6 +8,7 @@ import { ProductQuiz } from "@/components/ProductQuiz";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
+import BenefitsSection from "@/components/BenefitsSection";
 import { Footer } from "@/components/Footer";
 
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
@@ -71,6 +72,7 @@ export default function Home() {
           <FeaturesSection />
           <ProductQuiz />
           <FAQSection />
+          <BenefitsSection />
         </div>
 
       </main>
