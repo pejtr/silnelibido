@@ -30,8 +30,8 @@ interface ProductProps {
 }
 
 export function ProductCard({ name, price, currency, image, description, features, popular, url, badge, packages }: ProductProps) {
-  // Default to the second package (usually the most popular/middle option) if available, otherwise first
-  const [selectedPackageIndex, setSelectedPackageIndex] = useState(packages && packages.length > 1 ? 1 : 0);
+  // Default to the first package (cheapest option)
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
   
   const currentPackage = packages ? packages[selectedPackageIndex] : null;
   const displayPrice = currentPackage ? currentPackage.price : price;
