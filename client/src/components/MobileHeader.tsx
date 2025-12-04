@@ -62,15 +62,7 @@ export function MobileHeader() {
              <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#F472B6] drop-shadow-md filter"><path d="M12,4A6,6 0 0,1 18,10C18,12.97 15.84,15.44 13,15.92V18H15V20H13V22H11V20H9V18H11V15.92C8.16,15.44 6,12.97 6,10A6,6 0 0,1 12,4M12,6A4,4 0 0,0 8,10A4,4 0 0,0 12,14A4,4 0 0,0 16,10A4,4 0 0,0 12,6Z" /></svg> PRO ŽENY <span className="text-xl text-yellow-400 font-black">›</span>
            </a>
          </div>
-         {/* Progress Bar */}
-         {isSticky && (
-           <div className="w-full h-1 bg-red-900/30">
-             <div 
-               className="h-full bg-white/90 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
-               style={{ width: `${scrollProgress * 100}%` }}
-             />
-           </div>
-         )}
+
       </div>
     </div>
   );

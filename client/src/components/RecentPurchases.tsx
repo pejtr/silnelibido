@@ -137,7 +137,7 @@ export function RecentPurchases() {
       const isMobile = window.innerWidth < 768;
 
       // On mobile, wait for 50% scroll. On desktop, trigger immediately (or with low threshold)
-      if (!isMobile || scrollPercentage > 50) {
+      if (!isMobile || scrollPercentage > 33) {
         startNotifications();
         // Remove listener once triggered
         window.removeEventListener('scroll', handleScroll);
