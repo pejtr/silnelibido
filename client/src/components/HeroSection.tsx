@@ -223,7 +223,7 @@ export function HeroSection() {
       {/* Sticky Gift Icon (Mobile & Desktop) - Moved to root for z-index fix */}
       <a 
         href="#products" 
-        className={`fixed top-[56%] md:top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 md:hover:scale-105 group opacity-100 md:opacity-80 md:hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-[56%] md:top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 md:hover:scale-105 group touch-manipulation opacity-100 md:opacity-80 md:hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
       >
          <div className="bg-[#333]/80 p-2 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 md:group-hover:bg-[#333]">
             <Gift className="w-7 h-7 text-[#FFC107] animate-pulse md:group-hover:animate-none" />
@@ -243,7 +243,7 @@ export function HeroSection() {
             });
           }
         }}
-        className={`fixed top-[56%] md:top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 md:hover:scale-105 group opacity-100 md:opacity-80 md:hover:opacity-100 ${showQuiz ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-[56%] md:top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 md:hover:scale-105 group touch-manipulation opacity-100 md:opacity-80 md:hover:opacity-100 ${showQuiz ? 'translate-x-0' : '-translate-x-full'}`}
         aria-label="Spustit kvíz"
       >
          <div className="bg-[#2A2A5A]/90 p-2 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 md:group-hover:bg-[#2A2A5A]">
