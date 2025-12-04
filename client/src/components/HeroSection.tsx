@@ -201,14 +201,14 @@ export function HeroSection() {
 
               {/* Mobile Product Image (Bottom Right) */}
               <div className="md:hidden absolute bottom-[-40px] right-[-80px] w-[220px] z-20 flex items-end">
-                <div className="w-[30%] relative z-10 translate-x-4">
+                <div className="w-[30%] relative z-10 translate-x-8">
                   <img 
                     src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </div>
-                <div className="w-[70%] -ml-4 mb-2 relative z-0">
+                <div className="w-[70%] -ml-8 mb-2 relative z-0">
                   <img 
                     src="/images/proerecta-long-new.png" 
                     alt="Proerecta Long" 
