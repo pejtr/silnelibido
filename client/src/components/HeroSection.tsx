@@ -236,7 +236,7 @@ export function HeroSection() {
               </div>
 
               {/* Product Image (Overlay - Left - Small Shot) */}
-              <div className="absolute bottom-0 left-[-60px] md:left-[-140px] w-[140px] md:w-[180px] z-20 transform translate-y-10">
+              <div className="absolute bottom-0 left-[-80px] md:left-[-220px] w-[140px] md:w-[180px] z-20 transform translate-y-10">
                 <img 
                   src="/images/proerecta-shot-trans.png" 
                   alt="Proerecta Shot" 
