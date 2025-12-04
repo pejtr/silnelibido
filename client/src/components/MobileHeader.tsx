@@ -55,11 +55,11 @@ export function MobileHeader() {
       <div className={`w-full bg-[#D32F2F] flex flex-col justify-center items-center shadow-md transition-all duration-300 z-[40] ${isSticky ? 'fixed top-0 left-0 w-full' : 'sticky top-0'}`}>
          <div className="w-full flex justify-center items-center gap-2 py-2 px-2">
            <a href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" onClick={vibrate} className="text-white font-bold text-base uppercase tracking-wide flex items-center gap-1 hover:scale-110 transition-transform whitespace-nowrap">
-             <svg viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 drop-shadow-sm"><circle cx="10" cy="14" r="5"/><path d="M15 9l5-5"/><path d="M15 4h5v5"/></svg> PRO MUŽE <span className="text-xl text-yellow-400 font-black">›</span>
+             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#1E3A8A] drop-shadow-md filter"><path d="M16 2a2 2 0 0 1 2 2v4h-2V5.41l-3.3 3.3a6 6 0 1 1-1.41-1.41L14.59 4H12V2h4zM9 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fillRule="evenodd"/></svg> PRO MUŽE <span className="text-xl text-yellow-400 font-black">›</span>
            </a>
            <div className="w-px h-8 bg-white/30 mx-1"></div>
            <a href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" onClick={vibrate} className="text-white font-bold text-base uppercase tracking-wide flex items-center gap-1 hover:scale-110 transition-transform whitespace-nowrap">
-             <svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-16 h-16 drop-shadow-sm"><circle cx="12" cy="10" r="5"/><path d="M12 15v6"/><path d="M9 18h6"/></svg> PRO ŽENY <span className="text-xl text-yellow-400 font-black">›</span>
+             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#F472B6] drop-shadow-md filter"><path d="M12 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm-1 12h2v3h3v2h-3v3h-2v-3H8v-2h3v-3z" fillRule="evenodd"/></svg> PRO ŽENY <span className="text-xl text-yellow-400 font-black">›</span>
            </a>
          </div>
          {/* Progress Bar */}
