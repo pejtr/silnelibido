@@ -185,7 +185,7 @@ export default function Review() {
                 <tr className="border-b border-slate-100">
                   <td className="p-4 font-bold text-blue-600">KLASIK</td>
                   <td className="p-4">Okamžitá potřeba</td>
-                  <td className="p-4">45-60 min</td>
+                  <td className="p-4">30-60 min</td>
                   <td className="p-4 text-green-600 font-bold">9/10 (Zlatý střed)</td>
                 </tr>
                 <tr className="border-b border-slate-100 bg-slate-50/50">

@@ -4,7 +4,7 @@ const features = [
   {
     icon: Clock,
     title: "Okamžitý účinek",
-    description: "Stačí užít 45-60 minut před akcí. Nástup je rychlý a spolehlivý."
+    description: "Stačí užít 30-60 minut před akcí. Nástup je rychlý a spolehlivý."
   },
   {
     icon: Leaf,

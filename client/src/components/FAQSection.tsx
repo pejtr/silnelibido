@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Jak rychle Proerecta účinkuje?",
-    answer: "Účinek nastupuje přibližně 45-60 minut po užití tobolky. U varianty SHOT je nástup ještě rychlejší, již do 30 minut."
+    answer: "Účinek nastupuje přibližně 30-60 minut po užití tobolky. U varianty SHOT je nástup ještě rychlejší, již do 30 minut."
   },
   {
     question: "Je užívání bezpečné?",
