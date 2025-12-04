@@ -188,6 +188,42 @@ export default function BlogPost() {
                 </ul>
               </div>
             )}
+
+            {/* Related Articles */}
+            <div className="mt-16 pt-12 border-t border-slate-200">
+              <h3 className="text-2xl font-bold text-[#2A2A5A] mb-8">Mohlo by vás také zajímat</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {blogPosts
+                  .filter(p => p.id !== post.id) // Exclude current post
+                  .sort(() => 0.5 - Math.random()) // Randomize
+                  .slice(0, 3) // Take 3
+                  .map(relatedPost => (
+                    <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`} className="group block">
+                      <article className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 h-full flex flex-col">
+                        <div className="h-40 overflow-hidden relative">
+                          <img 
+                            src={relatedPost.image} 
+                            alt={relatedPost.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div className="p-4 flex flex-col flex-grow">
+                          <span className="text-xs font-bold text-[#D32F2F] uppercase tracking-wider mb-2 block">
+                            {relatedPost.category}
+                          </span>
+                          <h4 className="font-bold text-[#2A2A5A] group-hover:text-[#D32F2F] transition-colors line-clamp-2 mb-2">
+                            {relatedPost.title}
+                          </h4>
+                          <div className="mt-auto pt-2 flex items-center text-xs text-slate-400">
+                            <Clock className="w-3 h-3 mr-1" /> {relatedPost.readTime}
+                          </div>
+                        </div>
+                      </article>
+                    </Link>
+                  ))}
+              </div>
+            </div>
           </div>
 
           {/* Sidebar */}
