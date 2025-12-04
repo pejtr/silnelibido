@@ -245,7 +245,7 @@ export function HeroSection() {
                   />
                 </div>
                 {/* Klasik Product (Smaller, next to Shot) */}
-                <div className="w-[45%] -ml-8 mb-1 relative z-0">
+                <div className="w-[39%] -ml-6 mb-1 relative z-0">
                   <img 
                     src="/images/proerecta-klasik-small.png" 
                     alt="Proerecta Klasik" 
