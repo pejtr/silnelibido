@@ -55,12 +55,70 @@ export const blogPosts = [
     author: "Petr Dvořák",
     readTime: "4 min čtení",
     category: "Výživa"
+  },
+  {
+    id: "jak-stres-v-praci-zabiji-vas-sexlife",
+    title: "Jak stres v práci zabíjí váš sexlife (a co s tím dělat)",
+    excerpt: "Máte pocit, že si nosíte práci domů? Stres je tichý zabiják erekce. Zjistěte, jak kortizol ničí vaši mužnost a jak se bránit.",
+    image: "/images/blog/stress-work.jpg",
+    date: "8. 12. 2025",
+    author: "Mgr. Lenka Svobodová",
+    readTime: "6 min čtení",
+    category: "Psychologie"
+  },
+  {
+    id: "kegelovy-cviky-pro-muze",
+    title: "Kegelovy cviky pro muže: Tajná zbraň pro lepší výdrž v posteli",
+    excerpt: "Nejsou jen pro ženy! Kegelovy cviky vám pomohou k pevnější erekci a lepší kontrole nad ejakulací. Jednoduchý návod uvnitř.",
+    image: "/images/blog/kegel-men.jpg",
+    date: "12. 12. 2025",
+    author: "Petr Dvořák",
+    readTime: "5 min čtení",
+    category: "Cvičení"
+  },
+  {
+    id: "afrodiziaka-ktera-skutecne-funguji",
+    title: "Afrodiziaka, která skutečně fungují: Vědecký pohled",
+    excerpt: "Zapomeňte na nosorožčí rohy. Věda potvrdila účinnost jen několika látek. Které to jsou a proč byste je měli znát?",
+    image: "/images/blog/aphrodisiacs.jpg",
+    date: "15. 12. 2025",
+    author: "MUDr. Jan Novák",
+    readTime: "7 min čtení",
+    category: "Věda a výzkum"
+  },
+  {
+    id: "ranni-erekce-co-vam-rika",
+    title: "Ranní erekce: Co vám říká o vašem zdraví?",
+    excerpt: "Budíte se se 'stanem'? Gratulujeme! Ranní erekce je vizitkou vašeho cévního zdraví. Co ale znamená, když zmizí?",
+    image: "/images/blog/morning-wood.jpg",
+    date: "18. 12. 2025",
+    author: "MUDr. Jan Novák",
+    readTime: "4 min čtení",
+    category: "Zdraví"
+  },
+  {
+    id: "recenze-doplnku-stravy-na-erekci",
+    title: "Recenze doplňků stravy na erekci: Na co si dát pozor při výběru?",
+    excerpt: "Trh je plný podvodů. Naučte se číst složení a nenaleťte na zázračné sliby. Průvodce výběrem kvalitního doplňku.",
+    image: "/images/blog/supplements-review.jpg",
+    date: "20. 12. 2025",
+    author: "Petr Dvořák",
+    readTime: "8 min čtení",
+    category: "Recenze"
   }
 ];
+
+import { SEO } from "@/components/SEO";
+import { EbookDownload } from "@/components/EbookDownload";
 
 export default function BlogListing() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50">
+      <SEO 
+        title="Magazín"
+        description="Odborné články o mužském zdraví, erekci, testosteronu a libidu. Tipy, rady a recenze ověřených produktů."
+        canonical="/blog"
+      />
       <TopBar />
       <MobileHeader />
       
@@ -78,6 +136,7 @@ export default function BlogListing() {
 
         {/* Blog Grid */}
         <div className="container mx-auto px-4 py-12 md:py-20">
+          <EbookDownload />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`} className="group block h-full">

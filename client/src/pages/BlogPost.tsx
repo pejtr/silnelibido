@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, User, Clock, Share2, Facebook, Twitter, Linkedin }
 import { blogPosts } from "./BlogListing";
 import NotFound from "./NotFound";
 import { useEffect } from "react";
+import { SEO } from "@/components/SEO";
 
 export default function BlogPost() {
   const [match, params] = useRoute("/blog/:id");
@@ -18,8 +19,43 @@ export default function BlogPost() {
 
   if (!post) return <NotFound />;
 
+  // Schema.org Article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": [
+      `https://silnelibido.cz${post.image}`
+    ],
+    "datePublished": post.date.split('. ').reverse().join('-'), // Simple conversion, ideally use ISO format in data
+    "dateModified": post.date.split('. ').reverse().join('-'),
+    "author": [{
+      "@type": "Person",
+      "name": post.author
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Silné Libido",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://silnelibido.cz/images/logo.svg"
+      }
+    },
+    "description": post.excerpt
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-white">
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${post.id}`}
+        type="article"
+        image={post.image}
+        publishedTime={post.date} // Needs ISO format for strict compliance, but this is a start
+        author={post.author}
+        schema={articleSchema}
+      />
       <TopBar />
       <MobileHeader />
       
