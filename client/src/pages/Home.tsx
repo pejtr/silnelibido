@@ -5,6 +5,7 @@ import { IngredientsSection } from "@/components/IngredientsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { ProductsSection } from "@/components/ProductsSection";
 import { ProductQuiz } from "@/components/ProductQuiz";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
@@ -62,6 +63,7 @@ export default function Home() {
           </div>
 
           <ProductsSection />
+          <ComparisonTable />
           <ProductQuiz />
           <div id="reference">
             <TestimonialsSection />

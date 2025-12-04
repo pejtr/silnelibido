@@ -130,24 +130,6 @@ export function HeroSection() {
                   e.preventDefault();
                   const quizElement = document.getElementById('quiz');
                   if (quizElement) {
-                    // Use window.lenis if available (global instance) or fallback to native scroll
-                    // Since we don't have direct access to lenis instance here, we trigger a click on a hidden anchor
-                    // or dispatch a custom event, but simpler is to just let the global click handler in App.tsx handle it
-                    // by keeping it as an anchor tag, BUT we need to make sure the z-index and pointer-events are correct.
-                    // The issue might be that the anchor click is not being caught or the element is covered.
-                    // Let's try to use a programmatic scroll approach that works with the Lenis setup in App.tsx
-                    
-                    // Dispatch a custom event that App.tsx could listen to, OR just rely on the fact that 
-                    // App.tsx listens to ALL clicks on anchors.
-                    // If the click isn't working on mobile, it might be a touch event issue or z-index.
-                    // Let's try to force the scroll via a simulated click on a hidden link if direct click fails,
-                    // or just ensure the href is correct and the element exists.
-                    
-                    // Actually, the best way is to keep it as an anchor but ensure it's clickable.
-                    // The previous code was an anchor with href="#quiz".
-                    // If that didn't work, maybe the click event is being intercepted or the target is wrong.
-                    // Let's try to use a button with an explicit scroll logic that mimics what App.tsx does.
-                    
                     const targetPosition = quizElement.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
                       top: targetPosition,
@@ -165,6 +147,17 @@ export function HeroSection() {
                     </span>
                  </div>
               </button>
+
+              {/* Sticky Buy Button (Mobile Only) - Appears when scrolling down */}
+              <div className={`md:hidden fixed bottom-0 left-0 w-full z-[90] bg-white border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ${showQuiz ? 'translate-y-0' : 'translate-y-full'}`}>
+                <a 
+                  href="#products" 
+                  className="flex items-center justify-center gap-2 bg-[#D32F2F] text-white font-bold py-3 px-4 rounded-lg w-full shadow-md active:scale-[0.98] transition-transform"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  KOUPIT OD 599 Kč
+                </a>
+              </div>
 
               <div className="pt-4">
                 <a 
