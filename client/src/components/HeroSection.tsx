@@ -89,7 +89,7 @@ export function HeroSection() {
               </a>
             </ProductDropdown>
             <ProductDropdown gender="women">
-              <a href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="bg-[#D65A8A] text-white px-5 py-2 rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-md group">
+              <a href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" className="bg-[#D65A8A] text-white px-5 py-2 rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-md group">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 group-hover:text-pink-200 transition-colors"><path d="M12 15v7"/><path d="M9 19h6"/><circle cx="12" cy="9" r="6"/></svg>
                 PRO ŽENY
               </a>

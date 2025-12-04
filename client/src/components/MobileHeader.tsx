@@ -61,7 +61,7 @@ export function MobileHeader() {
          </a>
          
          <a 
-           href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+           href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" 
            onClick={vibrate} 
            className="flex-1 bg-[#D65A8A] text-white font-bold text-base uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
          >

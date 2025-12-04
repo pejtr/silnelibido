@@ -35,7 +35,7 @@ export function DesktopStickyNav() {
         
         <ProductDropdown gender="women">
           <a 
-            href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+            href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" 
             className="bg-[#D65A8A] text-white font-bold text-lg uppercase tracking-wide px-8 py-3 rounded-full flex items-center gap-3 shadow-xl hover:scale-105 transition-transform group border-2 border-white/10"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 group-hover:text-pink-200 transition-colors">
