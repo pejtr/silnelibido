@@ -145,7 +145,7 @@ export function ProductCard({ name, price, currency, image, description, feature
           className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all group bg-[#D32F2F] hover:bg-[#B71C1C] text-white" 
           onClick={() => window.location.href = url}
         >
-          Koupit <ShoppingCart className="ml-2 w-5 h-5" />
+          Objednat <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
         
         <div className="flex items-center justify-end w-full gap-1 text-xs text-green-600 font-medium">

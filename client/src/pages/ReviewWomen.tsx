@@ -63,7 +63,7 @@ export default function ReviewWomen() {
                     className="w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold rounded-full shadow-lg shadow-red-100"
                     onClick={() => window.location.href = affiliateLink}
                   >
-                    VYZKOUŠET SE SLEVOU
+                    OBJEDNAT SE SLEVOU
                   </Button>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function ReviewWomen() {
                     className="flex-1 bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold py-6 text-lg rounded-xl shadow-lg shadow-red-200"
                     onClick={() => window.location.href = affiliateLink}
                   >
-                    KOUPIT PROERECTA WOMEN
+                    OBJEDNAT PROERECTA WOMEN
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </div>
@@ -239,7 +239,7 @@ export default function ReviewWomen() {
                   className="w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold rounded-full"
                   onClick={() => window.location.href = affiliateLink}
                 >
-                  Koupit nyní
+                  Objednat nyní
                 </Button>
               </div>
             </aside>

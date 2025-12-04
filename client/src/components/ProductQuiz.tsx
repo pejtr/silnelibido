@@ -166,7 +166,7 @@ export function ProductQuiz() {
                     onClick={() => window.location.href = resultProduct.url}
                     className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
                   >
-                    Koupit nyní - {resultProduct.price} {resultProduct.currency}
+                    Objednat - {resultProduct.price} {resultProduct.currency}
                   </Button>
                   <Button 
                     variant="outline" 

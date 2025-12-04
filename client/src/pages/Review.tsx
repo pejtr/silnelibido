@@ -69,7 +69,7 @@ export default function Review() {
               </div>
               <a href="https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full md:w-auto bg-[#d32f2f] hover:bg-[#b71c1c] text-white font-bold py-6 px-8 text-lg shadow-lg shadow-red-900/20">
-                  Vyzkoušet se slevou <ArrowRight className="ml-2 w-5 h-5" />
+                  Objednat se slevou <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
             </div>
