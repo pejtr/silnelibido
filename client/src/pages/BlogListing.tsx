@@ -55,7 +55,7 @@ export default function BlogListing() {
             <Link href="/blog">
               <a className="hover:text-[#D32F2F] transition-colors">Odborné články</a>
             </Link>
-            <a href="https://www.proerecta.cz" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
+            <a href="https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
               Doprava zdarma od 1500 Kč
             </a>
           </nav>

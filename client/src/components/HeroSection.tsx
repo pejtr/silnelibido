@@ -55,17 +55,17 @@ export function HeroSection() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
           <div className="flex items-center gap-6">
-            <a href="https://www.proerecta.cz/produkty/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+            <a href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
               Pro muže <span className="text-xs">›</span>
             </a>
-            <a href="https://www.proerecta.cz/produkt/proerecta-women/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+            <a href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
               Pro ženy <span className="text-xs">›</span>
             </a>
           </div>
           <a href="#reference" className="hover:text-[#D32F2F] transition-colors">Reference</a>
-          <a href="https://www.proerecta.cz/o-nas/" className="hover:text-[#D32F2F] transition-colors">O nás</a>
-          <a href="https://www.proerecta.cz/kontakty/" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
-          <a href="https://www.proerecta.cz/blog/" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
+          <a href="https://www.proerecta.cz/o-nas/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="hover:text-[#D32F2F] transition-colors">O nás</a>
+          <a href="https://www.proerecta.cz/kontakty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
+          <a href="https://www.proerecta.cz/blog/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
             Ostatní <span className="text-[10px]">▼</span>
           </a>
         </nav>

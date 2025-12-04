@@ -240,7 +240,7 @@ export default function BlogPost() {
                 <span className="text-2xl font-bold text-[#D32F2F]">od 399 Kč</span>
                 <div className="flex text-yellow-400 text-xs">★★★★★</div>
               </div>
-              <a href="https://www.proerecta.cz/produkty/" className="block w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-center font-bold py-3 rounded-full transition-colors">
+              <a href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" className="block w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-center font-bold py-3 rounded-full transition-colors">
                 Vyzkoušet ihned
               </a>
             </div>
