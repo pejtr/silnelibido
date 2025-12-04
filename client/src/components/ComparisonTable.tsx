@@ -11,20 +11,20 @@ export function ComparisonTable() {
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full max-w-4xl mx-auto border-collapse">
+        <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+          <table className="w-full max-w-4xl mx-auto border-collapse min-w-[350px]">
             <thead>
               <tr>
-                <th className="p-4 text-left text-slate-500 font-medium border-b border-slate-200 w-1/3">Vlastnost</th>
-                <th className="p-4 text-center bg-[#D32F2F]/5 border-b border-[#D32F2F] text-[#D32F2F] font-bold text-lg w-1/3 rounded-t-xl">
+                <th className="p-2 md:p-4 text-left text-slate-500 font-medium border-b border-slate-200 w-[25%] md:w-1/3 text-xs md:text-base">Vlastnost</th>
+                <th className="p-2 md:p-4 text-center bg-[#D32F2F]/5 border-b border-[#D32F2F] text-[#D32F2F] font-bold text-sm md:text-lg w-[40%] md:w-1/3 rounded-t-xl">
                   Proerecta
                 </th>
-                <th className="p-4 text-center text-slate-400 font-medium border-b border-slate-200 w-1/3">
+                <th className="p-2 md:p-4 text-center text-slate-400 font-medium border-b border-slate-200 w-[35%] md:w-1/3 text-xs md:text-base">
                   Běžné doplňky
                 </th>
               </tr>
             </thead>
-            <tbody className="text-sm md:text-base">
+            <tbody className="text-xs md:text-base">
               {[
                 { label: "Nástup účinku", pro: "Do 30 minut (SHOT)", con: "Několik týdnů" },
                 { label: "Složení", pro: <span className="font-extrabold text-[#D32F2F]">Extra silné bylinné extrakty</span>, con: "Často jen sušené byliny" },
@@ -33,17 +33,17 @@ export function ComparisonTable() {
                 { label: "Garance vrácení peněz", pro: "Ano", con: "Většinou ne" },
               ].map((row, i) => (
                 <tr key={i} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                  <td className="p-4 font-medium text-slate-700">{row.label}</td>
-                  <td className="p-4 text-center bg-[#D32F2F]/5 font-bold text-slate-900">
-                    <div className="flex items-center justify-center gap-2">
-                      <Check className="w-5 h-5 text-green-500" />
-                      {row.pro}
+                  <td className="p-2 md:p-4 font-medium text-slate-700 align-middle">{row.label}</td>
+                  <td className="p-2 md:p-4 text-center bg-[#D32F2F]/5 font-bold text-slate-900 align-middle">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2">
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0" />
+                      <span className="break-words w-full">{row.pro}</span>
                     </div>
                   </td>
-                  <td className="p-4 text-center text-slate-500">
-                    <div className="flex items-center justify-center gap-2">
-                      {row.con === "Většinou ne" ? <X className="w-5 h-5 text-red-400" /> : null}
-                      {row.con}
+                  <td className="p-2 md:p-4 text-center text-slate-500 align-middle">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2">
+                      {row.con === "Většinou ne" ? <X className="w-4 h-4 md:w-5 md:h-5 text-red-400 flex-shrink-0" /> : null}
+                      <span className="break-words w-full">{row.con}</span>
                     </div>
                   </td>
                 </tr>
