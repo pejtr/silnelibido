@@ -47,10 +47,19 @@ export function HeroSection() {
   }, [lastScrollY, isScrollingUp]);
 
   useEffect(() => {
-    // Simple A/B test: 50% chance for each variant
-    const variant = Math.random() > 0.5 ? "A" : "B";
-    if (variant === "B") {
+    // Simple A/B/C test: 33% chance for each variant
+    const rand = Math.random();
+    let variant = "A";
+    
+    if (rand < 0.33) {
+      variant = "A";
+      setCtaText("Probudit libido");
+    } else if (rand < 0.66) {
+      variant = "B";
       setCtaText("Rozproudit libido");
+    } else {
+      variant = "C";
+      setCtaText("Zažehnout vášeň");
     }
     // In a real app, we would log this exposure to analytics here
     console.log(`A/B Test Variant: ${variant}`);
