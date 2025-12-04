@@ -148,16 +148,7 @@ export function HeroSection() {
                  </div>
               </button>
 
-              {/* Sticky Buy Button (Mobile Only) - Appears when scrolling down */}
-              <div className={`md:hidden fixed bottom-0 left-0 w-full z-[90] bg-white border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ${showQuiz ? 'translate-y-0' : 'translate-y-full'}`}>
-                <a 
-                  href="#products" 
-                  className="flex items-center justify-center gap-2 bg-[#D32F2F] text-white font-bold py-3 px-4 rounded-lg w-full shadow-md active:scale-[0.98] transition-transform"
-                >
-                  <ShoppingCart className="w-5 h-5" />
-                  KOUPIT OD 599 Kč
-                </a>
-              </div>
+
 
               <div className="pt-4">
                 <a 
