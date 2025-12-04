@@ -54,7 +54,7 @@ export default function Home() {
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
-                className="w-12 h-12 animate-bounce relative z-10 drop-shadow-sm"
+                className="w-8 h-8 animate-bounce relative z-10 drop-shadow-sm"
               >
                 <path d="M12 5v14M19 12l-7 7-7-7"/>
               </svg>
