@@ -54,7 +54,7 @@ export function MobileHeader() {
          <a 
            href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
            onClick={vibrate} 
-           className="flex-1 bg-[#1E3A8A] text-white font-bold text-base uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
+           className="flex-1 bg-[#112255] text-white font-bold text-base uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
          >
            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M16 3h5v5"/><path d="m21 3-6.75 6.75"/><circle cx="10" cy="14" r="6"/></svg>
            PRO MUŽE
