@@ -31,7 +31,6 @@ export function MobileHeader() {
       <div className="bg-white px-4 py-3 flex items-center justify-between relative z-50">
         <button onClick={vibrate} className="flex flex-col items-center gap-1 text-[#2A2A5A]">
           <Menu className="w-8 h-8" />
-          <span className="text-[10px] font-bold">MENU</span>
         </button>
         
         <a href={affiliateLink} onClick={vibrate} className="flex-shrink-0">
@@ -47,7 +46,6 @@ export function MobileHeader() {
             <ShoppingCart className="w-8 h-8 fill-[#D32F2F]" />
             <span className="absolute -top-1 -right-1 bg-[#2A2A5A] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
           </div>
-          <span className="text-[10px] font-bold">KOŠÍK</span>
         </a>
       </div>
 
