@@ -137,11 +137,11 @@
       },
       {
         "id": "long-3",
-        "name": "4 balení",
+        "name": "4 + 2 ZDARMA",
         "price": 2796,
-        "originalPrice": null,
-        "savings": null,
-        "description": "4 balení = 120 dní",
+        "originalPrice": 4194,
+        "savings": 1398,
+        "description": "6 balení = 180 dní",
         "badge": null
       }
     ]
@@ -184,11 +184,11 @@
       },
       {
         "id": "women-3",
-        "name": "4 balení",
+        "name": "4 + 2 ZDARMA",
         "price": 2396,
-        "originalPrice": null,
-        "savings": null,
-        "description": "4 balení = 120 dávek",
+        "originalPrice": 3594,
+        "savings": 1198,
+        "description": "6 balení = 180 dávek",
         "badge": null
       }
     ]
@@ -227,11 +227,11 @@
       },
       {
         "id": "prostate-3",
-        "name": "4 balení",
+        "name": "4 + 2 ZDARMA",
         "price": 2396,
-        "originalPrice": null,
-        "savings": null,
-        "description": "4 balení = 240 dávek",
+        "originalPrice": 3594,
+        "savings": 1198,
+        "description": "6 balení = 360 dávek",
         "badge": null
       }
     ]
