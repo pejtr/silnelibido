@@ -22,45 +22,53 @@ export default function BlogListing() {
       
       <main className="flex-grow">
         {/* Hero Header with Image Background */}
-        <div className="relative bg-[#0f172a] text-white overflow-hidden">
+        <div className="relative bg-[#0f172a] text-white overflow-hidden min-h-[600px] flex items-center">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/images/blog-hero-hiker.jpg" 
               alt="Muž na túře v horách" 
-              className="w-full h-full object-cover object-center opacity-60"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/80 to-transparent"></div>
+            {/* Gradient overlay: Dark at bottom for text, dark at right for form, clear at top-left for man */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0f172a]/40 to-[#0f172a]/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent"></div>
           </div>
 
-          <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <div className="container mx-auto px-4 py-12 relative z-10 h-full flex flex-col justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end h-full">
+              
+              {/* Left Content - Pushed to bottom */}
+              <div className="lg:col-span-7 lg:pb-12 order-2 lg:order-1">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
                   Magazín Silné Libido
                 </h1>
-                <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl text-slate-200 max-w-2xl leading-relaxed drop-shadow-md">
                   Odborné články, tipy a rady pro vaše sexuální zdraví, vitalitu a sebevědomí.
                 </p>
               </div>
 
               {/* Right Content - Ebook Form Card */}
-              <div className="lg:ml-auto w-full max-w-md">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
-                  <div className="inline-block bg-[#D32F2F]/20 text-[#ff8a80] text-xs font-bold px-3 py-1 rounded-full mb-4 border border-[#D32F2F]/30">
-                    📥 E-BOOK ZDARMA
-                  </div>
+              <div className="lg:col-span-5 lg:ml-auto w-full max-w-md order-1 lg:order-2 mb-8 lg:mb-0">
+                <div className="bg-[#1e293b]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden group hover:border-white/20 transition-colors">
+                  {/* Glow effect */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#D32F2F]/30 rounded-full blur-3xl group-hover:bg-[#D32F2F]/40 transition-all"></div>
                   
-                  <h2 className="text-2xl md:text-3xl font-bold mb-2 text-white">
-                    7denní restart testosteronu
-                  </h2>
-                  
-                  <p className="text-slate-300 text-sm mb-6 leading-relaxed">
-                    Cítíte se bez energie? Stáhněte si náš exkluzivní manuál a přirozeně nastartujte svou mužskou sílu za pouhý týden.
-                  </p>
-                  
-                  <ul className="space-y-3 mb-8">
+                  <div className="relative z-10">
+                    <div className="inline-block bg-[#D32F2F]/20 text-[#ff8a80] text-[10px] font-bold px-3 py-1 rounded-full mb-5 border border-[#D32F2F]/30 tracking-wider uppercase">
+                      📥 E-book zdarma
+                    </div>
+                    
+                    <h2 className="text-3xl font-bold mb-3 text-white leading-tight">
+                      7denní restart <br/>
+                      <span className="text-[#ff5252]">testosteronu</span>
+                    </h2>
+                    
+                    <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+                      Cítíte se bez energie? Stáhněte si náš exkluzivní manuál a přirozeně nastartujte svou mužskou sílu za pouhý týden.
+                    </p>
+                    
+                    <ul className="space-y-3 mb-8">
                     <li className="flex items-start gap-3 text-sm text-slate-200">
                       <div className="w-5 h-5 rounded-full bg-[#D32F2F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg className="w-3 h-3 text-[#ff8a80]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,6 +108,7 @@ export default function BlogListing() {
                       Získat e-book ZDARMA
                     </button>
                   </form>
+                  </div>
                 </div>
               </div>
             </div>
