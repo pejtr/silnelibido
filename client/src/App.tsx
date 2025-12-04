@@ -27,9 +27,28 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 import { useEffect } from "react";
+import Lenis from "lenis";
 
 function SmoothScroll() {
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 2.0, // Even slower duration for very smooth feel
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.8, // Reduce wheel sensitivity for "heavier" feel
+      touchMultiplier: 1.5,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Handle anchor links with Lenis
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
@@ -38,35 +57,20 @@ function SmoothScroll() {
         e.preventDefault();
         const element = document.querySelector(anchor.hash);
         if (element) {
-          const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const startPosition = window.pageYOffset;
-          const distance = targetPosition - startPosition;
-          const duration = 1500; // Slower duration in ms
-          let start: number | null = null;
-
-          const animation = (currentTime: number) => {
-            if (start === null) start = currentTime;
-            const timeElapsed = currentTime - start;
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
-          };
-
-          // Easing function (easeInOutQuad)
-          const ease = (t: number, b: number, c: number, d: number) => {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-          };
-
-          requestAnimationFrame(animation);
+          lenis.scrollTo(element as HTMLElement, {
+            duration: 2.5, // Slower duration for anchor scrolls
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
         }
       }
     };
 
     document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
+
+    return () => {
+      lenis.destroy();
+      document.removeEventListener('click', handleAnchorClick);
+    };
   }, []);
 
   return null;

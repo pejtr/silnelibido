@@ -125,9 +125,38 @@ export function HeroSection() {
               </a>
 
               {/* Sticky Quiz Icon (Mobile & Desktop) - Appears when Gift disappears */}
-              <a 
-                href="#quiz" 
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const quizElement = document.getElementById('quiz');
+                  if (quizElement) {
+                    // Use window.lenis if available (global instance) or fallback to native scroll
+                    // Since we don't have direct access to lenis instance here, we trigger a click on a hidden anchor
+                    // or dispatch a custom event, but simpler is to just let the global click handler in App.tsx handle it
+                    // by keeping it as an anchor tag, BUT we need to make sure the z-index and pointer-events are correct.
+                    // The issue might be that the anchor click is not being caught or the element is covered.
+                    // Let's try to use a programmatic scroll approach that works with the Lenis setup in App.tsx
+                    
+                    // Dispatch a custom event that App.tsx could listen to, OR just rely on the fact that 
+                    // App.tsx listens to ALL clicks on anchors.
+                    // If the click isn't working on mobile, it might be a touch event issue or z-index.
+                    // Let's try to force the scroll via a simulated click on a hidden link if direct click fails,
+                    // or just ensure the href is correct and the element exists.
+                    
+                    // Actually, the best way is to keep it as an anchor but ensure it's clickable.
+                    // The previous code was an anchor with href="#quiz".
+                    // If that didn't work, maybe the click event is being intercepted or the target is wrong.
+                    // Let's try to use a button with an explicit scroll logic that mimics what App.tsx does.
+                    
+                    const targetPosition = quizElement.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: targetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
                 className={`fixed bottom-[calc(2rem+22px)] left-0 z-[100] transition-all duration-500 active:scale-95 hover:scale-105 group ${showQuiz ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+                aria-label="Spustit kvíz"
               >
                  <div className="bg-[#2A2A5A]/90 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#2A2A5A]">
                     <HelpCircle className="w-8 h-8 text-white animate-bounce group-hover:animate-none" />
@@ -135,7 +164,7 @@ export function HeroSection() {
                       Kvíz: Vyberte si produkt
                     </span>
                  </div>
-              </a>
+              </button>
 
               <div className="pt-4">
                 <a 
