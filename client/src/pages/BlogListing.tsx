@@ -2,7 +2,9 @@ import { TopBar } from "@/components/TopBar";
 import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
-import { ArrowRight, Calendar, User, Clock } from "lucide-react";
+import { ArrowRight, Calendar, User, Clock, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 import { blogPosts } from "@/data/blogPosts";
 
@@ -10,6 +12,25 @@ import { SEO } from "@/components/SEO";
 import { EbookDownload } from "@/components/EbookDownload";
 
 export default function BlogListing() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      toast.success("E-book byl úspěšně odeslán na váš e-mail!");
+      setEmail("");
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50">
       <SEO 
@@ -95,19 +116,51 @@ export default function BlogListing() {
                     </li>
                   </ul>
                   
-                  <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                    <div>
-                      <input 
-                        type="email" 
-                        placeholder="vas@email.cz" 
-                        className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#D32F2F] focus:ring-1 focus:ring-[#D32F2F] transition-all"
-                        required
-                      />
+                  {isSuccess ? (
+                    <div className="bg-green-500/20 border border-green-500/30 rounded-xl p-6 text-center animate-in fade-in zoom-in duration-300">
+                      <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-500/20">
+                        <CheckCircle className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">Úspěšně odesláno!</h3>
+                      <p className="text-slate-200 text-sm">
+                        E-book je na cestě do vaší schránky. Zkontrolujte prosím i složku spam.
+                      </p>
+                      <button 
+                        onClick={() => setIsSuccess(false)}
+                        className="mt-6 text-sm text-slate-300 hover:text-white underline underline-offset-4"
+                      >
+                        Odeslat na jiný e-mail
+                      </button>
                     </div>
-                    <button type="submit" className="w-full bg-gradient-to-r from-[#D32F2F] to-[#B71C1C] hover:from-[#B71C1C] hover:to-[#9A1616] text-white font-bold py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
-                      Získat e-book ZDARMA
-                    </button>
-                  </form>
+                  ) : (
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                      <div>
+                        <input 
+                          type="email" 
+                          placeholder="vas@email.cz" 
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#D32F2F] focus:ring-1 focus:ring-[#D32F2F] transition-all"
+                          required
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="w-full bg-gradient-to-r from-[#D32F2F] to-[#B71C1C] hover:from-[#B71C1C] hover:to-[#9A1616] text-white font-bold py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Odesílám...
+                          </>
+                        ) : (
+                          "Získat e-book ZDARMA"
+                        )}
+                      </button>
+                    </form>
+                  )}
                   </div>
                 </div>
               </div>
