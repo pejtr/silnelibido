@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ArrowRight } from "lucide-react";
-
+import { Check, ArrowRight, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+
+interface Package {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice: number | null;
+  savings: number | null;
+  description: string;
+  badge: string | null;
+}
 
 interface ProductProps {
   name: string;
@@ -17,18 +26,15 @@ interface ProductProps {
     text: string;
     color: string;
   };
+  packages?: Package[];
 }
 
-export function ProductCard({ name, price, currency, image, description, features, popular, url, badge }: ProductProps) {
-  const [selectedPackage, setSelectedPackage] = useState(1);
-
-  const packages = [
-    { count: 1, discount: 0, label: "1 balení" },
-    { count: 2, discount: 5, label: "2 balení (-5%)" },
-    { count: 3, discount: 10, label: "3 balení (-10%)" }
-  ];
-
-  const currentPrice = Math.round(price * selectedPackage * (1 - (packages.find(p => p.count === selectedPackage)?.discount || 0) / 100));
+export function ProductCard({ name, price, currency, image, description, features, popular, url, badge, packages }: ProductProps) {
+  // Default to the second package (usually the most popular/middle option) if available, otherwise first
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState(packages && packages.length > 1 ? 1 : 0);
+  
+  const currentPackage = packages ? packages[selectedPackageIndex] : null;
+  const displayPrice = currentPackage ? currentPackage.price : price;
 
   return (
     <Card className={`flex flex-col h-full relative overflow-hidden transition-all duration-300 hover:shadow-lg ${popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
@@ -57,7 +63,7 @@ export function ProductCard({ name, price, currency, image, description, feature
         </div>
       </CardHeader>
       
-      <CardContent className="flex-grow p-6">
+      <CardContent className="flex-grow p-6 pb-2">
         <CardTitle className="text-xl font-bold mb-2 text-foreground">{name}</CardTitle>
         <p className="text-muted-foreground text-sm mb-4 min-h-[60px]">{description}</p>
         
@@ -72,36 +78,80 @@ export function ProductCard({ name, price, currency, image, description, feature
       </CardContent>
       
       <CardFooter className="p-6 pt-0 flex flex-col gap-4">
-        {/* Package Selection */}
-        <div className="grid grid-cols-3 gap-2 w-full mb-2">
-          {packages.map((pkg) => (
-            <button
-              key={pkg.count}
-              onClick={() => setSelectedPackage(pkg.count)}
-              className={`text-xs py-2 px-1 rounded border transition-all ${
-                selectedPackage === pkg.count
-                  ? "bg-primary text-white border-primary font-bold shadow-sm"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-primary/50"
-              }`}
-            >
-              {pkg.label}
-            </button>
-          ))}
-        </div>
+        {/* Package Selection Grid */}
+        {packages && (
+          <div className="grid grid-cols-3 gap-2 w-full mb-2">
+            {packages.map((pkg, index) => (
+              <button
+                key={pkg.id}
+                onClick={() => setSelectedPackageIndex(index)}
+                className={`relative flex flex-col items-center justify-between p-2 rounded-lg border transition-all h-full ${
+                  selectedPackageIndex === index
+                    ? "bg-white border-[#D32F2F] ring-1 ring-[#D32F2F] shadow-md z-10"
+                    : "bg-slate-50 border-slate-200 hover:border-slate-300 text-slate-500"
+                }`}
+              >
+                {/* Badge for package */}
+                {pkg.badge && (
+                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[#D32F2F] text-white text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap uppercase tracking-wide shadow-sm">
+                    {pkg.badge}
+                  </div>
+                )}
+                
+                <div className="text-xs font-medium text-center mb-1 pt-1 leading-tight min-h-[2.5em] flex items-center justify-center">
+                  {pkg.name}
+                </div>
+                
+                <div className="flex flex-col items-center mt-auto">
+                  {/* Original Price (crossed out) */}
+                  {pkg.originalPrice && (
+                    <span className="text-[10px] line-through text-slate-400 mb-0.5">
+                      {pkg.originalPrice} Kč
+                    </span>
+                  )}
+                  
+                  {/* Current Price */}
+                  <div className={`font-bold ${selectedPackageIndex === index ? "text-[#D32F2F] text-base" : "text-slate-700 text-sm"}`}>
+                    {pkg.price} Kč
+                  </div>
+                  
+                  {/* Savings */}
+                  {pkg.savings && selectedPackageIndex === index && (
+                    <div className="text-[9px] text-green-600 font-bold mt-0.5 bg-green-50 px-1 rounded">
+                      Ušetříte {pkg.savings} Kč
+                    </div>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
 
-        <div className="flex items-baseline gap-1 w-full">
-          <span className="text-sm font-medium text-muted-foreground mr-1">Cena:</span>
-          <span className="text-3xl font-bold text-primary">{currentPrice}</span>
-          <span className="text-sm font-medium text-muted-foreground">{currency}</span>
+        {/* Selected Package Details */}
+        {currentPackage && (
+          <div className="w-full text-center bg-slate-50 p-2 rounded border border-slate-100 text-xs text-slate-600 whitespace-pre-line">
+            {currentPackage.description}
+          </div>
+        )}
+
+        {/* Total Price Display */}
+        <div className="flex items-baseline gap-1 w-full pt-2">
+          <span className="text-lg font-medium text-slate-700 mr-1">Celkem:</span>
+          <span className="text-3xl font-bold text-[#2A2A5A]">{displayPrice}</span>
+          <span className="text-lg font-bold text-[#2A2A5A]">{currency}</span>
         </div>
         
         <Button 
-          className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all group" 
-          variant={popular ? "default" : "outline"}
+          className="w-full font-bold text-base py-6 shadow-md hover:shadow-lg transition-all group bg-[#D32F2F] hover:bg-[#B71C1C] text-white" 
           onClick={() => window.location.href = url}
         >
-          Koupit {selectedPackage > 1 ? `${selectedPackage} balení` : ''} <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          Vložit do košíku <ShoppingCart className="ml-2 w-5 h-5" />
         </Button>
+        
+        <div className="flex items-center justify-end w-full gap-1 text-xs text-green-600 font-medium">
+          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+          Skladem - Pozítří u vás
+        </div>
       </CardFooter>
     </Card>
   );

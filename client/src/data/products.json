@@ -12,6 +12,35 @@
       "Bylinné složení",
       "Podpora mikrocirkulace"
     ],
+    "packages": [
+      {
+        "id": "klasik-1",
+        "name": "1 balení",
+        "price": 399,
+        "originalPrice": null,
+        "savings": null,
+        "description": "Skladem\ncelkem 12 tobolek",
+        "badge": null
+      },
+      {
+        "id": "klasik-2",
+        "name": "2 + 1 ZDARMA",
+        "price": 798,
+        "originalPrice": 1197,
+        "savings": 399,
+        "description": "Skladem\n1 balení = 266 Kč\ncelkem 36 tobolek",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "klasik-3",
+        "name": "4 + 2 ZDARMA",
+        "price": 1854,
+        "originalPrice": 2394,
+        "savings": 540,
+        "description": "Skladem\n1 balení = 266 Kč\ncelkem 72 tobolek",
+        "badge": null
+      }
+    ],
     "ingredients_images": [
       {
         "name": "Hroznová jádra",
@@ -30,7 +59,7 @@
   {
     "id": "proerecta-shot",
     "name": "Proerecta SHOT",
-    "price": 106,
+    "price": 448,
     "currency": "CZK",
     "image": "/images/proerecta-shot-new.png",
     "description": "Nápoj pro zrychlený nástup účinku. Užijte 30 minut před sexem.",
@@ -40,6 +69,35 @@
       "Tekutá forma",
       "Vysoká vstřebatelnost"
     ],
+    "packages": [
+      {
+        "id": "shot-1",
+        "name": "4 shoty",
+        "price": 448,
+        "originalPrice": null,
+        "savings": null,
+        "description": "1 shot = 112 Kč\ncelkem 4 dávky",
+        "badge": null
+      },
+      {
+        "id": "shot-2",
+        "name": "8 shotů",
+        "price": 799,
+        "originalPrice": 896,
+        "savings": 97,
+        "description": "1 shot = 99,9 Kč\ncelkem 8 dávek",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "shot-3",
+        "name": "16 shotů",
+        "price": 1598,
+        "originalPrice": 1792,
+        "savings": 194,
+        "description": "1 shot = 99,9 Kč\ncelkem 16 dávek",
+        "badge": null
+      }
+    ],
     "badge": {
       "text": "BESTSELLER",
       "color": "#D32F2F"
@@ -48,7 +106,7 @@
   {
     "id": "proerecta-long",
     "name": "Proerecta LONG",
-    "price": 399,
+    "price": 699,
     "currency": "CZK",
     "image": "/images/proerecta-long-new.png",
     "description": "Tobolky pro dlouhodobé užívání. Podpora vitality a mikrocirkulace pro muže nad 40 let.",
@@ -57,6 +115,35 @@
       "Dlouhodobá péče",
       "Pro muže 40+",
       "Podpora vitality"
+    ],
+    "packages": [
+      {
+        "id": "long-1",
+        "name": "1 balení",
+        "price": 699,
+        "originalPrice": null,
+        "savings": null,
+        "description": "cena za balení\n1 balení = 30 dní",
+        "badge": null
+      },
+      {
+        "id": "long-2",
+        "name": "2 + 1 ZDARMA",
+        "price": 1398,
+        "originalPrice": 2097,
+        "savings": 699,
+        "description": "1 balení = 466 Kč\n3 balení = 90 dní",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "long-3",
+        "name": "4 balení",
+        "price": 2796,
+        "originalPrice": null,
+        "savings": null,
+        "description": "4 balení = 120 dní",
+        "badge": null
+      }
     ]
   },
   {
