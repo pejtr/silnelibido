@@ -17,7 +17,7 @@ export function IngredientsSection() {
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round" 
-              className="w-8 h-8 animate-bounce"
+              className="w-12 h-12 animate-bounce"
             >
               <path d="M12 5v14M19 12l-7 7-7-7"/>
             </svg>
