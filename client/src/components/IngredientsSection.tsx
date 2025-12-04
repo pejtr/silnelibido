@@ -56,7 +56,11 @@ export function IngredientsSection() {
                 <img src="/images/maca.png" alt="Maca" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
-                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Maca Peruánská</h3>
+                <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">
+                  <a href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" className="hover:underline" target="_blank" rel="noopener noreferrer">
+                    Maca Peruánská
+                  </a>
+                </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">Udržuje sexualitu, plodnost, vitalitu a vytrvalost.</p>
               </div>
             </div>
