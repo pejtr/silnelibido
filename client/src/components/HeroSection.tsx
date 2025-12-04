@@ -138,7 +138,7 @@ export function HeroSection() {
             {/* Left Column: Text */}
             <div className="max-w-xl space-y-6 md:space-y-8 text-center lg:text-left relative z-10">
               <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.2] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none">
-                Přírodní booster pro váš <br/>
+                Přírodní péče o váš <br/>
                 <span className="text-white md:text-[#2A2A5A]">milostný život</span>
               </h1>
               
