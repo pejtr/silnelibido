@@ -1,8 +1,6 @@
-import { TopBar } from "@/components/TopBar";
-import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
-import { ArrowRight, Calendar, User, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, Calendar, User, Clock, CheckCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -38,8 +36,39 @@ export default function BlogListing() {
         description="Odborné články o mužském zdraví, erekci, testosteronu a libidu. Tipy, rady a recenze ověřených produktů."
         canonical="/blog"
       />
-      <TopBar />
-      <MobileHeader />
+      {/* Custom Blog Header */}
+      <header className="bg-white py-4 sticky top-0 z-50 shadow-sm">
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/">
+            <a className="flex items-center gap-1">
+              <span className="text-2xl font-bold text-[#2A2A5A]">proerecta</span>
+              <div className="w-2 h-2 bg-[#D32F2F] rounded-full mt-1"></div>
+            </a>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+            <Link href="/blog">
+              <a className="hover:text-[#D32F2F] transition-colors">Menu</a>
+            </Link>
+            <Link href="/blog">
+              <a className="hover:text-[#D32F2F] transition-colors">Odborné články</a>
+            </Link>
+            <span className="text-slate-500">Doprava zdarma od 1500 Kč</span>
+            <div className="flex items-center gap-1 cursor-pointer hover:text-[#D32F2F] transition-colors">
+              Česky (Kč) <ChevronDown className="w-4 h-4" />
+            </div>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden text-slate-700">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </header>
       
       <main className="flex-grow">
         {/* Hero Header with Image Background */}
