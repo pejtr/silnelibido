@@ -55,11 +55,11 @@ export function MobileHeader() {
       <div className={`w-full bg-[#D32F2F] flex flex-col justify-center items-center shadow-md transition-all duration-300 z-[40] ${isSticky ? 'fixed top-0 left-0 w-full' : 'sticky top-0'}`}>
          <div className="w-full flex justify-center items-center gap-2 py-2 px-2">
            <a href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" onClick={vibrate} className="text-white font-bold text-base uppercase tracking-wide flex items-center gap-1 hover:scale-110 transition-transform whitespace-nowrap">
-             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#1E3A8A] drop-shadow-md filter"><path d="M20 4v6h-2V6.41l-3.29 3.3a7 7 0 1 0 2.83 2.83l3.3-3.29H14V4h6zM11.5 20a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /></svg> PRO MUŽE <span className="text-xl text-yellow-400 font-black">›</span>
+             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#1E3A8A] drop-shadow-md filter"><path d="M9,9C10.29,9 11.5,9.41 12.47,10.11L17.58,5H13V3H21V11H19V6.41L13.89,11.5C14.59,12.5 15,13.7 15,15A6,6 0 0,1 9,21A6,6 0 0,1 3,15A6,6 0 0,1 9,9M9,11A4,4 0 0,0 5,15A4,4 0 0,0 9,19A4,4 0 0,0 13,15A4,4 0 0,0 9,11Z" /></svg> PRO MUŽE <span className="text-xl text-yellow-400 font-black">›</span>
            </a>
            <div className="w-px h-8 bg-white/30 mx-1"></div>
            <a href="https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" onClick={vibrate} className="text-white font-bold text-base uppercase tracking-wide flex items-center gap-1 hover:scale-110 transition-transform whitespace-nowrap">
-             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#F472B6] drop-shadow-md filter"><path d="M12 4a6 6 0 0 0-6 6c0 2.97 2.16 5.43 5 5.91V19H8v2h3v2h2v-2h3v-2h-3v-3.09c2.84-.48 5-2.94 5-5.91a6 6 0 0 0-6-6zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" /></svg> PRO ŽENY <span className="text-xl text-yellow-400 font-black">›</span>
+             <svg viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-[#F472B6] drop-shadow-md filter"><path d="M12,4A6,6 0 0,1 18,10C18,12.97 15.84,15.44 13,15.92V18H15V20H13V22H11V20H9V18H11V15.92C8.16,15.44 6,12.97 6,10A6,6 0 0,1 12,4M12,6A4,4 0 0,0 8,10A4,4 0 0,0 12,14A4,4 0 0,0 16,10A4,4 0 0,0 12,6Z" /></svg> PRO ŽENY <span className="text-xl text-yellow-400 font-black">›</span>
            </a>
          </div>
          {/* Progress Bar */}
