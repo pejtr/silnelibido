@@ -236,16 +236,16 @@ export function HeroSection() {
               </div>
 
               {/* Product Image (Overlay - Left - Small Shot) */}
-              <div className="absolute bottom-0 left-[-80px] md:left-[-220px] w-[280px] md:w-[380px] z-20 transform translate-y-10 flex items-end">
-                <div className="w-[45%] relative z-10">
+              <div className="absolute bottom-0 left-[-80px] md:left-[-220px] w-[350px] md:w-[550px] z-20 transform translate-y-10 flex items-end">
+                <div className="w-[30%] relative z-10">
                   <img 
                     src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </div>
-                {/* Klasik Product (Larger, next to Shot) */}
-                <div className="w-[55%] -ml-8 mb-2 relative z-0">
+                {/* Klasik Product (Much Larger, next to Shot) */}
+                <div className="w-[70%] -ml-12 mb-4 relative z-0">
                   <img 
                     src="/images/proerecta-klasik-small.png" 
                     alt="Proerecta Klasik" 
