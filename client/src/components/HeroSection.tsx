@@ -110,7 +110,7 @@ export function HeroSection() {
               </h1>
               
               <p className="text-base md:text-xl text-white/90 md:text-slate-600 leading-relaxed drop-shadow-md md:drop-shadow-none max-w-xs mx-auto md:max-w-none">
-                <span className="text-2xl md:text-3xl font-serif italic font-bold text-white md:text-[#2A2A5A] drop-shadow-[0_2px_2px_rgba(255,215,0,0.6)] md:drop-shadow-[0_2px_2px_rgba(218,165,32,0.4)]">Koitus</span> udržuje milostný vztah.<br className="hidden md:block"/>
+                <span className="text-xl md:text-2xl font-serif italic font-medium text-white md:text-[#2A2A5A] drop-shadow-[0_1px_1px_rgba(255,215,0,0.4)] md:drop-shadow-[0_1px_1px_rgba(218,165,32,0.3)]">Koitus</span> udržuje milostný vztah.<br className="hidden md:block"/>
                 Nenechte se o něj obrat.
               </p>
 
