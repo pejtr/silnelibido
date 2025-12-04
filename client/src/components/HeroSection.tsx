@@ -222,24 +222,24 @@ export function HeroSection() {
                 <img 
                   src="/images/hero-couple.jpg" 
                   alt="Happy Couple" 
-                  className="w-full h-full object-cover object-[center_20%] scale-125"
+                  className="w-full h-full object-cover object-[center_20%] scale-125 -scale-x-100"
                 />
               </div>
 
-              {/* Product Image (Overlay - Right) */}
+              {/* Product Image (Overlay - Right - Large Women) */}
               <div className="absolute bottom-0 right-0 md:right-12 w-[200px] md:w-[280px] z-20 transform translate-y-10">
                 <img 
-                  src="/images/proerecta-shot-trans.png" 
-                  alt="Proerecta Shot" 
+                  src="/images/proerecta-women-hero.png" 
+                  alt="Proerecta Women" 
                   className="w-full h-auto drop-shadow-2xl"
                 />
               </div>
 
-              {/* Product Image (Overlay - Left) */}
+              {/* Product Image (Overlay - Left - Small Shot) */}
               <div className="absolute bottom-0 left-0 md:left-[-50px] w-[180px] md:w-[240px] z-20 transform translate-y-10">
                 <img 
-                  src="/images/proerecta-women-hero.png" 
-                  alt="Proerecta Women" 
+                  src="/images/proerecta-shot-trans.png" 
+                  alt="Proerecta Shot" 
                   className="w-full h-auto drop-shadow-2xl"
                 />
               </div>
