@@ -26,7 +26,7 @@ export function ComparisonTable() {
             </thead>
             <tbody className="text-sm md:text-base">
               {[
-                { label: "Nástup účinku", pro: "Do 60 minut (SHOT)", con: "Několik týdnů" },
+                { label: "Nástup účinku", pro: "Do 30 minut (SHOT)", con: "Několik týdnů" },
                 { label: "Složení", pro: "Extra silné bylinné extrakty", con: "Často jen sušené byliny" },
                 { label: "Certifikace", pro: "Schváleno v EU", con: "Nejasný původ" },
                 { label: "Vedlejší účinky", pro: "Žádné známé", con: "Bolest hlavy, návaly horka" },
