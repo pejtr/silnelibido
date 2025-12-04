@@ -176,7 +176,7 @@ export function HeroSection() {
               </div>
 
               {/* Icons Row */}
-              <div className="flex flex-wrap justify-start gap-6 md:gap-12 pt-2 md:pt-4">
+              <div className="flex flex-wrap justify-start gap-2 md:gap-12 pt-2 md:pt-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
                      <img src="/images/icon-czech-flag-round.png" alt="Česká značka" className="w-12 h-12 object-contain drop-shadow-md" />
@@ -200,15 +200,15 @@ export function HeroSection() {
               </div>
 
               {/* Mobile Product Image (Bottom Right) */}
-              <div className="md:hidden absolute bottom-[-40px] right-[-20px] w-[220px] z-20 flex items-end">
-                <div className="w-[40%] relative z-10 translate-x-4">
+              <div className="md:hidden absolute bottom-[-40px] right-[-80px] w-[220px] z-20 flex items-end">
+                <div className="w-[30%] relative z-10 translate-x-4">
                   <img 
                     src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </div>
-                <div className="w-[60%] -ml-4 mb-2 relative z-0">
+                <div className="w-[70%] -ml-4 mb-2 relative z-0">
                   <img 
                     src="/images/proerecta-long-new.png" 
                     alt="Proerecta Long" 
