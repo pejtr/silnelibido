@@ -8,6 +8,20 @@ export function IngredientsSection() {
 
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          {/* Bouncing Arrow */}
+          <div className="flex justify-center mb-4">
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="#D32F2F" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="w-8 h-8 animate-bounce"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2A2A5A] mb-4">
             Síla přírody pro vaši erekci
           </h2>
