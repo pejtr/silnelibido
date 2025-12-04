@@ -117,7 +117,7 @@ export function HeroSection() {
               {/* Sticky Gift Icon (Mobile & Desktop) */}
               <a 
                 href="#products" 
-                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group ${showGift ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
               >
                  <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
                     <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
@@ -128,7 +128,7 @@ export function HeroSection() {
               <button 
                 onClick={(e) => {
                   e.preventDefault();
-                  const quizElement = document.getElementById('quiz');
+                  const quizElement = document.getElementById('quiz-section');
                   if (quizElement) {
                     const targetPosition = quizElement.getBoundingClientRect().top + window.pageYOffset;
                     window.scrollTo({
@@ -137,7 +137,7 @@ export function HeroSection() {
                     });
                   }
                 }}
-                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group ${showQuiz ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showQuiz ? 'translate-x-0' : '-translate-x-full'}`}
                 aria-label="Spustit kvíz"
               >
                  <div className="bg-[#2A2A5A]/90 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#2A2A5A]">

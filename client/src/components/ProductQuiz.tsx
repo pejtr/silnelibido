@@ -75,7 +75,7 @@ export function ProductQuiz() {
 
   if (!isStarted) {
     return (
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50" id="quiz-section">
         <div className="container px-4 md:px-6">
           {/* Bouncing Arrow */}
           <div className="flex justify-center mb-4">
