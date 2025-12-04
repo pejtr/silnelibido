@@ -3,14 +3,14 @@ import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 import { Link, useRoute } from "wouter";
 import { ArrowLeft, Calendar, User, Clock, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
-import { blogPosts } from "./BlogListing";
+import { blogPosts } from "@/data/blogPosts";
 import NotFound from "./NotFound";
 import { useEffect } from "react";
 import { SEO } from "@/components/SEO";
 
 export default function BlogPost() {
   const [match, params] = useRoute("/blog/:id");
-  const post = blogPosts.find(p => p.id === params?.id);
+  const post = blogPosts.find((p: any) => p.id === params?.id);
 
   // Scroll to top on mount
   useEffect(() => {
@@ -114,10 +114,31 @@ export default function BlogPost() {
           
           {/* Main Content */}
           <div className="lg:col-span-8 prose prose-lg prose-slate max-w-none prose-headings:text-[#2A2A5A] prose-a:text-[#D32F2F] prose-img:rounded-xl">
+            {/* Main Article Image */}
+            <img 
+              src={post.image} 
+              alt={post.title} 
+              className="w-full h-auto rounded-2xl shadow-lg mb-8"
+            />
+
             <p className="lead text-xl text-slate-600 font-medium mb-8">
               {post.excerpt}
             </p>
             
+            {/* Content Image */}
+            {post.contentImage && (
+              <figure className="my-8">
+                <img 
+                  src={post.contentImage} 
+                  alt={`Ilustrace k článku: ${post.title}`} 
+                  className="w-full h-auto rounded-xl shadow-md"
+                />
+                <figcaption className="text-center text-sm text-slate-500 mt-2">
+                  Ilustrační foto
+                </figcaption>
+              </figure>
+            )}
+
             {/* Placeholder content - will be replaced by actual content */}
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
