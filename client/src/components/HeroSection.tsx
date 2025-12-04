@@ -56,7 +56,7 @@ export function HeroSection() {
       setCtaText("Probudit libido");
     } else if (rand < 0.66) {
       variant = "B";
-      setCtaText("Rozproudit libido");
+      setCtaText("Rozproudit vášeň");
     } else {
       variant = "C";
       setCtaText("Zažehnout vášeň");
