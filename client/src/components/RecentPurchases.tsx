@@ -93,31 +93,64 @@ export function RecentPurchases() {
   };
 
   useEffect(() => {
-    // Initial delay before showing the first notification
-    const initialTimeout = setTimeout(() => {
-      if (!isClosed) {
-        setCustomer(getRelevantCustomer());
-        setProduct(getRandomProduct());
-        setIsVisible(true);
-      }
-    }, 5000);
+    let initialTimeout: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
+    let hasTriggered = false;
 
-    // Cycle through customers
-    const interval = setInterval(() => {
-      if (isClosed) return;
-      
-      setIsVisible(false);
-      
-      setTimeout(() => {
+    const startNotifications = () => {
+      if (hasTriggered || isClosed) return;
+      hasTriggered = true;
+
+      // Initial delay before showing the first notification
+      // On mobile, we want a longer delay (e.g., 10s) compared to desktop (5s)
+      const isMobile = window.innerWidth < 768;
+      const delay = isMobile ? 10000 : 5000;
+
+      initialTimeout = setTimeout(() => {
+        if (!isClosed) {
+          setCustomer(getRelevantCustomer());
+          setProduct(getRandomProduct());
+          setIsVisible(true);
+        }
+      }, delay);
+
+      // Cycle through customers
+      interval = setInterval(() => {
         if (isClosed) return;
-        setCustomer(getRelevantCustomer());
-        setProduct(getRandomProduct());
-        setIsVisible(true);
-      }, 8000); // Wait 8s before showing next one
-      
-    }, 30000); // Show new one every 30s
+        
+        setIsVisible(false);
+        
+        setTimeout(() => {
+          if (isClosed) return;
+          setCustomer(getRelevantCustomer());
+          setProduct(getRandomProduct());
+          setIsVisible(true);
+        }, 8000); // Wait 8s before showing next one
+        
+      }, 30000); // Show new one every 30s
+    };
+
+    const handleScroll = () => {
+      if (hasTriggered) return;
+
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      const isMobile = window.innerWidth < 768;
+
+      // On mobile, wait for 50% scroll. On desktop, trigger immediately (or with low threshold)
+      if (!isMobile || scrollPercentage > 50) {
+        startNotifications();
+        // Remove listener once triggered
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    // Check immediately in case we are already scrolled or on desktop
+    handleScroll();
+    
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       clearTimeout(initialTimeout);
       clearInterval(interval);
     };
