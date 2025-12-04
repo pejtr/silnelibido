@@ -170,6 +170,22 @@ export default function BlogPost() {
             <p>
               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
             </p>
+
+            {/* Sources Section */}
+            {post.sources && post.sources.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-slate-200">
+                <h3 className="text-lg font-bold text-[#2A2A5A] mb-4 flex items-center gap-2">
+                  <span className="bg-slate-100 p-1 rounded">📚</span> Zdroje a studie
+                </h3>
+                <ul className="list-none pl-0 space-y-2 text-sm text-slate-500">
+                  {post.sources.map((source: string, index: number) => (
+                    <li key={index} className="pl-4 border-l-2 border-slate-200 hover:border-[#D32F2F] transition-colors">
+                      {source}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
