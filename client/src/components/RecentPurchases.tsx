@@ -127,7 +127,7 @@ export function RecentPurchases() {
 
   return (
     <div 
-      className={`fixed bottom-20 md:bottom-4 left-4 z-50 transition-all duration-500 transform ${
+      className={`fixed bottom-4 left-4 z-50 transition-all duration-500 transform ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
