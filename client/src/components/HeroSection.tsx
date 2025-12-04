@@ -7,19 +7,36 @@ export function HeroSection() {
   const [ctaText, setCtaText] = useState("Probudit libido");
   const [showGift, setShowGift] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
       const productsSection = document.getElementById('products');
+      
+      // Determine scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsScrollingUp(false); // Scrolling down
+      } else {
+        setIsScrollingUp(true); // Scrolling up
+      }
+      setLastScrollY(currentScrollY);
+
       if (productsSection) {
         const rect = productsSection.getBoundingClientRect();
-        // Hide if the top of products section is near or above the viewport bottom
-        // Using window.innerHeight * 0.8 to hide it a bit before it fully enters view
+        // Logic for switching between Gift and Quiz based on section visibility
+        // But now also respecting scroll direction for visibility
+        
         if (rect.top < window.innerHeight * 0.8) {
+          // In products section or below
           setShowGift(false);
-          setShowQuiz(true);
+          // Show quiz only if scrolling up
+          setShowQuiz(isScrollingUp);
         } else {
-          setShowGift(true);
+          // Above products section
+          // Show gift only if scrolling up
+          setShowGift(isScrollingUp);
           setShowQuiz(false);
         }
       }
@@ -27,7 +44,7 @@ export function HeroSection() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY, isScrollingUp]);
 
   useEffect(() => {
     // Simple A/B test: 50% chance for each variant
