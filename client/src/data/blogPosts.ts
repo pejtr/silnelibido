@@ -29,7 +29,7 @@ export const blogPosts = [
       
       <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 my-8">
         <h3 class="text-blue-800 font-bold mt-0">Jak to napravit?</h3>
-        <p>Kromě změny jídelníčku můžete podpořit své cévní zdraví a prokrvení pomocí specializovaných doplňků. <a href="https://www.proerecta.cz/produkt/proerecta-klasik/" class="text-blue-600 font-bold hover:underline">Proerecta KLASIK</a> obsahuje extrakty z bylin, které přirozeně podporují mikrocirkulaci krve.</p>
+        <p>Kromě změny jídelníčku můžete podpořit své cévní zdraví a prokrvení pomocí specializovaných doplňků. <a href="https://www.proerecta.cz/produkt/proerecta-klasik/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-blue-600 font-bold hover:underline">Proerecta KLASIK</a> obsahuje extrakty z bylin, které přirozeně podporují mikrocirkulaci krve.</p>
       </div>
     `,
     sources: [
@@ -66,7 +66,7 @@ export const blogPosts = [
       
       <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500 my-8">
         <h3 class="text-red-800 font-bold mt-0">Dlouhodobá podpora</h3>
-        <p>Pro muže, kteří chtějí komplexně podpořit svou vitalitu a hormonální rovnováhu, je ideální <a href="https://www.proerecta.cz/produkt/proerecta-long/" class="text-red-600 font-bold hover:underline">Proerecta LONG</a>. Tento doplněk je navržen pro dlouhodobé užívání a stabilizaci hladiny testosteronu.</p>
+        <p>Pro muže, kteří chtějí komplexně podpořit svou vitalitu a hormonální rovnováhu, je ideální <a href="https://www.proerecta.cz/produkt/proerecta-long/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-red-600 font-bold hover:underline">Proerecta LONG</a>. Tento doplněk je navržen pro dlouhodobé užívání a stabilizaci hladiny testosteronu.</p>
       </div>
     `,
     sources: [
@@ -96,7 +96,7 @@ export const blogPosts = [
       
       <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500 my-8">
         <h3 class="text-green-800 font-bold mt-0">Kde ho najít?</h3>
-        <p>Kvalitní extrakt z kotvičníku je klíčovou složkou mnoha našich produktů. Pro okamžitý efekt vyzkoušejte <a href="https://www.proerecta.cz/produkt/proerecta-shot/" class="text-green-600 font-bold hover:underline">Proerecta SHOT</a>, který kombinuje Tribulus s dalšími stimulanty pro rychlý nástup účinku.</p>
+        <p>Kvalitní extrakt z kotvičníku je klíčovou složkou mnoha našich produktů. Pro okamžitý efekt vyzkoušejte <a href="https://www.proerecta.cz/produkt/proerecta-shot/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-green-600 font-bold hover:underline">Proerecta SHOT</a>, který kombinuje Tribulus s dalšími stimulanty pro rychlý nástup účinku.</p>
       </div>
     `,
     sources: [
@@ -131,7 +131,7 @@ export const blogPosts = [
       
       <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-500 my-8">
         <h3 class="text-purple-800 font-bold mt-0">Podpora sebevědomí</h3>
-        <p>Někdy stačí jen vědět, že máte "pojistku". <a href="https://www.proerecta.cz/produkt/proerecta-klasik/" class="text-purple-600 font-bold hover:underline">Proerecta KLASIK</a> vám dodá potřebnou jistotu a fyzickou podporu, abyste se mohli uvolnit a užít si intimitu bez obav.</p>
+        <p>Někdy stačí jen vědět, že máte "pojistku". <a href="https://www.proerecta.cz/produkt/proerecta-klasik/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-purple-600 font-bold hover:underline">Proerecta KLASIK</a> vám dodá potřebnou jistotu a fyzickou podporu, abyste se mohli uvolnit a užít si intimitu bez obav.</p>
       </div>
     `,
     sources: [
@@ -165,7 +165,7 @@ export const blogPosts = [
       
       <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500 my-8">
         <h3 class="text-yellow-800 font-bold mt-0">Koncentrovaná síla</h3>
-        <p>Sníst kilo melounu denně není praktické. Proto jsme ty nejúčinnější látky (jako citrulin a arginin) koncentrovali do <a href="https://www.proerecta.cz/produkt/proerecta-long/" class="text-yellow-600 font-bold hover:underline">Proerecta LONG</a> pro maximální a pohodlný účinek.</p>
+        <p>Sníst kilo melounu denně není praktické. Proto jsme ty nejúčinnější látky (jako citrulin a arginin) koncentrovali do <a href="https://www.proerecta.cz/produkt/proerecta-long/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-yellow-600 font-bold hover:underline">Proerecta LONG</a> pro maximální a pohodlný účinek.</p>
       </div>
     `,
     sources: [
@@ -194,7 +194,7 @@ export const blogPosts = [
       
       <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-500 my-8">
         <h3 class="text-indigo-800 font-bold mt-0">Rychlá pomoc</h3>
-        <p>Pokud potřebujete rychle přepnout z pracovního módu do milostného, <a href="https://www.proerecta.cz/produkt/proerecta-shot/" class="text-indigo-600 font-bold hover:underline">Proerecta SHOT</a> vám dodá energii a pomůže se soustředit na to podstatné.</p>
+        <p>Pokud potřebujete rychle přepnout z pracovního módu do milostného, <a href="https://www.proerecta.cz/produkt/proerecta-shot/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-indigo-600 font-bold hover:underline">Proerecta SHOT</a> vám dodá energii a pomůže se soustředit na to podstatné.</p>
       </div>
     `,
     sources: [
@@ -227,7 +227,7 @@ export const blogPosts = [
       
       <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 my-8">
         <h3 class="text-orange-800 font-bold mt-0">Kombinujte pro lepší efekt</h3>
-        <p>Cvičení je skvělé, ale v kombinaci s <a href="https://www.proerecta.cz/produkt/proerecta-long/" class="text-orange-600 font-bold hover:underline">Proerecta LONG</a> dosáhnete výsledků rychleji díky lepšímu prokrvení tkání.</p>
+        <p>Cvičení je skvělé, ale v kombinaci s <a href="https://www.proerecta.cz/produkt/proerecta-long/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-orange-600 font-bold hover:underline">Proerecta LONG</a> dosáhnete výsledků rychleji díky lepšímu prokrvení tkání.</p>
       </div>
     `,
     sources: [
@@ -258,7 +258,7 @@ export const blogPosts = [
       
       <div class="bg-pink-50 p-6 rounded-xl border-l-4 border-pink-500 my-8">
         <h3 class="text-pink-800 font-bold mt-0">Vše v jednom</h3>
-        <p>Nemusíte shánět každou bylinku zvlášť. <a href="https://www.proerecta.cz/produkt/proerecta-klasik/" class="text-pink-600 font-bold hover:underline">Proerecta KLASIK</a> obsahuje vyváženou směs ověřených afrodiziak pro maximální synergický efekt.</p>
+        <p>Nemusíte shánět každou bylinku zvlášť. <a href="https://www.proerecta.cz/produkt/proerecta-klasik/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-pink-600 font-bold hover:underline">Proerecta KLASIK</a> obsahuje vyváženou směs ověřených afrodiziak pro maximální synergický efekt.</p>
       </div>
     `,
     sources: [
@@ -285,7 +285,7 @@ export const blogPosts = [
       
       <div class="bg-teal-50 p-6 rounded-xl border-l-4 border-teal-500 my-8">
         <h3 class="text-teal-800 font-bold mt-0">Prevence je základ</h3>
-        <p>Udržujte své cévy v kondici zdravým životním stylem a doplňky stravy. <a href="https://www.proerecta.cz/produkt/proerecta-long/" class="text-teal-600 font-bold hover:underline">Proerecta LONG</a> pomáhá udržovat vitalitu cévního systému a podporuje přirozené erektilní procesy.</p>
+        <p>Udržujte své cévy v kondici zdravým životním stylem a doplňky stravy. <a href="https://www.proerecta.cz/produkt/proerecta-long/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-teal-600 font-bold hover:underline">Proerecta LONG</a> pomáhá udržovat vitalitu cévního systému a podporuje přirozené erektilní procesy.</p>
       </div>
     `,
     sources: [
@@ -317,7 +317,7 @@ export const blogPosts = [
       
       <div class="bg-slate-100 p-6 rounded-xl border-l-4 border-slate-500 my-8">
         <h3 class="text-slate-800 font-bold mt-0">Sázka na jistotu</h3>
-        <p>Proerecta je na trhu již od roku 2010. Jsme česká značka s tisíci spokojených zákazníků. Naše produkty <a href="https://www.proerecta.cz/produkty/" class="text-slate-700 font-bold hover:underline">Proerecta KLASIK, LONG a SHOT</a> jsou certifikované a bezpečné.</p>
+        <p>Proerecta je na trhu již od roku 2010. Jsme česká značka s tisíci spokojených zákazníků. Naše produkty <a href="https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" class="text-slate-700 font-bold hover:underline">Proerecta KLASIK, LONG a SHOT</a> jsou certifikované a bezpečné.</p>
       </div>
     `,
     sources: [
