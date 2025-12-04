@@ -41,7 +41,6 @@ export default function Home() {
         
         {/* Content Wrapper for White Card Effect */}
         <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
-          <FeaturesSection />
           <IngredientsSection />
           
           {/* Stylish Down Arrow Divider */}
@@ -62,8 +61,9 @@ export default function Home() {
             </div>
           </div>
 
-          <ProductsSection />
           <ComparisonTable />
+          <ProductsSection />
+          <FeaturesSection />
           <div id="reference">
             <TestimonialsSection />
           </div>
