@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { DesktopStickyNav } from "@/components/DesktopStickyNav";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -36,6 +37,7 @@ export default function Home() {
       <TopBar />
       <MobileHeader />
       <ExitIntentPopup />
+      <DesktopStickyNav />
       <main className="flex-grow">
         <HeroSection />
         
