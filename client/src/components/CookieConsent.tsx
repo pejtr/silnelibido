@@ -30,26 +30,26 @@ export function CookieConsent() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-[200] p-4 md:p-6 animate-in slide-in-from-bottom duration-500">
-      <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
-        <div className="flex-1 text-sm text-slate-600">
-          <h3 className="font-bold text-slate-900 mb-1 text-base">Respektujeme vaše soukromí</h3>
-          <p>
-            Používáme cookies, abychom vám zajistili co nejlepší zážitek z našeho webu, analyzovali návštěvnost a mohli vám zobrazovat relevantní reklamu (např. na Skliku). Kliknutím na "Souhlasím" nám dáváte svolení s jejich použitím.
+    <div className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-[200] p-3 md:p-6 animate-in slide-in-from-bottom duration-500">
+      <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-3 md:gap-8">
+        <div className="flex-1 text-xs md:text-sm text-slate-600 pr-6 md:pr-0">
+          <h3 className="font-bold text-slate-900 mb-1 text-sm md:text-base">Respektujeme vaše soukromí</h3>
+          <p className="leading-tight">
+            Používáme cookies pro lepší zážitek, analýzu a reklamu. Kliknutím na "Souhlasím" dáváte svolení.
           </p>
         </div>
         
-        <div className="flex items-center gap-3 w-full md:w-auto">
+        <div className="flex items-center gap-2 w-full md:w-auto">
           <Button 
             variant="outline" 
             onClick={handleDecline}
-            className="flex-1 md:flex-none whitespace-nowrap"
+            className="flex-1 md:flex-none whitespace-nowrap h-8 text-xs md:text-sm md:h-10"
           >
             Odmítnout
           </Button>
           <Button 
             onClick={handleAccept}
-            className="flex-1 md:flex-none bg-[#D32F2F] hover:bg-[#B71C1C] text-white whitespace-nowrap"
+            className="flex-1 md:flex-none bg-[#D32F2F] hover:bg-[#B71C1C] text-white whitespace-nowrap h-8 text-xs md:text-sm md:h-10"
           >
             Souhlasím
           </Button>
@@ -57,10 +57,10 @@ export function CookieConsent() {
         
         <button 
           onClick={() => setIsVisible(false)}
-          className="absolute top-2 right-2 md:hidden text-slate-400 hover:text-slate-600"
+          className="absolute top-2 right-2 md:hidden text-slate-400 hover:text-slate-600 p-1"
           aria-label="Zavřít"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4" />
         </button>
       </div>
     </div>
