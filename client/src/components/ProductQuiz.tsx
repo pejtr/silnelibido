@@ -110,7 +110,16 @@ export function ProductQuiz() {
                   Každý muž (i žena) má jiné potřeby. Náš krátký průvodce vám pomůže vybrat to nejlepší pro vás.
                 </p>
                 <Button 
-                  onClick={() => setIsStarted(true)}
+                  onClick={() => {
+                    setIsStarted(true);
+                    // Wait for state update and render, then scroll
+                    setTimeout(() => {
+                      const quizElement = document.getElementById('quiz');
+                      if (quizElement) {
+                        quizElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }, 100);
+                  }}
                   className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full md:w-auto"
                 >
                   Spustit průvodce <ArrowRight className="ml-2 w-5 h-5" />
