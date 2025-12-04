@@ -114,39 +114,7 @@ export function HeroSection() {
                 Nenechte se o něj obrat.
               </p>
 
-              {/* Sticky Gift Icon (Mobile & Desktop) */}
-              <a 
-                href="#products" 
-                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
-              >
-                 <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
-                    <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
-                 </div>
-              </a>
-
-              {/* Sticky Quiz Icon (Mobile & Desktop) - Appears when Gift disappears */}
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const quizElement = document.getElementById('quiz-section');
-                  if (quizElement) {
-                    const targetPosition = quizElement.getBoundingClientRect().top + window.pageYOffset;
-                    window.scrollTo({
-                      top: targetPosition,
-                      behavior: 'smooth'
-                    });
-                  }
-                }}
-                className={`fixed top-1/2 -translate-y-1/2 left-0 z-[200] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showQuiz ? 'translate-x-0' : '-translate-x-full'}`}
-                aria-label="Spustit kvíz"
-              >
-                 <div className="bg-[#2A2A5A]/90 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#2A2A5A]">
-                    <HelpCircle className="w-8 h-8 text-white animate-bounce group-hover:animate-none" />
-                    <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white text-[#2A2A5A] text-xs font-bold px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                      Kvíz: Vyberte si produkt
-                    </span>
-                 </div>
-              </button>
+              
 
 
 
@@ -252,6 +220,39 @@ export function HeroSection() {
       </div>
 
 
+      {/* Sticky Gift Icon (Mobile & Desktop) - Moved to root for z-index fix */}
+      <a 
+        href="#products" 
+        className={`fixed top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showGift ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+         <div className="bg-[#333]/80 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#333]">
+            <Gift className="w-8 h-8 text-[#FFC107] animate-pulse group-hover:animate-none" />
+         </div>
+      </a>
+
+      {/* Sticky Quiz Icon (Mobile & Desktop) - Appears when Gift disappears - Moved to root for z-index fix */}
+      <button 
+        onClick={(e) => {
+          e.preventDefault();
+          const quizElement = document.getElementById('quiz-section');
+          if (quizElement) {
+            const targetPosition = quizElement.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }}
+        className={`fixed top-1/2 -translate-y-1/2 left-0 z-[9999] transition-all duration-500 active:scale-95 hover:scale-105 group opacity-80 hover:opacity-100 ${showQuiz ? 'translate-x-0' : '-translate-x-full'}`}
+        aria-label="Spustit kvíz"
+      >
+         <div className="bg-[#2A2A5A]/90 p-3 rounded-r-xl backdrop-blur-sm shadow-lg border-l-0 border border-white/10 group-hover:bg-[#2A2A5A]">
+            <HelpCircle className="w-8 h-8 text-white animate-bounce group-hover:animate-none" />
+            <span className="absolute left-full top-1/2 -translate-y-1/2 ml-2 bg-white text-[#2A2A5A] text-xs font-bold px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              Kvíz: Vyberte si produkt
+            </span>
+         </div>
+      </button>
     </div>
   );
 }
