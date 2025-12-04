@@ -34,7 +34,7 @@ export function MobileHeader() {
 
         </button>
         
-        <a href={affiliateLink} className="flex-shrink-0">
+        <a href={affiliateLink} onClick={vibrate} className="flex-shrink-0">
           <img 
             src="/images/logo.svg" 
             alt="Proerecta" 
