@@ -31,11 +31,11 @@ export function IngredientsSection() {
         </div>
 
         {/* Ingredients Cycle Image */}
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <img 
             src="/images/ingredients-comparison.png" 
             alt="Srovnání složení Proerecta produktů" 
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain scale-100 md:scale-110 transform origin-center"
             loading="lazy"
           />
           
