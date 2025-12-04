@@ -110,7 +110,7 @@ export function HeroSection() {
               </h1>
               
               <p className="text-base md:text-xl text-white/90 md:text-slate-600 leading-relaxed drop-shadow-md md:drop-shadow-none max-w-xs mx-auto md:max-w-none">
-                Sex udržuje milostný vztah.<br className="hidden md:block"/>
+                <span className="text-2xl md:text-3xl font-black uppercase tracking-wide">Sex</span> udržuje milostný vztah.<br className="hidden md:block"/>
                 Nenechte se o něj obrat.
               </p>
 
