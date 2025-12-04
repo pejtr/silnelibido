@@ -9,7 +9,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
-import { NewsletterSection } from "@/components/NewsletterSection";
+
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
@@ -70,7 +70,7 @@ export default function Home() {
           <ProductQuiz />
           <FAQSection />
         </div>
-        <NewsletterSection />
+
       </main>
       <Footer />
 

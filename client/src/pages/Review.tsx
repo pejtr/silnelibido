@@ -162,7 +162,7 @@ export default function Review() {
 
           <figure className="my-10">
             <img 
-              src="/images/proerecta-women-long-real.png" 
+              src="/images/proerecta-women-trans.png" 
               alt="Proerecta Long a Women" 
               className="w-full rounded-xl shadow-lg border border-slate-100"
             />
@@ -207,7 +207,7 @@ export default function Review() {
           <div className="flex flex-col md:flex-row gap-8 items-center my-12 bg-slate-50 p-8 rounded-2xl border border-slate-200 not-prose">
             <div className="w-full md:w-1/3">
               <img 
-                src="/images/proerecta-long-detail.webp" 
+                src="/images/proerecta-long-trans.png" 
                 alt="Detail Proerecta Long" 
                 className="w-full rounded-lg shadow-md mix-blend-multiply"
               />
