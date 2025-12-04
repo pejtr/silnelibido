@@ -162,12 +162,41 @@
     "badge": {
       "text": "PRO ŽENY",
       "color": "#E91E63"
-    }
+    },
+    "packages": [
+      {
+        "id": "women-1",
+        "name": "1 balení",
+        "price": 599,
+        "originalPrice": null,
+        "savings": null,
+        "description": "cena za 1 balení\n1 balení = 30 dávek",
+        "badge": null
+      },
+      {
+        "id": "women-2",
+        "name": "2 + 1 ZDARMA",
+        "price": 1197,
+        "originalPrice": 1797,
+        "savings": 600,
+        "description": "3 balení = 90 dávek\n1 balení za 399 Kč",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "women-3",
+        "name": "4 balení",
+        "price": 2396,
+        "originalPrice": null,
+        "savings": null,
+        "description": "4 balení = 120 dávek",
+        "badge": null
+      }
+    ]
   },
   {
     "id": "proerecta-prostate",
     "name": "Proerecta PROSTATE",
-    "price": 369,
+    "price": 599,
     "currency": "CZK",
     "image": "/images/proerecta-prostate-real.png",
     "description": "Dlouhodobá rostlinná péče o kondici a vitalitu prostaty a močových cest.",
@@ -176,12 +205,41 @@
       "Normální funkce prostaty",
       "Zdraví močových cest",
       "Serenoa plazivá"
+    ],
+    "packages": [
+      {
+        "id": "prostate-1",
+        "name": "1 balení",
+        "price": 599,
+        "originalPrice": null,
+        "savings": null,
+        "description": "1 balení = 60 dávek",
+        "badge": null
+      },
+      {
+        "id": "prostate-2",
+        "name": "2 + 1 ZDARMA",
+        "price": 1197,
+        "originalPrice": 1797,
+        "savings": 600,
+        "description": "3 balení = 180 dávek\n1 balení za 399 Kč",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "prostate-3",
+        "name": "4 balení",
+        "price": 2396,
+        "originalPrice": null,
+        "savings": null,
+        "description": "4 balení = 240 dávek",
+        "badge": null
+      }
     ]
   },
   {
     "id": "proerecta-gumidci",
     "name": "Proerecta GUMÍDCI",
-    "price": 499,
+    "price": 599,
     "currency": "CZK",
     "image": "/images/proerecta-gumidci-new.png",
     "description": "Želatinové bonbony pro podporu sexuálního výkonu, výdrže a pevné erekce.",
@@ -190,6 +248,35 @@
       "Chutná forma (bonbony)",
       "Podpora výkonu",
       "Vitamíny a minerály"
+    ],
+    "packages": [
+      {
+        "id": "gumidci-1",
+        "name": "1 balení",
+        "price": 599,
+        "originalPrice": null,
+        "savings": null,
+        "description": "1 balení = 30 dní",
+        "badge": null
+      },
+      {
+        "id": "gumidci-2",
+        "name": "2 + 1 ZDARMA",
+        "price": 1197,
+        "originalPrice": 1797,
+        "savings": 600,
+        "description": "Cena za balení 399 Kč\n3 balení = 90 dní",
+        "badge": "OBLÍBENÉ"
+      },
+      {
+        "id": "gumidci-3",
+        "name": "4 + 2 ZDARMA",
+        "price": 2394,
+        "originalPrice": 3594,
+        "savings": 1200,
+        "description": "Cena za balení 399 Kč\n6 balení = 180 dní",
+        "badge": null
+      }
     ]
   }
 ]
