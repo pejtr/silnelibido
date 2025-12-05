@@ -246,24 +246,43 @@ export function HeroSection() {
               </div>
 
               {/* Product Image (Overlay - Left - Small Shot) */}
-              <div className="absolute bottom-0 left-[-50px] md:left-[-150px] lg:left-[-280px] w-[280px] md:w-[400px] lg:w-[550px] z-20 transform translate-y-10 flex items-end">
+              <div 
+                className="absolute bottom-0 left-[-50px] md:left-[-150px] lg:left-[-280px] w-[280px] md:w-[400px] lg:w-[550px] z-20 transform translate-y-10 flex items-end animate-float transition-transform duration-100 ease-out group"
+                style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
+              >
                 <div className="w-[35%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.png" 
+                    src="/images/proerecta-shot-trans.webp" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </div>
                 {/* Long Product (Much Larger, next to Shot) */}
-                <div className="w-[65%] -ml-16 mb-4 relative z-0">
+                <div className="w-[65%] -ml-16 mb-4 relative z-0 group/product">
                   <img 
                     src="/images/proerecta-klasik-trans-new.webp" 
                     alt="Proerecta Klasik" 
-                    className="w-full h-auto drop-shadow-xl"
+                    className="w-full h-auto drop-shadow-[0_25px_25px_rgba(0,0,0,0.35)]"
                   />
+                  
+                  {/* Interactive Tooltip */}
+                  <div className="absolute top-1/4 right-4 z-30">
+                    <div className="relative group/tooltip">
+                      <button className="w-6 h-6 bg-white/90 backdrop-blur text-[#2A2A5A] rounded-full shadow-lg flex items-center justify-center font-bold text-xs border border-[#2A2A5A]/10 hover:scale-110 transition-transform cursor-help">
+                        i
+                      </button>
+                      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-2 w-48 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 translate-x-2 group-hover/tooltip:translate-x-0 text-left">
+                        <p className="text-xs font-bold text-[#2A2A5A] mb-1">Proerecta Klasik</p>
+                        <p className="text-[10px] text-slate-600 leading-tight">
+                          Okamžitá podpora erekce do 45 minut. Užívejte 1-2 tobolky před akcí.
+                        </p>
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 w-2 h-2 bg-white rotate-45 border-l border-b border-slate-100"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
+              </div> 
+              
               {/* Red Arrow Decoration */}
               <div className="absolute top-1/4 right-0 w-24 h-24 z-10 hidden lg:block">
                  <svg viewBox="0 0 100 100" fill="none" stroke="#D32F2F" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
