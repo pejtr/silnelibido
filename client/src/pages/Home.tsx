@@ -1,17 +1,18 @@
 import { TopBar } from "../components/TopBar";
 import { HeroSection } from "@/components/HeroSection";
 import { MobileHeader } from "@/components/MobileHeader";
-import { IngredientsSection } from "@/components/IngredientsSection";
-import { FeaturesSection } from "@/components/FeaturesSection";
-import { ProductsSection } from "@/components/ProductsSection";
-import { ProductQuiz } from "@/components/ProductQuiz";
-import { ComparisonTable } from "@/components/ComparisonTable";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { FAQSection } from "@/components/FAQSection";
-import BenefitsSection from "@/components/BenefitsSection";
+import { lazy, Suspense } from "react";
 import { Footer } from "@/components/Footer";
-
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+
+const IngredientsSection = lazy(() => import("@/components/IngredientsSection").then(module => ({ default: module.IngredientsSection })));
+const FeaturesSection = lazy(() => import("@/components/FeaturesSection").then(module => ({ default: module.FeaturesSection })));
+const ProductsSection = lazy(() => import("@/components/ProductsSection").then(module => ({ default: module.ProductsSection })));
+const ProductQuiz = lazy(() => import("@/components/ProductQuiz").then(module => ({ default: module.ProductQuiz })));
+const ComparisonTable = lazy(() => import("@/components/ComparisonTable").then(module => ({ default: module.ComparisonTable })));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection").then(module => ({ default: module.TestimonialsSection })));
+const FAQSection = lazy(() => import("@/components/FAQSection").then(module => ({ default: module.FAQSection })));
+const BenefitsSection = lazy(() => import("@/components/BenefitsSection"));
 import { DesktopStickyNav } from "@/components/DesktopStickyNav";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
@@ -44,7 +45,9 @@ export default function Home() {
         
         {/* Content Wrapper for White Card Effect */}
         <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
-          <IngredientsSection />
+          <Suspense fallback={<div className="h-96" />}>
+            <IngredientsSection />
+          </Suspense>
           
           {/* Stylish Down Arrow Divider */}
           <div className="bg-white flex justify-center pt-0 pb-8 -mb-12 relative z-10">
@@ -64,15 +67,17 @@ export default function Home() {
             </div>
           </div>
 
-          <ComparisonTable />
-          <ProductsSection />
-          <FeaturesSection />
-          <ProductQuiz />
-          <FAQSection />
-          <div id="reference">
-            <TestimonialsSection />
-          </div>
-          <BenefitsSection />
+          <Suspense fallback={<div className="h-96" />}>
+            <ComparisonTable />
+            <ProductsSection />
+            <FeaturesSection />
+            <ProductQuiz />
+            <FAQSection />
+            <div id="reference">
+              <TestimonialsSection />
+            </div>
+            <BenefitsSection />
+          </Suspense>
         </div>
 
       </main>
