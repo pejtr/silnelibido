@@ -29,13 +29,13 @@ export function TestimonialsSection() {
           {/* Avatars Group */}
           <div className="flex items-center justify-center -space-x-4 mb-8">
             <div className="w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg">
-              <img src="/images/avatar-1.jpg" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/men/32.jpg"} />
+              <img src="/images/avatar-1.webp" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/men/32.jpg"} />
             </div>
             <div className="w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg z-10">
-              <img src="/images/avatar-2.jpg" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/women/44.jpg"} />
+              <img src="/images/avatar-2.webp" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/women/44.jpg"} />
             </div>
             <div className="w-16 h-16 rounded-full border-4 border-white overflow-hidden shadow-lg z-20">
-              <img src="/images/avatar-3.jpg" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/men/85.jpg"} />
+              <img src="/images/avatar-3.webp" alt="User" className="w-full h-full object-cover" onError={(e) => e.currentTarget.src = "https://randomuser.me/api/portraits/men/85.jpg"} />
             </div>
             <div className="w-16 h-16 rounded-full border-4 border-white bg-[#2A2A5A] text-white flex items-center justify-center shadow-lg z-30">
               <div className="text-center leading-none">

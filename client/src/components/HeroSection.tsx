@@ -240,21 +240,21 @@ export function HeroSection() {
               <div className="flex flex-wrap justify-start gap-2 md:gap-12 pt-2 md:pt-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                     <img src="/images/icon-czech-flag-round.png" alt="Česká značka" className="w-12 h-12 object-contain drop-shadow-md" />
+                     <img src="/images/icon-czech-flag-round.webp" alt="Česká značka" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Česká<br/>značka</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <img src="/images/icon-herbal-leaf-round.png" alt="Bylinné produkty" className="w-12 h-12 object-contain drop-shadow-md" />
+                    <img src="/images/icon-herbal-leaf-round.webp" alt="Bylinné produkty" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Bylinné<br/>produkty</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-12 h-12 rounded-full bg-white/10 md:bg-transparent flex items-center justify-center backdrop-blur-sm md:backdrop-blur-none border border-white/20 md:border-none">
-                    <img src="/images/icon-discrete-box-round.png" alt="Diskrétní balení" className="w-12 h-12 object-contain drop-shadow-md" />
+                    <img src="/images/icon-discrete-box-round.webp" alt="Diskrétní balení" className="w-12 h-12 object-contain drop-shadow-md" />
                   </div>
                   <span className="text-xs font-bold text-white md:text-[#2A2A5A] text-center leading-tight drop-shadow-md md:drop-shadow-none">Diskrétní<br/>balení</span>
                 </div>
@@ -264,7 +264,7 @@ export function HeroSection() {
               <div className="md:hidden absolute bottom-[-40px] right-[-80px] w-[220px] z-20 flex items-end">
                 <div className="w-[30%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.png" 
+                    src="/images/proerecta-shot-trans.webp" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
@@ -284,7 +284,7 @@ export function HeroSection() {
               <div className="hidden md:flex flex-wrap justify-center lg:justify-start items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
                 <span className="text-sm font-bold text-[#2A2A5A] mr-2">Napsali o nás:</span>
                 <div className="flex items-center gap-8 h-8">
-                  <img src="/images/idnes-logo.png" alt="iDNES.cz" className="h-full object-contain" loading="lazy" />
+                  <img src="/images/idnes-logo.webp" alt="iDNES.cz" className="h-full object-contain" loading="lazy" />
                   <span className="font-serif font-bold text-slate-400 text-2xl flex items-center h-full">doma<span className="text-red-400">.cz</span></span>
                   <span className="font-sans font-black text-slate-400 text-2xl tracking-tighter flex items-center h-full">EREKCE.cz</span>
                 </div>
@@ -315,7 +315,7 @@ export function HeroSection() {
               >
                 <div className="w-[35%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.png" 
+                    src="/images/proerecta-shot-trans.webp" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
@@ -355,7 +355,7 @@ export function HeroSection() {
 
               {/* Floating Leaves */}
               <div className="absolute bottom-20 right-[300px] w-16 h-16 z-30 animate-bounce duration-[3000ms]">
-                 <img src="/images/zensen.png" alt="Leaf" className="w-full h-full object-contain opacity-80 rotate-45" />
+                 <img src="/images/zensen.webp" alt="Leaf" className="w-full h-full object-contain opacity-80 rotate-45" />
               </div>
 
             </div>

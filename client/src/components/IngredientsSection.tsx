@@ -33,7 +33,7 @@ export function IngredientsSection() {
         {/* Ingredients Cycle Image */}
         <div className="relative max-w-7xl mx-auto">
           <img 
-            src="/images/ingredients-comparison.png" 
+            src="/images/ingredients-comparison.webp" 
             alt="Srovnání složení Proerecta produktů" 
             className="w-full h-auto object-contain scale-100 md:scale-110 transform origin-center"
             loading="lazy"
@@ -43,7 +43,7 @@ export function IngredientsSection() {
           <div className="md:hidden grid grid-cols-1 gap-4 mt-8">
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img src="/images/tribulus-icon.png" alt="Tribulus" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/images/tribulus-icon.webp" alt="Tribulus" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Tribulus Terrestris</h3>
@@ -53,7 +53,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/maca.png" alt="Maca" className="w-8 h-8 object-contain" loading="lazy" />
+                <img src="/images/maca.webp" alt="Maca" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">
@@ -67,7 +67,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/zensen.png" alt="Ženšen" className="w-8 h-8 object-contain" loading="lazy" />
+                <img src="/images/zensen.webp" alt="Ženšen" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Ženšen Pravý</h3>
@@ -77,7 +77,7 @@ export function IngredientsSection() {
 
             <div className="bg-white p-5 rounded-xl border border-slate-100 shadow-sm flex gap-4 items-start">
               <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
-                <img src="/images/hrozny.png" alt="Hrozny" className="w-8 h-8 object-contain" loading="lazy" />
+                <img src="/images/hrozny.webp" alt="Hrozny" className="w-8 h-8 object-contain" loading="lazy" />
               </div>
               <div>
                 <h3 className="font-bold text-[#D32F2F] mb-1 text-lg">Extrakt z hroznů</h3>
