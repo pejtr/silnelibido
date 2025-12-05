@@ -11,6 +11,19 @@ export function HeroSection() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [heroImage, setHeroImage] = useState("/images/hero-couple.webp");
+
+  useEffect(() => {
+    // Check URL parameters for age targeting
+    const params = new URLSearchParams(window.location.search);
+    const ageParam = params.get('age');
+    
+    if (ageParam === '35') {
+      setHeroImage("/images/hero-couple-35.webp");
+    } else {
+      setHeroImage("/images/hero-couple.webp");
+    }
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -151,7 +164,7 @@ export function HeroSection() {
         {/* Mobile Background Image (Full Screen) */}
         <div className="md:hidden absolute top-0 left-0 w-full h-[110%] z-0">
           <img 
-            src="/images/hero-couple.jpg" 
+            src={heroImage}
             alt="Background" 
             className="w-full h-full object-cover object-[center_top]"
             fetchPriority="high"
@@ -269,9 +282,11 @@ export function HeroSection() {
               {/* Couple Image (Masked) */}
               <div className="relative w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-0 mr-12 md:mr-24 flex items-center -translate-x-[151px]">
                 <img 
-                  src="/images/hero-couple.jpg" 
+                  src={heroImage}
                   alt="Happy Couple" 
                   className="w-full h-full object-cover object-[center_20%] scale-125 -scale-x-100"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
 
