@@ -10,6 +10,36 @@ export function HeroSection() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      // Only apply parallax on desktop
+      if (window.innerWidth >= 1024) {
+        const x = (window.innerWidth - e.clientX * 2) / 50;
+        const y = (window.innerHeight - e.clientY * 2) / 50;
+        setOffset({ x, y });
+      }
+    };
+
+    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
+      // Apply parallax on mobile/tablet based on tilt
+      if (window.innerWidth < 1024 && e.beta && e.gamma) {
+        // beta is front-to-back tilt in degrees, gamma is left-to-right
+        const x = e.gamma / 2; // limit movement
+        const y = (e.beta - 45) / 2; // subtract 45deg as base holding angle
+        setOffset({ x, y });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
