@@ -12,6 +12,11 @@ export function HeroSection() {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [heroImage, setHeroImage] = useState("/images/hero-couple.webp");
+  const [headline, setHeadline] = useState({
+    main: "Přírodní péče o váš",
+    highlight: "milostný život",
+    sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat."
+  });
 
   useEffect(() => {
     // Check URL parameters for age targeting
@@ -20,8 +25,18 @@ export function HeroSection() {
     
     if (ageParam === '35') {
       setHeroImage("/images/hero-couple-35.webp");
+      setHeadline({
+        main: "Maximalizujte svůj",
+        highlight: "sexuální potenciál",
+        sub: "Více energie, tvrdší erekce a lepší výdrž. Buďte vždy připraven."
+      });
     } else {
       setHeroImage("/images/hero-couple.webp");
+      setHeadline({
+        main: "Přírodní péče o váš",
+        highlight: "milostný život",
+        sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat."
+      });
     }
   }, []);
 
@@ -181,12 +196,12 @@ export function HeroSection() {
             {/* Left Column: Text */}
             <div className="max-w-xl space-y-4 md:space-y-8 text-left relative z-10">
               <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.1] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none">
-                Přírodní péče o váš <br/>
-                <span className="text-white md:text-[#2A2A5A]">milostný život</span>
+                {headline.main} <br/>
+                <span className="text-white md:text-[#2A2A5A]">{headline.highlight}</span>
               </h1>
               
               <p className="text-base md:text-xl text-white md:text-slate-600 leading-snug drop-shadow-md md:drop-shadow-none max-w-[90%] md:max-w-none">
-                Sex udržuje milostný vztah. Nenechte se o něj obrat.
+                {headline.sub}
               </p>
 
               
