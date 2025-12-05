@@ -11,7 +11,7 @@ const features = [
     title: "Přírodní složení",
     description: (
       <>
-        Ženšen, <a href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" className="text-[#D32F2F] hover:underline font-medium" target="_blank" rel="noopener noreferrer">Maca</a>, Rhodiola a aminokyseliny. Žádná nebezpečná chemie.
+        <a href="https://dobracajovnapraha.cz/produkt/korejsky-zensen-cerveny/" className="text-[#D32F2F] hover:underline font-medium" target="_blank" rel="noopener noreferrer">Ženšen</a>, <a href="https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02" className="text-[#D32F2F] hover:underline font-medium" target="_blank" rel="noopener noreferrer">Maca</a>, Rhodiola a aminokyseliny. Žádná nebezpečná chemie.
       </>
     )
   },
