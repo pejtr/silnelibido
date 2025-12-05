@@ -22,6 +22,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'wouter'],
+          'ui-vendor': ['lucide-react', 'framer-motion', 'clsx', 'tailwind-merge'],
+          'radix-vendor': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot'],
+        },
+      },
+    },
   },
   server: {
     port: 3000,

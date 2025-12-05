@@ -75,38 +75,45 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const productsSection = document.getElementById('products');
-      
-      // Determine scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsScrollingUp(false); // Scrolling down
-      } else {
-        setIsScrollingUp(true); // Scrolling up
-      }
-      setLastScrollY(currentScrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const productsSection = document.getElementById('products');
+          
+          // Determine scroll direction
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            setIsScrollingUp(false); // Scrolling down
+          } else {
+            setIsScrollingUp(true); // Scrolling up
+          }
+          setLastScrollY(currentScrollY);
 
-      if (productsSection) {
-        const rect = productsSection.getBoundingClientRect();
-        // Logic for switching between Gift and Quiz based on section visibility
-        // But now also respecting scroll direction for visibility
-        
-        if (rect.top < window.innerHeight * 0.8) {
-          // In products section or below
-          setShowGift(false);
-          // Show quiz only if scrolling up
-          setShowQuiz(isScrollingUp);
-        } else {
-          // Above products section
-          // Show gift only if scrolling up
-          setShowGift(isScrollingUp);
-          setShowQuiz(false);
-        }
+          if (productsSection) {
+            const rect = productsSection.getBoundingClientRect();
+            // Logic for switching between Gift and Quiz based on section visibility
+            // But now also respecting scroll direction for visibility
+            
+            if (rect.top < window.innerHeight * 0.8) {
+              // In products section or below
+              setShowGift(false);
+              // Show quiz only if scrolling up
+              setShowQuiz(isScrollingUp);
+            } else {
+              // Above products section
+              // Show gift only if scrolling up
+              setShowGift(isScrollingUp);
+              setShowQuiz(false);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY, isScrollingUp]);
 

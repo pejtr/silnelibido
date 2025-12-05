@@ -2,14 +2,34 @@
 <html lang="en">
 
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W17ZRESZWM"></script>
+    <!-- Google tag (gtag.js) - Deferred -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-W17ZRESZWM');
+      // Defer GTM until user interaction or 4s delay
+      (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-W17ZRESZWM';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-W17ZRESZWM');
+        }
+        
+        // Load on interaction
+        ['click', 'scroll', 'touchstart', 'mousemove'].forEach(function(event) {
+          window.addEventListener(event, loadGTM, { once: true, passive: true });
+        });
+        
+        // Fallback load after 4 seconds
+        setTimeout(loadGTM, 4000);
+      })();
     </script>
     <meta charset="UTF-8" />
     <meta
