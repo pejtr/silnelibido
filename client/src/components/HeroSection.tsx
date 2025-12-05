@@ -24,8 +24,10 @@ export function HeroSection() {
     const params = new URLSearchParams(window.location.search);
     const ageParam = params.get('age');
     
+    const isMobile = window.innerWidth < 768;
+    
     if (ageParam === '35') {
-      setHeroImage("/images/hero-couple-35.webp");
+      setHeroImage(isMobile ? "/images/hero-couple-35-mobile.webp" : "/images/hero-couple-35.webp");
       setHeadline({
         main: "Maximalizujte svůj",
         highlight: "sexuální potenciál",
@@ -33,7 +35,7 @@ export function HeroSection() {
         cta: "Posílit libido"
       });
     } else {
-      setHeroImage("/images/hero-couple.webp");
+      setHeroImage(isMobile ? "/images/hero-couple-mobile.webp" : "/images/hero-couple.webp");
       setHeadline({
         main: "Přírodní péče o váš",
         highlight: "milostný život",
@@ -188,7 +190,7 @@ export function HeroSection() {
             fetchPriority="high"
             decoding="async"
             width="800"
-            height="1200"
+            height="447"
           />
           {/* Dark Overlay for readability */}
           <div className="absolute top-0 left-0 w-full h-full bg-[#2A2A5A]/40 mix-blend-multiply"></div>
