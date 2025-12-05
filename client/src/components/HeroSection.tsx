@@ -187,6 +187,8 @@ export function HeroSection() {
             className="w-full h-full object-cover object-[center_top]"
             fetchPriority="high"
             decoding="async"
+            width="800"
+            height="1200"
           />
           {/* Dark Overlay for readability */}
           <div className="absolute top-0 left-0 w-full h-full bg-[#2A2A5A]/40 mix-blend-multiply"></div>
@@ -305,6 +307,8 @@ export function HeroSection() {
                   className="w-full h-full object-cover object-[center_20%] scale-125 -scale-x-100"
                   fetchPriority="high"
                   decoding="async"
+                  width="550"
+                  height="550"
                 />
               </div>
 
