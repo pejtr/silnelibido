@@ -224,3 +224,12 @@ body {
 .animate-zoom-in-out {
   animation: zoom-in-out 1s ease-in-out;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
