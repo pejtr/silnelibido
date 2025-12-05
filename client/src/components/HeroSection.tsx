@@ -269,6 +269,9 @@ export function HeroSection() {
                     src="/images/proerecta-shot-trans.webp" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
+                    loading="eager"
+                    width="203"
+                    height="514"
                   />
                 </div>
                 <div className="w-[70%] -ml-8 mb-2 relative z-0">
@@ -322,6 +325,9 @@ export function HeroSection() {
                     src="/images/proerecta-shot-trans.webp" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
+                    loading="eager"
+                    width="203"
+                    height="514"
                   />
                 </div>
                 {/* Long Product (Much Larger, next to Shot) */}
@@ -330,6 +336,9 @@ export function HeroSection() {
                     src="/images/proerecta-klasik-trans-new.webp" 
                     alt="Proerecta Klasik" 
                     className="w-full h-auto drop-shadow-[0_25px_25px_rgba(0,0,0,0.35)]"
+                    loading="eager"
+                    width="300"
+                    height="309"
                   />
                   
                   {/* Interactive Tooltip */}
