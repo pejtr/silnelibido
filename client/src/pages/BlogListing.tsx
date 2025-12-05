@@ -40,20 +40,18 @@ export default function BlogListing() {
       <header className="bg-white py-4 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <a className="flex items-center gap-1">
-              <span className="text-2xl font-bold text-[#2A2A5A]">proerecta</span>
-              <div className="w-2 h-2 bg-[#D32F2F] rounded-full mt-1"></div>
-            </a>
+          <Link href="/" className="flex items-center gap-1">
+            <span className="text-2xl font-bold text-[#2A2A5A]">SilnéLibido.cz</span>
+            <div className="w-2 h-2 bg-[#D32F2F] rounded-full mt-1"></div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-            <Link href="/">
-              <a className="hover:text-[#D32F2F] transition-colors">Domů</a>
+            <Link href="/" className="hover:text-[#D32F2F] transition-colors">
+              Domů
             </Link>
-            <Link href="/blog">
-              <a className="hover:text-[#D32F2F] transition-colors">Odborné články</a>
+            <Link href="/blog" className="hover:text-[#D32F2F] transition-colors">
+              Odborné články
             </Link>
             <a href="https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
               Doprava zdarma od 1500 Kč
