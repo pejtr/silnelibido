@@ -282,7 +282,7 @@ export function HeroSection() {
               >
                 <div className="w-[35%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.webp" 
+                    src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
