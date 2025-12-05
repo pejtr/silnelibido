@@ -30,7 +30,7 @@ export function HeroSection() {
         main: "Maximalizujte svůj",
         highlight: "sexuální potenciál",
         sub: "Více energie, tvrdší erekce a lepší výdrž. Buďte vždy připraven.",
-        cta: "Chci maximální výkon"
+        cta: "Posílit libido"
       });
     } else {
       setHeroImage("/images/hero-couple.webp");

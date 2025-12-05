@@ -46,39 +46,132 @@ export default function BlogListing() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
-            <Link href="/" className="hover:text-[#D32F2F] transition-colors">
-              Domů
-            </Link>
+          <nav className="hidden md:flex items-center justify-between flex-1 ml-8 text-sm font-medium text-slate-700">
+            {/* Left Side Links */}
+            <div className="flex items-center gap-6">
+              <Link href="/" className="hover:text-[#D32F2F] transition-colors">
+                Domů
+              </Link>
+            </div>
             
-            {/* Gender Buttons */}
-            <div className="flex items-center gap-3">
-              <a 
-                href="https://www.proerecta.cz/pro-muze/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-full hover:bg-[#1e293b] transition-colors shadow-sm"
-              >
-                <span className="text-lg leading-none">♂</span>
-                <span className="font-bold text-xs tracking-wide">PRO MUŽE</span>
-              </a>
-              <a 
-                href="https://www.proerecta.cz/pro-zeny/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#e11d48] text-white px-4 py-2 rounded-full hover:bg-[#be123c] transition-colors shadow-sm"
-              >
-                <span className="text-lg leading-none">♀</span>
-                <span className="font-bold text-xs tracking-wide">PRO ŽENY</span>
-              </a>
+            {/* Center: Gender Buttons with Dropdowns */}
+            <div className="flex items-center gap-3 absolute left-1/2 transform -translate-x-1/2">
+              {/* PRO MUŽE Dropdown */}
+              <div className="relative group">
+                <a 
+                  href="https://www.proerecta.cz/pro-muze/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-full hover:bg-[#1e293b] transition-colors shadow-sm"
+                >
+                  <span className="text-lg leading-none">♂</span>
+                  <span className="font-bold text-xs tracking-wide">PRO MUŽE</span>
+                </a>
+                
+                {/* Dropdown Content */}
+                <div className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-lg shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-6 grid grid-cols-2 gap-6">
+                  {/* Product 1: Klasik */}
+                  <a href="https://www.proerecta.cz/proerecta-klasik/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                    <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
+                      <img src="/images/proerecta-klasik-trans-new.webp" alt="Proerecta Klasik" className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#D32F2F] transition-colors">PROERECTA KLASIK</h4>
+                      <p className="text-[10px] text-slate-500 uppercase mt-0.5">Tobolky pro okamžité použití</p>
+                      <p className="text-[#D32F2F] font-bold text-sm mt-1">399 CZK</p>
+                    </div>
+                  </a>
+
+                  {/* Product 2: Shot */}
+                  <a href="https://www.proerecta.cz/proerecta-shot/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                    <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
+                      <img src="/images/proerecta-shot-trans.png" alt="Proerecta Shot" className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#D32F2F] transition-colors">PROERECTA SHOT</h4>
+                      <p className="text-[10px] text-slate-500 uppercase mt-0.5">Nápoj pro zrychlený nástup</p>
+                      <p className="text-[#D32F2F] font-bold text-sm mt-1">448 CZK</p>
+                    </div>
+                  </a>
+
+                  {/* Product 3: Long */}
+                  <a href="https://www.proerecta.cz/proerecta-long/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                    <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
+                      <img src="/images/proerecta-long-trans.png" alt="Proerecta Long" className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#D32F2F] transition-colors">PROERECTA LONG</h4>
+                      <p className="text-[10px] text-slate-500 uppercase mt-0.5">Tobolky pro dlouhodobé užívání</p>
+                      <p className="text-[#D32F2F] font-bold text-sm mt-1">699 CZK</p>
+                    </div>
+                  </a>
+
+                  {/* Product 4: Prostate */}
+                  <a href="https://www.proerecta.cz/proerecta-prostate/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                    <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
+                      <img src="/images/proerecta-prostate.png" alt="Proerecta Prostate" className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#D32F2F] transition-colors">PROERECTA PROSTATE</h4>
+                      <p className="text-[10px] text-slate-500 uppercase mt-0.5">Dlouhodobá péče o prostatu</p>
+                      <p className="text-[#D32F2F] font-bold text-sm mt-1">599 CZK</p>
+                    </div>
+                  </a>
+
+                  {/* Footer Link */}
+                  <div className="col-span-2 border-t border-slate-100 pt-4 text-center">
+                    <a href="https://www.proerecta.cz/pro-muze/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-slate-700 hover:text-[#D32F2F] uppercase tracking-wide">
+                      Zobrazit vše pro muže ›
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* PRO ŽENY Dropdown */}
+              <div className="relative group">
+                <a 
+                  href="https://www.proerecta.cz/pro-zeny/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#e11d48] text-white px-4 py-2 rounded-full hover:bg-[#be123c] transition-colors shadow-sm"
+                >
+                  <span className="text-lg leading-none">♀</span>
+                  <span className="font-bold text-xs tracking-wide">PRO ŽENY</span>
+                </a>
+
+                {/* Dropdown Content */}
+                <div className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-lg shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-6">
+                  {/* Product 1: Women */}
+                  <a href="https://www.proerecta.cz/proerecta-women/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
+                    <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
+                      <img src="/images/proerecta-women-trans.png" alt="Proerecta Women" className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#e11d48] transition-colors">PROERECTA WOMEN</h4>
+                      <p className="text-[10px] text-slate-500 uppercase mt-0.5">Pro libido a vitalitu žen</p>
+                      <p className="text-[#e11d48] font-bold text-sm mt-1">599 CZK</p>
+                    </div>
+                  </a>
+
+                  {/* Footer Link */}
+                  <div className="border-t border-slate-100 pt-4 mt-4 text-center">
+                    <a href="https://www.proerecta.cz/pro-zeny/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-slate-700 hover:text-[#e11d48] uppercase tracking-wide">
+                      Zobrazit vše pro ženy ›
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <Link href="/blog" className="hover:text-[#D32F2F] transition-colors">
-              Odborné články
-            </Link>
-            <a href="https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
-              Doprava zdarma od 1500 Kč
-            </a>
+            {/* Right Side Links */}
+            <div className="flex items-center gap-6">
+              <Link href="/blog" className="hover:text-[#D32F2F] transition-colors">
+                Odborné články
+              </Link>
+              <a href="https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#D32F2F] transition-colors">
+                Doprava zdarma od 1500 Kč
+              </a>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
