@@ -46,10 +46,33 @@ export default function BlogListing() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
             <Link href="/" className="hover:text-[#D32F2F] transition-colors">
               Domů
             </Link>
+            
+            {/* Gender Buttons */}
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.proerecta.cz/pro-muze/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-full hover:bg-[#1e293b] transition-colors shadow-sm"
+              >
+                <span className="text-lg leading-none">♂</span>
+                <span className="font-bold text-xs tracking-wide">PRO MUŽE</span>
+              </a>
+              <a 
+                href="https://www.proerecta.cz/pro-zeny/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#e11d48] text-white px-4 py-2 rounded-full hover:bg-[#be123c] transition-colors shadow-sm"
+              >
+                <span className="text-lg leading-none">♀</span>
+                <span className="font-bold text-xs tracking-wide">PRO ŽENY</span>
+              </a>
+            </div>
+
             <Link href="/blog" className="hover:text-[#D32F2F] transition-colors">
               Odborné články
             </Link>
