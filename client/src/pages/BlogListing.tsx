@@ -109,7 +109,7 @@ export default function BlogListing() {
                   {/* Product 4: Prostate */}
                   <a href="https://www.proerecta.cz/proerecta-prostate/" target="_blank" rel="noopener noreferrer" className="flex gap-4 group/item hover:bg-slate-50 p-2 rounded-lg transition-colors">
                     <div className="w-16 h-16 flex-shrink-0 bg-white rounded-md border border-slate-100 p-1">
-                      <img src="/images/proerecta-prostate.png" alt="Proerecta Prostate" className="w-full h-full object-contain" />
+                      <img src="/images/proerecta-prostate-real.png" alt="Proerecta Prostate" className="w-full h-full object-contain" />
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 text-sm group-hover/item:text-[#D32F2F] transition-colors">PROERECTA PROSTATE</h4>
