@@ -4,6 +4,7 @@ import { MobileHeader } from "@/components/MobileHeader";
 import { lazy, Suspense } from "react";
 import { Footer } from "@/components/Footer";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { LazyLoad } from "@/components/LazyLoad";
 
 const IngredientsSection = lazy(() => import("@/components/IngredientsSection").then(module => ({ default: module.IngredientsSection })));
 const FeaturesSection = lazy(() => import("@/components/FeaturesSection").then(module => ({ default: module.FeaturesSection })));
@@ -45,9 +46,11 @@ export default function Home() {
         
         {/* Content Wrapper for White Card Effect */}
         <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
-          <Suspense fallback={<div className="h-96" />}>
-            <IngredientsSection />
-          </Suspense>
+          <LazyLoad minHeight="800px" rootMargin="200px">
+            <Suspense fallback={<div className="h-96" />}>
+              <IngredientsSection />
+            </Suspense>
+          </LazyLoad>
           
           {/* Stylish Down Arrow Divider */}
           <div className="bg-white flex justify-center pt-0 pb-8 -mb-12 relative z-10">
@@ -67,17 +70,49 @@ export default function Home() {
             </div>
           </div>
 
-          <Suspense fallback={<div className="h-96" />}>
-            <ComparisonTable />
-            <ProductsSection />
-            <FeaturesSection />
-            <ProductQuiz />
-            <FAQSection />
-            <div id="reference">
-              <TestimonialsSection />
-            </div>
-            <BenefitsSection />
-          </Suspense>
+          <LazyLoad minHeight="400px">
+            <Suspense fallback={<div className="h-48" />}>
+              <ComparisonTable />
+            </Suspense>
+          </LazyLoad>
+
+          <LazyLoad minHeight="600px">
+            <Suspense fallback={<div className="h-96" />}>
+              <ProductsSection />
+            </Suspense>
+          </LazyLoad>
+
+          <LazyLoad minHeight="600px">
+            <Suspense fallback={<div className="h-96" />}>
+              <FeaturesSection />
+            </Suspense>
+          </LazyLoad>
+
+          <LazyLoad minHeight="500px">
+            <Suspense fallback={<div className="h-64" />}>
+              <ProductQuiz />
+            </Suspense>
+          </LazyLoad>
+
+          <LazyLoad minHeight="400px">
+            <Suspense fallback={<div className="h-48" />}>
+              <FAQSection />
+            </Suspense>
+          </LazyLoad>
+
+          <div id="reference">
+            <LazyLoad minHeight="600px">
+              <Suspense fallback={<div className="h-96" />}>
+                <TestimonialsSection />
+              </Suspense>
+            </LazyLoad>
+          </div>
+
+          <LazyLoad minHeight="400px">
+            <Suspense fallback={<div className="h-48" />}>
+              <BenefitsSection />
+            </Suspense>
+          </LazyLoad>
         </div>
 
       </main>
