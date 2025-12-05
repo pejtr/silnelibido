@@ -15,7 +15,8 @@ export function HeroSection() {
   const [headline, setHeadline] = useState({
     main: "Přírodní péče o váš",
     highlight: "milostný život",
-    sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat."
+    sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat.",
+    cta: "Probudit libido"
   });
 
   useEffect(() => {
@@ -28,14 +29,16 @@ export function HeroSection() {
       setHeadline({
         main: "Maximalizujte svůj",
         highlight: "sexuální potenciál",
-        sub: "Více energie, tvrdší erekce a lepší výdrž. Buďte vždy připraven."
+        sub: "Více energie, tvrdší erekce a lepší výdrž. Buďte vždy připraven.",
+        cta: "Chci maximální výkon"
       });
     } else {
       setHeroImage("/images/hero-couple.webp");
       setHeadline({
         main: "Přírodní péče o váš",
         highlight: "milostný život",
-        sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat."
+        sub: "Sex udržuje milostný vztah. Nenechte se o něj obrat.",
+        cta: "Probudit libido"
       });
     }
   }, []);
@@ -213,7 +216,7 @@ export function HeroSection() {
                   href="#products" 
                   className="inline-flex items-center justify-center gap-2 bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg font-bold px-8 py-3 md:px-12 md:py-4 rounded-full shadow-xl shadow-red-900/50 md:shadow-red-200 transition-transform hover:scale-105 w-auto md:w-auto animate-zoom-in-out"
                 >
-                  {ctaText} <span className="text-3xl md:text-4xl animate-flicker ml-1">🔥</span>
+                  {headline.cta} <span className="text-3xl md:text-4xl animate-flicker ml-1">🔥</span>
                 </a>
               </div>
 
