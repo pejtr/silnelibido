@@ -1,39 +1,9 @@
 import { ShoppingCart, Gift, HelpCircle } from "lucide-react";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { ProductDropdown } from "./ProductDropdown";
 
 export function HeroSection() {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      const x = (clientX / innerWidth - 0.5) * 20; // Max 10px shift
-      const y = (clientY / innerHeight - 0.5) * 20;
-      setOffset({ x, y });
-    };
-
-    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
-      if (e.beta === null || e.gamma === null) return;
-      // Beta is front-to-back tilt (-180 to 180), Gamma is left-to-right tilt (-90 to 90)
-      // We clamp values to avoid extreme shifts
-      const x = Math.min(Math.max(e.gamma, -20), 20); 
-      const y = Math.min(Math.max(e.beta - 45, -20), 20); // Center around 45deg holding angle
-      setOffset({ x, y });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("deviceorientation", handleDeviceOrientation);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("deviceorientation", handleDeviceOrientation);
-    };
-  }, []);
   const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
   const [ctaText, setCtaText] = useState("Probudit libido");
   const [showGift, setShowGift] = useState(true);
@@ -151,7 +121,7 @@ export function HeroSection() {
         {/* Mobile Background Image (Full Screen) */}
         <div className="md:hidden absolute top-0 left-0 w-full h-[110%] z-0">
           <img 
-            src="/images/hero-couple.webp" 
+            src="/images/hero-couple.jpg" 
             alt="Background" 
             className="w-full h-full object-cover object-[center_top]"
             fetchPriority="high"
@@ -233,15 +203,15 @@ export function HeroSection() {
               <div className="md:hidden absolute bottom-[-40px] right-[-80px] w-[220px] z-20 flex items-end">
                 <div className="w-[30%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.webp" 
+                    src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
                 </div>
                 <div className="w-[70%] -ml-8 mb-2 relative z-0">
                   <img 
-                    src="/images/proerecta-long-new.webp" 
-                    alt="Proerecta Long" 
+                   src="/images/proerecta-klasik-trans-new.webp" 
+                    alt="Proerecta Klasik" 
                     className="w-full h-auto drop-shadow-xl"
                   />
                 </div>
@@ -261,7 +231,7 @@ export function HeroSection() {
             </div>
 
             {/* Right Column: Image Composition (Desktop Only) */}
-            <div ref={heroRef} className="hidden md:flex relative h-[500px] md:h-[600px] w-full items-center justify-center lg:justify-end">
+            <div className="hidden md:flex relative h-[500px] md:h-[600px] w-full items-center justify-center lg:justify-end">
               
               {/* Background Shape (Mask) */}
               <div className="absolute top-0 right-0 w-[120%] h-full bg-gradient-to-l from-slate-50 to-transparent rounded-l-[10rem] -z-10"></div>
@@ -269,20 +239,17 @@ export function HeroSection() {
               {/* Couple Image (Masked) */}
               <div className="relative w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full overflow-hidden border-8 border-white shadow-2xl z-0 mr-12 md:mr-24 flex items-center -translate-x-[151px]">
                 <img 
-                  src="/images/hero-couple.webp" 
+                  src="/images/hero-couple.jpg" 
                   alt="Happy Couple" 
                   className="w-full h-full object-cover object-[center_20%] scale-125 -scale-x-100"
                 />
               </div>
 
               {/* Product Image (Overlay - Left - Small Shot) */}
-              <div 
-                className="absolute bottom-0 left-[-50px] md:left-[-150px] lg:left-[-280px] w-[280px] md:w-[400px] lg:w-[550px] z-20 transform translate-y-10 flex items-end animate-float transition-transform duration-100 ease-out"
-                style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
-              >
+              <div className="absolute bottom-0 left-[-50px] md:left-[-150px] lg:left-[-280px] w-[280px] md:w-[400px] lg:w-[550px] z-20 transform translate-y-10 flex items-end">
                 <div className="w-[35%] relative z-10 translate-x-8">
                   <img 
-                    src="/images/proerecta-shot-trans.webp" 
+                    src="/images/proerecta-shot-trans.png" 
                     alt="Proerecta Shot" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
@@ -290,8 +257,8 @@ export function HeroSection() {
                 {/* Long Product (Much Larger, next to Shot) */}
                 <div className="w-[65%] -ml-16 mb-4 relative z-0">
                   <img 
-                    src="/images/proerecta-long-new.webp" 
-                    alt="Proerecta Long" 
+                    src="/images/proerecta-klasik-trans-new.webp" 
+                    alt="Proerecta Klasik" 
                     className="w-full h-auto drop-shadow-xl"
                   />
                 </div>
@@ -306,7 +273,7 @@ export function HeroSection() {
 
               {/* Floating Leaves */}
               <div className="absolute bottom-20 right-[300px] w-16 h-16 z-30 animate-bounce duration-[3000ms]">
-                 <img src="/images/zensen.webp" alt="Leaf" className="w-full h-full object-contain opacity-80 rotate-45" />
+                 <img src="/images/zensen.png" alt="Leaf" className="w-full h-full object-contain opacity-80 rotate-45" />
               </div>
 
             </div>
