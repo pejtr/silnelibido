@@ -270,20 +270,38 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                   src={heroImageDesktop}
                   alt="Happy Couple"
                   fill
-                  className="object-contain object-center scale-110"
+                  className="object-cover object-center rounded-bl-[100px]"
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               
               {/* Floating Product Image */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-12 w-[400px] h-[400px] animate-float">
+              <div className="absolute -bottom-12 -left-12 w-[380px] h-[380px] animate-float">
                 <Image
-                  src="/images/proerecta-shot-cz.png"
+                  src="/images/proerecta-klasik-trans-new.png"
+                  alt="Proerecta Klasik"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 768px) 100vw, 380px"
+                />
+              </div>
+              <div className="absolute bottom-24 -left-24 w-[280px] h-[280px] animate-float" style={{ animationDelay: "1s" }}>
+                <Image
+                  src="/images/proerecta-long-trans.png"
+                  alt="Proerecta Long"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 768px) 100vw, 280px"
+                />
+              </div>
+              <div className="absolute -bottom-8 left-48 w-[240px] h-[240px] animate-float" style={{ animationDelay: "2s" }}>
+                <Image
+                  src="/images/proerecta-shot-trans.png"
                   alt="Proerecta Shot"
                   fill
                   className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  sizes="(max-width: 768px) 100vw, 240px"
                 />
               </div>
             </div>
