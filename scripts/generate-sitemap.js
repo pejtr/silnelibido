@@ -1,73 +1,80 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const fs = require('fs');
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Define the base URL
+const BASE_URL = 'https://silnelibido.cz';
 
-// Blog posts data (mirrored from BlogListing.tsx for simplicity in this script)
-// In a real app, this would be fetched from a CMS or shared data file
-const blogPosts = [
-  "5-prirodnich-zabijaku-erekce",
-  "testosteron-po-tricitce",
-  "kotvicnik-zemni-zazrak-nebo-mytus",
-  "erekce-vs-psychika",
-  "top-7-potravin-pro-pevnou-erekci",
-  "jak-stres-v-praci-zabiji-vas-sexlife",
-  "kegelovy-cviky-pro-muze",
-  "afrodiziaka-ktera-skutecne-funguji",
-  "ranni-erekce-co-vam-rika",
-  "recenze-doplnku-stravy-na-erekci"
-];
-
-const DOMAIN = 'https://silnelibido.cz';
-
+// Define static pages
 const staticPages = [
   '',
   '/recenze',
-  '/blog'
+  '/blog',
 ];
 
-function generateSitemap() {
-  const today = new Date().toISOString();
+// Function to get blog posts
+// Since we can't import TS files directly in JS script without compilation, 
+// we'll read the file content and extract slugs using regex or simple parsing if possible.
+// Or better, we can assume the data structure if we know it.
+// But for robustness, let's try to read the blogPosts.ts file.
 
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+const blogPostsPath = path.join(__dirname, '../data/blogPosts.ts');
+
+function getBlogSlugs() {
+  try {
+    const content = fs.readFileSync(blogPostsPath, 'utf8');
+    // Look for id: "slug" pattern
+    const regex = /id:\s*["']([^"']+)["']/g;
+    const slugs = [];
+    let match;
+    while ((match = regex.exec(content)) !== null) {
+      slugs.push(match[1]);
+    }
+    return slugs;
+  } catch (error) {
+    console.error('Error reading blog posts:', error);
+    return [];
+  }
+}
+
+function generateSitemap() {
+  const blogSlugs = getBlogSlugs();
+  const date = new Date().toISOString();
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
   // Add static pages
   staticPages.forEach(page => {
-    sitemap += `
+    xml += `
   <url>
-    <loc>${DOMAIN}${page}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${BASE_URL}${page}</loc>
+    <lastmod>${date}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>`;
   });
 
   // Add blog posts
-  blogPosts.forEach(slug => {
-    sitemap += `
+  blogSlugs.forEach(slug => {
+    xml += `
   <url>
-    <loc>${DOMAIN}/blog/${slug}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${BASE_URL}/blog/${slug}</loc>
+    <lastmod>${date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`;
   });
 
-  sitemap += `
+  xml += `
 </urlset>`;
 
-  const publicDir = path.join(__dirname, '../client/public');
-  
-  // Ensure public dir exists
+  const publicDir = path.join(__dirname, '../public');
   if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
+    fs.mkdirSync(publicDir);
   }
 
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-  console.log('✅ Sitemap generated successfully at client/public/sitemap.xml');
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml);
+  console.log(`Sitemap generated with ${staticPages.length + blogSlugs.length} URLs`);
 }
 
 generateSitemap();
