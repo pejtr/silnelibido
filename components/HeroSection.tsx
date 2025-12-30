@@ -15,7 +15,7 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
   const { url: affiliateLink, trackClick: trackHeroClick } = useAffiliateLink(baseAffiliateLink);
   
   const { url: productsLink } = useAffiliateLink("https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
-  const { url: womenLink } = useAffiliateLink("https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02");
+  const { url: womenLink } = useAffiliateLink("https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
   const { url: aboutLink } = useAffiliateLink("https://www.proerecta.cz/o-nas/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
   const { url: contactLink } = useAffiliateLink("https://www.proerecta.cz/kontakty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
   const { url: blogLink } = useAffiliateLink("https://www.proerecta.cz/blog/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
