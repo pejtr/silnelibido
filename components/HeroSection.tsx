@@ -123,13 +123,13 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
     
     if (rand < 0.33) {
       variant = "A";
-      setCtaText(headline.cta);
+      setCtaText(headline.cta); // "Probudit libido" or "Posílit libido"
     } else if (rand < 0.66) {
       variant = "B";
-      setCtaText(isTarget35 ? "Zvýšit výkon" : "Rozproudit vášeň");
+      setCtaText("Vybrat produkt"); // Transactional CTA
     } else {
       variant = "C";
-      setCtaText(isTarget35 ? "Chci maximální výkon" : "Zažehnout vášeň");
+      setCtaText(isTarget35 ? "Chci maximální výkon" : "Chci vyzkoušet"); // Action-oriented CTA
     }
     // In a real app, we would log this exposure to analytics here
     console.log(`A/B Test Variant: ${variant}`);
