@@ -69,8 +69,8 @@ export function ProductDropdown({ gender, children, className = "" }: ProductDro
       
       {/* Dropdown Content */}
       <div 
-        className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px] transition-all duration-300 z-50 ${
-          isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+        className={`absolute bottom-full left-1/2 -translate-x-1/2 pb-4 w-[600px] transition-all duration-300 z-50 ${
+          isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"
         }`}
       >
         <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden p-6">
