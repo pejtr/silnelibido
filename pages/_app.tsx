@@ -8,6 +8,7 @@ import Router from 'next/router'
 import Script from 'next/script'
 import * as fbq from '@/lib/fpixel'
 import { FB_PIXEL_ID } from '@/lib/fpixel'
+import * as gtag from '@/lib/gtag'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,8 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
     // This pageview only triggers the first time (it's important for Pixel to have real information)
     fbq.pageview()
 
-    const handleRouteChange = () => {
+    const handleRouteChange = (url: string) => {
       fbq.pageview()
+      gtag.pageview(url)
     }
 
     Router.events.on('routeChangeComplete', handleRouteChange)
@@ -28,6 +30,27 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
       <main className={inter.className}>
+        {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+                'analytics_storage': 'denied' // Default to denied until consent
+              });
+            `,
+          }}
+        />
+
         {/* Facebook Pixel Script */}
         <Script
           id="fb-pixel"

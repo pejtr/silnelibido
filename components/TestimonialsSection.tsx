@@ -28,7 +28,7 @@ export function TestimonialsSection() {
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-red-50 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="container px-4 md:px-6 relative z-10 mx-auto">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 md:mb-16">
           
           {/* Avatars Group */}
@@ -51,7 +51,7 @@ export function TestimonialsSection() {
           </div>
 
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2A2A5A] mb-4 leading-tight">
-            Přes 95 % českých mužů, žen i párů je s účinky spokojených a další denně přibývají
+            Recenze Proerecta: Přes 95 % českých mužů, žen i párů je s účinky spokojených
           </h2>
           
           <p className="text-slate-600 text-sm md:text-base max-w-2xl mx-auto mb-8">

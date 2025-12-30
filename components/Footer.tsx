@@ -1,133 +1,131 @@
 "use client";
 
-import Image from "next/image";
-import { Facebook, Instagram, Phone, Mail } from "lucide-react";
-import { useAffiliateLink } from "@/hooks/useAffiliateLink";
+import { Phone, Mail, Facebook, Instagram } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
-  const { url: homeLink, trackClick } = useAffiliateLink("https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
-  
-  const footerLinks = {
-    faq: [
-      { text: "Jak dlouho Proerecta účinkuje?", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c#ucinky" },
-      { text: "Má Proerecta nějaké omezení užívání?", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c#omezeni" },
-      { text: "Jak je Proerecta zabalená a označená?", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c#baleni" },
-      { text: "Pomůže mi Proerecta i ve vysokém věku?", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c#vek" },
-      { text: "Není to jen placebo?", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c#placebo" },
-    ],
-    interest: [
-      { text: "Diskrétní balení Proerecta", url: "https://www.proerecta.cz/diskretni-baleni/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "Doprava a platba", url: "https://www.proerecta.cz/doprava-a-platba/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "Garance vrácení peněz", url: "https://www.proerecta.cz/garance-vraceni-penez/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "Často kladené otázky", url: "https://www.proerecta.cz/faq/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-    ],
-    company: [
-      { text: "Reference", url: "https://www.proerecta.cz/reference/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "Produkty", url: "https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "O nás", url: "https://www.proerecta.cz/o-nas/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-      { text: "Kontakty", url: "https://www.proerecta.cz/kontakty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c" },
-    ]
-  };
+  const affiliateLink = "https://www.proerecta.cz/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c";
 
   return (
-    <footer className="bg-[#112255] text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#F8F9FE] text-[#2A2A5A] pt-16 pb-8 relative z-10">
+      <div className="container px-4 md:px-8">
+        
+        {/* Newsletter Section */}
+        <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-8 rounded-2xl mb-12">
+          <div className="max-w-2xl">
+            <h3 className="text-2xl font-bold mb-2">Přihlaste se k odběru novinek</h3>
+            <p className="text-slate-300 mb-6">Získejte exkluzivní tipy, články a speciální nabídky přímo do vaší schránky.</p>
+            <form className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Váš e-mail"
+                className="flex-1 px-4 py-3 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"
+              >
+                Přihlásit se
+              </button>
+            </form>
+            <p className="text-xs text-slate-400 mt-3">Neposílame spam. Odhlášení kdykoliv.</p>
+          </div>
+        </div>
+        
+        {/* Top Section: 4 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           
-          {/* Brand Column */}
+          {/* Column 1: Logo & Contact */}
           <div className="space-y-6">
-            <a href={homeLink} onClick={trackClick} className="block">
-              <Image src="/images/proerecta-logo-white.svg" alt="Proerecta" width={180} height={40} className="h-10 w-auto" />
-            </a>
-            <p className="text-sm text-slate-300 font-medium">the all natural solution</p>
-            <div className="flex gap-4">
-              <a href="#" className="bg-[#B71C1C] text-white p-1.5 rounded hover:bg-[#D32F2F] transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="bg-[#B71C1C] text-white p-1.5 rounded hover:bg-[#D32F2F] transition-colors">
-                <Instagram size={18} />
-              </a>
+            <img 
+              src="/images/logo.svg" 
+              alt="Proerecta" 
+              className="h-8"
+            />
+            <p className="text-sm text-slate-500 font-medium">the all natural solution for your sexual health</p>
+            
+            <div className="flex gap-4 text-[#D32F2F]">
+              <Facebook className="w-6 h-6 cursor-pointer hover:opacity-80" />
+              <Instagram className="w-6 h-6 cursor-pointer hover:opacity-80" />
             </div>
-            <div className="space-y-3 pt-2">
-              <a href="tel:+420607657370" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-medium">
-                <Phone size={18} className="text-[#B71C1C]" />
+
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 space-y-3 inline-block min-w-[240px]">
+              <a href="tel:+420607657370" className="flex items-center gap-3 font-bold hover:text-[#D32F2F] transition-colors">
+                <Phone className="w-5 h-5 text-[#2A2A5A]" />
                 +420 607 657 370
               </a>
-              <a href="mailto:info@proerecta.cz" className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors font-medium">
-                <Mail size={18} className="text-[#B71C1C]" />
+              <a href="mailto:info@proerecta.cz" className="flex items-center gap-3 font-bold hover:text-[#D32F2F] transition-colors">
+                <Mail className="w-5 h-5 text-[#2A2A5A]" />
                 info@proerecta.cz
               </a>
             </div>
           </div>
 
-          {/* FAQ Column */}
+          {/* Column 2: FAQ */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Často se lidé ptají</h3>
-            <ul className="space-y-3">
-              {footerLinks.faq.map((link, i) => (
-                <li key={i}>
-                  <a href={link.url} className="text-slate-300 hover:text-white text-sm underline decoration-slate-500 hover:decoration-white transition-all">
-                    {link.text}
-                  </a>
-                </li>
-              ))}
+            <h3 className="font-extrabold text-lg mb-6">Často se lidé ptají</h3>
+            <ul className="space-y-3 text-sm font-medium underline decoration-slate-300 underline-offset-4">
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Jak dlouho Proerecta účinkuje?</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Má Proerecta nějaké omezení užívání?</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Jak je Proerecta zabalená a označená?</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Pomůže mi Proerecta i ve vysokém věku?</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Není to jen placebo?</a></li>
             </ul>
           </div>
 
-          {/* Interest Column */}
+          {/* Column 3: Interest */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Může vás zajímat</h3>
-            <ul className="space-y-3">
-              {footerLinks.interest.map((link, i) => (
-                <li key={i}>
-                  <a href={link.url} className="text-slate-300 hover:text-white text-sm underline decoration-slate-500 hover:decoration-white transition-all">
-                    {link.text}
-                  </a>
-                </li>
-              ))}
+            <h3 className="font-extrabold text-lg mb-6">Může vás zajímat</h3>
+            <ul className="space-y-3 text-sm font-medium underline decoration-slate-300 underline-offset-4">
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Diskrétní balení Proerecta</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Doprava a platba</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Garance vrácení peněz</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Často kladené otázky</a></li>
             </ul>
           </div>
 
-          {/* Company Column */}
+          {/* Column 4: Menu */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Proerecta</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, i) => (
-                <li key={i}>
-                  <a href={link.url} className="text-slate-300 hover:text-white text-sm underline decoration-slate-500 hover:decoration-white transition-all">
-                    {link.text}
-                  </a>
-                </li>
-              ))}
+            <h3 className="font-extrabold text-lg mb-6">Proerecta</h3>
+            <ul className="space-y-3 text-sm font-medium underline decoration-slate-300 underline-offset-4">
+              <li><Link href="/blog" className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all font-bold text-[#D32F2F]">Magazín Silné Libido</Link></li>
+              <li><Link href="/recenze" className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Recenze produktů</Link></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Reference</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Produkty</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">O nás</a></li>
+              <li><a href={affiliateLink} className="hover:text-[#D32F2F] hover:decoration-[#D32F2F] transition-all">Kontakty</a></li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-xs text-slate-400 space-y-1">
-            <p><span className="font-bold text-slate-300">Provozuje:</span> eMarkest, s.r.o.</p>
-            <p>Domažlická 1232/3</p>
-            <p>130 00 Praha 3, ČR</p>
-          </div>
+        {/* Divider */}
+        <div className="h-px bg-slate-200 w-full mb-8"></div>
+
+        {/* Bottom Section: Company Info & Logos */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 text-sm text-slate-600">
           
-          <div className="text-xs text-slate-400 space-y-1">
-            <p><span className="font-bold text-slate-300">IČ:</span> 24272973</p>
-            <p><span className="font-bold text-slate-300">DIČ:</span> CZ24272973</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+            <div><span className="font-bold">Provozuje:</span> eMarkest, s.r.o.</div>
+            <div><span className="font-bold">IČ:</span> 24272973</div>
+            <div className="pl-[78px]">Domažlická 1232/3</div>
+            <div><span className="font-bold">DIČ:</span> CZ24272973</div>
+            <div className="pl-[78px]">130 00 3, ČR</div>
           </div>
 
-          <div className="flex items-center gap-4 bg-white p-2 rounded">
-            <Image src="/images/visa-logo.png" alt="Visa" width={50} height={30} className="h-6 w-auto object-contain" />
-            <Image src="/images/mastercard-logo.png" alt="Mastercard" width={50} height={30} className="h-6 w-auto object-contain" />
-            <Image src="/images/balikovna-logo.png" alt="Balíkovna" width={80} height={30} className="h-6 w-auto object-contain" />
-            <Image src="/images/gls-logo.png" alt="GLS" width={60} height={30} className="h-6 w-auto object-contain" />
-            <Image src="/images/dpd-logo.png" alt="DPD" width={60} height={30} className="h-6 w-auto object-contain" />
+          <div className="flex gap-2 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all">
+            {/* Payment Logos Placeholder - using divs to simulate layout */}
+            <div className="h-8 w-12 bg-white border border-slate-200 rounded flex items-center justify-center font-bold text-[10px] text-blue-800 italic">VISA</div>
+            <div className="h-8 w-12 bg-white border border-slate-200 rounded flex items-center justify-center font-bold text-[10px] text-red-600">MC</div>
+            <div className="h-8 w-20 bg-white border border-slate-200 rounded flex items-center justify-center font-bold text-[10px] text-blue-600">Balíkovna</div>
+            <div className="h-8 w-16 bg-[#FDB913] border border-slate-200 rounded flex items-center justify-center font-bold text-[10px] text-[#2A2A5A]">GLS</div>
           </div>
         </div>
 
-        <div className="mt-8 text-center text-xs text-slate-500 border-t border-slate-800 pt-4">
-          © 2025 eMarkest, s.r.o. • <a href="#" className="hover:text-white underline">Zpracování osobních údajů</a> • <a href="#" className="hover:text-white underline">Obchodní podmínky</a>
+        <div className="mt-8 text-center text-xs text-slate-500 border-t border-slate-200 pt-4">
+          &copy; {new Date().getFullYear()} eMarkest, s.r.o. • <a href="#" className="underline hover:text-[#D32F2F]">Zpracování osobních údajů</a> • <a href="#" className="underline hover:text-[#D32F2F]">Obchodní podmínky</a>
         </div>
+
       </div>
     </footer>
   );

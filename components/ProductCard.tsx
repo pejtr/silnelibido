@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ArrowRight, ShoppingCart } from "lucide-react";
+import { Check, ArrowRight, ShoppingCart, Truck, ShieldCheck } from "lucide-react";
+import { CountdownTimer } from "./CountdownTimer";
 import Image from "next/image";
 import { useState } from "react";
 import { useAffiliateLink } from "@/hooks/useAffiliateLink";
@@ -34,7 +35,7 @@ interface ProductProps {
   packages?: Package[];
 }
 
-export function ProductCard({ name, price, currency, image, description, features, popular, url, badge, packages }: ProductProps) {
+export function ProductCard({ name, price, currency, image, description, features, popular, url, badge, packages, className }: ProductProps & { className?: string }) {
   // Default to the first package (cheapest option)
   const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
   const { url: affiliateUrl, trackClick } = useAffiliateLink(url);
@@ -43,7 +44,7 @@ export function ProductCard({ name, price, currency, image, description, feature
   const displayPrice = currentPackage ? currentPackage.price : price;
 
   return (
-    <Card className={`flex flex-col h-full relative overflow-hidden transition-all duration-300 hover:shadow-lg ${popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
+    <Card className={`flex flex-col h-full w-full relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'} ${className}`}>
       {badge && (
         <div 
           className="absolute top-4 left-4 text-white text-base font-bold px-4 py-4 rounded-full z-20 shadow-md flex items-center justify-center text-center leading-tight w-[120px] h-[120px] transform -rotate-12"
@@ -55,6 +56,13 @@ export function ProductCard({ name, price, currency, image, description, feature
       {popular && !badge && (
         <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
           NEJPRODÁVANĚJŠÍ
+        </div>
+      )}
+      
+      {/* Show countdown for Proerecta LONG (identified by name or specific prop, here using name check for simplicity) */}
+      {name.includes("LONG") && (
+        <div className="absolute top-0 right-0 z-10 w-full flex justify-end px-4 pt-12">
+           {/* Positioned below the badge or header area */}
         </div>
       )}
       
@@ -74,6 +82,11 @@ export function ProductCard({ name, price, currency, image, description, feature
       
       <CardContent className="flex-grow p-6 pb-2">
         <CardTitle className="text-xl font-bold mb-2 text-foreground">{name}</CardTitle>
+        {name.includes("LONG") && (
+          <div className="mb-3">
+            <CountdownTimer text="Akční cena končí za:" />
+          </div>
+        )}
         <p className="text-muted-foreground text-sm mb-4 min-h-[60px]">{description}</p>
         
         <div className="space-y-2 mb-6">
@@ -172,9 +185,19 @@ export function ProductCard({ name, price, currency, image, description, feature
           Objednat <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
         
-        <div className="flex items-center justify-end w-full gap-1 text-xs text-green-600 font-medium">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-          Skladem - Pozítří u vás
+        <div className="flex flex-col w-full gap-2">
+          <div className="flex items-center justify-between w-full text-[10px] text-slate-500 px-1">
+            <div className="flex items-center gap-1">
+              <Truck className="w-3 h-3" /> Doprava zdarma
+            </div>
+            <div className="flex items-center gap-1">
+              <ShieldCheck className="w-3 h-3" /> Garance vrácení
+            </div>
+          </div>
+          <div className="flex items-center justify-center w-full gap-1 text-xs text-green-600 font-medium border-t border-slate-100 pt-2">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            Skladem - Pozítří u vás
+          </div>
         </div>
       </CardFooter>
     </Card>

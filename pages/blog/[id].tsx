@@ -1,186 +1,245 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { GetStaticPaths, GetStaticProps } from "next";
 import { TopBar } from "@/components/TopBar";
+import { HeroSection } from "@/components/HeroSection";
 import { MobileHeader } from "@/components/MobileHeader";
 import { Footer } from "@/components/Footer";
 import { DesktopStickyNav } from "@/components/DesktopStickyNav";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { TableOfContents } from "@/components/TableOfContents";
+import { PopularArticles } from "@/components/PopularArticles";
+import Link from "next/link";
+import Image from "next/image";
+import Head from "next/head";
 import { blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { ArrowUp, Share2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-interface BlogPostProps {
-  post: typeof blogPosts[0];
-}
+export default function BlogArticlePage() {
+  const router = useRouter();
+  const { id } = router.query;
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = blogPosts.map((post) => ({
-    params: { id: post.id },
-  }));
+  const article = blogPosts.find(post => post.id === id);
 
-  return { paths, fallback: false };
-};
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
 
-export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) => {
-  const post = blogPosts.find((p) => p.id === params?.id);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  if (!post) {
-    return { notFound: true };
-  }
-
-  return {
-    props: { post },
-  };
-};
-
-export default function BlogPost({ post }: BlogPostProps) {
-  // JSON-LD Structured Data for BlogPosting
-  const blogPostingSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "image": `https://silnelibido.cz${post.image}`,
-    "author": {
-      "@type": "Person",
-      "name": post.author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Proerecta",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://silnelibido.cz/images/logo.svg"
-      }
-    },
-    "datePublished": post.date.split('. ').reverse().join('-'), // Convert to ISO format roughly (needs proper parsing if strict)
-    "description": post.excerpt,
-    "articleBody": post.content.replace(/<[^>]*>?/gm, '') // Strip HTML tags for schema
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return (
-    <>
-      <Head>
-        <title>{post.title} | Magazín Silné Libido</title>
-        <meta name="description" content={post.excerpt} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={`https://silnelibido.cz${post.image}`} />
-        <meta property="og:type" content="article" />
-        
-        {/* JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
-        />
-      </Head>
-      
-      <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
+  if (!article) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Head>
+          <title>Článek nenalezen - Silné Libido</title>
+        </Head>
         <TopBar />
         <MobileHeader />
         <DesktopStickyNav />
-        
-        <main className="flex-grow">
-          {/* Article Header */}
-          <div className="bg-[#2A2A5A] text-white pt-12 pb-24 relative overflow-hidden">
-             <div className="absolute inset-0 z-0 opacity-10">
-               <Image 
-                 src={post.contentImage || post.image} 
-                 alt="Background" 
-                 fill 
-                 className="object-cover blur-sm"
-               />
-            </div>
-            <div className="container px-4 md:px-8 relative z-10">
-              <Link href="/blog" className="inline-flex items-center gap-2 text-slate-300 hover:text-white mb-8 transition-colors text-sm font-bold uppercase tracking-wide">
-                <ArrowLeft className="w-4 h-4" /> Zpět na magazín
-              </Link>
-              
-              <div className="max-w-3xl mx-auto text-center">
-                <div className="inline-block bg-[#D32F2F] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-6">
-                  {post.category}
-                </div>
-                <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                  {post.title}
-                </h1>
-                
-                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <User className="w-4 h-4" />
-                    {post.author}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    {post.date}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
-                    {post.readTime}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Article Content */}
-          <div className="bg-white mx-0 md:mx-4 rounded-t-[2.5rem] -mt-12 relative z-20 pt-12 pb-24 px-4 md:px-8 shadow-sm">
-            <div className="container mx-auto max-w-3xl">
-              
-              {/* Main Image */}
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-12 shadow-lg">
-                <Image
-                  src={post.contentImage || post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Content */}
-              <article 
-                className="prose prose-lg prose-slate max-w-none prose-headings:text-[#2A2A5A] prose-headings:font-bold prose-a:text-[#D32F2F] prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-
-              {/* Share */}
-              <div className="mt-12 pt-8 border-t border-slate-100 flex items-center justify-between">
-                <span className="font-bold text-[#2A2A5A] flex items-center gap-2">
-                  <Share2 className="w-5 h-5" /> Sdílet článek
-                </span>
-                <div className="flex gap-4">
-                  <button className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100 transition-colors">
-                    <Facebook className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center hover:bg-sky-100 transition-colors">
-                    <Twitter className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center hover:bg-indigo-100 transition-colors">
-                    <Linkedin className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Sources */}
-              {post.sources && (
-                <div className="mt-12 bg-slate-50 p-6 rounded-xl text-sm text-slate-500">
-                  <h3 className="font-bold text-slate-700 mb-4 uppercase tracking-wide text-xs">Zdroje a studie</h3>
-                  <ul className="space-y-2 list-disc pl-4">
-                    {post.sources.map((source, i) => (
-                      <li key={i}>{source}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-            </div>
-          </div>
-        </main>
-        
+        <div className="container mx-auto px-4 py-16 text-center">
+          <h1 className="text-3xl font-bold text-[#2A2A5A] mb-4">Článek nenalezen</h1>
+          <Link href="/blog">
+            <button className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold px-6 py-3 rounded-full">
+              Zpět na blog
+            </button>
+          </Link>
+        </div>
         <Footer />
       </div>
-    </>
+    );
+  }
+
+  // Schema.org structured data for article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "description": article.excerpt,
+    "image": `https://silnelibido.cz${article.contentImage}`,
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "author": {
+      "@type": "Person",
+      "name": article.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Silné Libido",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://silnelibido.cz/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://silnelibido.cz/blog/${article.id}`
+    },
+    "articleBody": article.content,
+    "keywords": article.category
+  };
+
+  // Generate FAQ Schema if available
+  const faqSchema = article.faq ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": article.faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  } : null;
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Head>
+        <title>{article.title} - Silné Libido</title>
+        <meta name="description" content={article.excerpt} />
+        <meta name="keywords" content={article.category} />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.excerpt} />
+        <meta property="og:image" content={`https://silnelibido.cz${article.contentImage}`} />
+        <meta property="og:url" content={`https://silnelibido.cz/blog/${article.id}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.excerpt} />
+        <meta name="twitter:image" content={`https://silnelibido.cz${article.contentImage}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+      </Head>
+      <TopBar />
+      <MobileHeader />
+      <DesktopStickyNav />
+      <HeroSection ageTarget={null} />
+
+      {/* Article Content */}
+      <div className="container mx-auto px-4 md:px-8 py-12">
+        <div className="max-w-3xl mx-auto">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-slate-600 mb-8">
+            <Link href="/blog" className="hover:text-[#D32F2F]">Blog</Link>
+            <span>/</span>
+            <span className="text-slate-900 font-medium">{article.title}</span>
+          </div>
+
+          {/* Article Header */}
+          <div className="mb-8">
+            <div className="inline-block bg-[#D32F2F] text-white px-4 py-1 rounded-full text-sm font-bold mb-4">
+              {article.category}
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-[#2A2A5A] mb-4 leading-tight">
+              {article.title}
+            </h1>
+
+            {/* Article Meta */}
+            <div className="flex flex-wrap items-center gap-4 text-slate-600 mb-8 pb-8 border-b border-slate-200">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#D32F2F] to-[#B71C1C] rounded-full flex items-center justify-center text-white font-bold">
+                  {article.author.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-medium text-slate-900">{article.author}</p>
+                  <p className="text-xs text-slate-500">{article.date}</p>
+                </div>
+              </div>
+              <span className="text-slate-400">•</span>
+              <span className="text-sm">{article.readTime}</span>
+              <span className="text-slate-400">•</span>
+              <button className="flex items-center gap-2 text-[#D32F2F] hover:text-[#B71C1C] transition-colors">
+                <Share2 className="w-4 h-4" />
+                Sdílet
+              </button>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden mb-12 shadow-lg">
+            <Image
+              src={article.contentImage}
+              alt={article.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Article Layout with Sidebar */}
+          <div className="flex flex-col lg:flex-row gap-8 relative">
+            {/* Main Content Column */}
+            <div className="flex-1 min-w-0">
+              {/* Mobile Table of Contents */}
+              <TableOfContents mobile />
+
+              <div className="prose prose-lg max-w-none mb-12">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                  className="text-slate-700 leading-relaxed"
+                />
+              </div>
+            </div>
+
+            {/* Sidebar Column */}
+            <div className="hidden lg:block w-64 flex-shrink-0">
+              <TableOfContents />
+              <PopularArticles articles={blogPosts.slice(0, 3)} />
+            </div>
+          </div>
+
+          {/* Sources */}
+          {article.sources && article.sources.length > 0 && (
+            <div className="bg-slate-50 p-6 rounded-xl mb-12 border border-slate-200">
+              <h3 className="font-bold text-[#2A2A5A] mb-4">Zdroje a reference:</h3>
+              <ul className="space-y-2">
+                {article.sources.map((source, index) => (
+                  <li key={index} className="text-sm text-slate-600 flex gap-3">
+                    <span className="text-[#D32F2F] font-bold flex-shrink-0">{index + 1}.</span>
+                    <span>{source}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Related Articles */}
+          <RelatedArticles 
+            currentArticleId={article.id} 
+            allArticles={blogPosts} 
+            maxArticles={3} 
+            manualRelatedIds={article.relatedIds}
+          />
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-[#D32F2F] hover:bg-[#B71C1C] text-white p-3 rounded-full shadow-lg transition-all z-40"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-6 h-6" />
+        </button>
+      )}
+
+      <Footer />
+    </div>
   );
 }

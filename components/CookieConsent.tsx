@@ -12,13 +12,20 @@ export const CookieConsent = () => {
       // Show banner after a short delay
       const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
+    } else if (consent === 'accepted') {
+      // Restore consent on reload
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
     }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setIsVisible(false);
-    // Here you would typically initialize analytics scripts
+    // Initialize analytics scripts
     if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('consent', 'update', {
             'analytics_storage': 'granted'
@@ -29,6 +36,12 @@ export const CookieConsent = () => {
   const handleDecline = () => {
     localStorage.setItem('cookie-consent', 'declined');
     setIsVisible(false);
+    // Ensure analytics storage is denied
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+        });
+    }
   };
 
   if (!isVisible) return null;

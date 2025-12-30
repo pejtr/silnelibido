@@ -1,180 +1,138 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { X, Gift, Copy, Check } from "lucide-react";
+import { Copy, Check, Gift } from "lucide-react";
 import { toast } from "sonner";
 
 export function ExitIntentPopup() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasShown, setHasShown] = useState(false);
-
-  const showPopup = useCallback(() => {
-    if (!hasShown && !sessionStorage.getItem("exitIntentShown")) {
-      setIsVisible(true);
-      setHasShown(true);
-      sessionStorage.setItem("exitIntentShown", "true");
-    }
-  }, [hasShown]);
+  const [open, setOpen] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [canTrigger, setCanTrigger] = useState(false);
 
   useEffect(() => {
+    // Only run on client
+    if (typeof window === "undefined") return;
+
+    // 10-second delay before enabling exit intent
+    const timer = setTimeout(() => {
+      setCanTrigger(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Only run on client
+    if (typeof window === "undefined") return;
+
     // Check if already shown in this session
-    const alreadyShown = sessionStorage.getItem("exitIntentShown");
+    const alreadyShown = sessionStorage.getItem("exit-intent-shown");
     if (alreadyShown) {
-      setHasShown(true);
+      setHasTriggered(true);
       return;
     }
 
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) {
-        showPopup();
+      if (e.clientY <= 0 && !hasTriggered && canTrigger) {
+        setOpen(true);
+        setHasTriggered(true);
+        sessionStorage.setItem("exit-intent-shown", "true");
       }
     };
 
-    // Fallback timer for mobile or if mouse doesn't leave
-    const timer = setTimeout(() => {
-      showPopup();
-    }, 60000); // Show after 60 seconds automatically
+    // Mobile Scroll Logic
+    let lastScrollY = window.scrollY;
+    let lastTime = Date.now();
+    const SCROLL_THRESHOLD = 20; // Minimum scroll distance
+    const SPEED_THRESHOLD = 1.5; // Pixels per ms (fast scroll)
+
+    const handleScroll = () => {
+      if (hasTriggered || !canTrigger) return;
+
+      const currentScrollY = window.scrollY;
+      const currentTime = Date.now();
+      const timeDiff = currentTime - lastTime;
+      const scrollDiff = lastScrollY - currentScrollY; // Positive if scrolling up
+
+      // Only check if scrolling up significantly
+      if (scrollDiff > SCROLL_THRESHOLD && timeDiff > 0) {
+        const speed = scrollDiff / timeDiff;
+        
+        // If scrolling up fast (likely reaching for URL bar)
+        if (speed > SPEED_THRESHOLD) {
+          setOpen(true);
+          setHasTriggered(true);
+          sessionStorage.setItem("exit-intent-shown", "true");
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      lastTime = currentTime;
+    };
 
     document.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
-      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [showPopup]); // showPopup is now stable thanks to useCallback
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      toast.error("Prosím zadejte platný e-mail.");
-      return;
-    }
-
-    setIsLoading(true);
-    
-    // Simulate API call and email saving
-    console.log("Saving email to database:", email);
-    
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      toast.success("E-mail byl úspěšně uložen!");
-    }, 800);
-  };
+  }, [hasTriggered, canTrigger]);
 
   const copyCode = () => {
-    navigator.clipboard.writeText("sleva11");
-    toast.success("Kód zkopírován do schránky!");
+    navigator.clipboard.writeText("SLEVA5");
+    setCopied(true);
+    toast.success("Kód zkopírován!");
+    setTimeout(() => setCopied(false), 2000);
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogContent className="sm:max-w-md border-t-4 border-t-[#D32F2F]">
+        <DialogHeader className="items-center text-center">
+          <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+            <Gift className="w-6 h-6 text-[#D32F2F]" />
+          </div>
+          <DialogTitle className="text-2xl font-bold text-[#2A2A5A]">
+            Počkejte! Neodcházejte s prázdnou
+          </DialogTitle>
+          <DialogDescription className="text-center text-base pt-2 text-slate-600">
+            Máme pro vás speciální slevu <span className="font-bold text-[#D32F2F]">5 %</span> na vaši objednávku.
+          </DialogDescription>
+        </DialogHeader>
         
-        {/* Close Button */}
-        <button 
-          onClick={handleClose}
-          className="absolute top-4 right-4 p-2 bg-white/50 hover:bg-slate-100 rounded-full transition-colors z-10"
-        >
-          <X className="w-5 h-5 text-slate-500" />
-        </button>
-
-        <div className="flex flex-col md:flex-row h-full">
-          {/* Left Side (Image/Color) */}
-          <div className="hidden md:flex w-1/3 bg-[#2A2A5A] items-center justify-center p-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/hero-couple.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-            <div className="relative z-10 text-center">
-              <div className="w-16 h-16 bg-[#D32F2F] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-bounce">
-                <Gift className="w-8 h-8 text-white" />
-              </div>
-              <p className="text-white/80 text-sm font-medium">
-                Neodcházejte s prázdnou!
-              </p>
+        <div className="flex flex-col items-center justify-center py-6 space-y-4">
+          <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Váš slevový kód</div>
+          <div 
+            className="group relative flex items-center justify-between w-full max-w-[260px] bg-slate-50 border-2 border-dashed border-[#D32F2F]/30 hover:border-[#D32F2F] rounded-xl p-4 cursor-pointer transition-all hover:bg-red-50/50"
+            onClick={copyCode}
+          >
+            <span className="font-mono text-2xl font-bold tracking-wider text-[#2A2A5A] group-hover:text-[#D32F2F] transition-colors">SLEVA5</span>
+            {copied ? <Check className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5 text-slate-400 group-hover:text-[#D32F2F]" />}
+            
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-2 text-[10px] text-slate-400 group-hover:text-[#D32F2F] transition-colors">
+              Klikněte pro zkopírování
             </div>
           </div>
-
-          {/* Right Side (Content) */}
-          <div className="w-full md:w-2/3 p-8 md:p-10">
-            {!isSubmitted ? (
-              <>
-                <div className="text-center md:text-left mb-6">
-                  <h3 className="text-2xl font-bold text-[#2A2A5A] mb-2">
-                    Počkejte chvíli! ✋
-                  </h3>
-                  <p className="text-slate-600">
-                    Máme pro vás speciální slevu <span className="font-bold text-[#D32F2F]">11 %</span> na celý nákup. Stačí zadat e-mail.
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Input
-                      type="email"
-                      placeholder="Váš e-mail"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="h-12 rounded-xl border-slate-200 focus-visible:ring-[#D32F2F]"
-                      required
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    disabled={isLoading}
-                    className="w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white h-12 rounded-xl font-bold text-lg shadow-lg shadow-red-100"
-                  >
-                    {isLoading ? "Odesílám..." : "Chci slevu 11 %"}
-                  </Button>
-                  <p className="text-[10px] text-slate-400 text-center">
-                    Respektujeme vaše soukromí. Žádný spam.
-                  </p>
-                </form>
-              </>
-            ) : (
-              <div className="text-center py-4 animate-in fade-in zoom-in duration-300">
-                <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-[#2A2A5A] mb-2">
-                  Tady je váš kód!
-                </h3>
-                <p className="text-slate-500 text-sm mb-6">
-                  Použijte ho v košíku pro 11% slevu.
-                </p>
-
-                <div 
-                  onClick={copyCode}
-                  className="bg-slate-50 border-2 border-dashed border-[#D32F2F]/30 rounded-xl p-4 mb-6 cursor-pointer hover:bg-red-50 transition-colors group relative"
-                >
-                  <span className="text-2xl font-mono font-bold text-[#D32F2F] tracking-widest">
-                    sleva11
-                  </span>
-                  <div className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-[#D32F2F]">
-                    <Copy className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <Button 
-                  onClick={() => window.location.href = "https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c"}
-                  className="w-full bg-[#2A2A5A] hover:bg-[#1a1a3a] text-white h-12 rounded-xl font-bold"
-                >
-                  Použít slevu
-                </Button>
-              </div>
-            )}
-          </div>
         </div>
-      </div>
-    </div>
+
+        <DialogFooter className="sm:justify-center gap-2 sm:gap-0">
+          <Button 
+            className="w-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold py-6 text-lg shadow-lg shadow-red-100"
+            onClick={() => {
+              copyCode();
+              setOpen(false);
+              // Optional: Scroll to products or checkout
+              document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Použít slevu a nakoupit
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
