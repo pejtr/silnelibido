@@ -148,11 +148,12 @@ export default function Home() {
         <MobileHeader />
         <ExitIntentPopup />
         <DesktopStickyNav />
-        <main className="flex-grow">
-          <HeroSection ageTarget={ageTarget} />
-          
-          {/* Content Wrapper for White Card Effect */}
-          <div className="bg-white mx-0 md:mx-4 rounded-[2.5rem] overflow-hidden mb-4 shadow-sm">
+        
+        {/* Main Centered Container */}
+        <div className="w-full max-w-[1400px] mx-auto bg-white shadow-2xl my-0 md:my-8 md:rounded-[2.5rem] overflow-hidden flex flex-col min-h-screen relative">
+          <main className="flex-grow">
+            <HeroSection ageTarget={ageTarget} />
+            
             <IngredientsSection />
             
             {/* Stylish Down Arrow Divider */}
@@ -184,10 +185,9 @@ export default function Home() {
             </div>
 
             <BenefitsSection />
-          </div>
-
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </div>
 
         {/* Scroll to Top Button */}
         <button

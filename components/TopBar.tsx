@@ -1,10 +1,9 @@
 "use client";
 
-import { Phone, Check, Clock } from "lucide-react";
+import { Phone, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export function TopBar() {
-  const [timeLeft, setTimeLeft] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -19,44 +18,8 @@ export function TopBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Set deadline to December 20th, 2025 at 12:00 PM (Last shipping date)
-    const deadline = new Date("2025-12-20T12:00:00").getTime();
-
-    const updateTimer = () => {
-      const now = new Date().getTime();
-      const distance = deadline - now;
-
-      if (distance < 0) {
-        setTimeLeft("Garance doručení do Vánoc vypršela!");
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-      setTimeLeft(`${days}d ${hours}h ${minutes}m`);
-    };
-
-    updateTimer();
-    const interval = setInterval(updateTimer, 60000); // Update every minute
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="w-full font-sans">
-      {/* Christmas Bar */}
-      <div className="bg-gradient-to-r from-[#990000] via-[#D32F2F] to-[#990000] text-white text-center py-2 text-sm font-bold px-4 shadow-inner flex justify-center items-center gap-3 animate-pulse">
-        <span className="text-xl">🎄</span>
-        <div className="flex flex-col items-center leading-tight">
-          <span>Do konce garance doručení zbývá:</span>
-          <span className="text-base">{timeLeft || "..."}</span>
-        </div>
-        <span className="text-xl">🎁</span>
-      </div>
-
       {/* Info Bar - Desktop Only */}
       <div className="hidden md:block bg-[#1E1E4E] text-white py-3 px-4 md:px-8 text-[13px] font-normal tracking-wide">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
