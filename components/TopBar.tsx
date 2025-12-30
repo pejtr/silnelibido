@@ -20,6 +20,13 @@ export function TopBar() {
 
   return (
     <div className="w-full font-sans">
+      {/* New Notification Bar - Red Gradient */}
+      <div className="w-full bg-gradient-to-r from-[#B71C1C] via-[#D32F2F] to-[#B71C1C] text-white py-2 px-4 text-center text-sm font-medium shadow-sm relative z-20">
+        <span className="inline-flex items-center gap-2 drop-shadow-sm">
+          <span className="font-bold">Novinka:</span> 🔥 Seznamte se s novou verzí Proerecta Shot Power.
+        </span>
+      </div>
+
       {/* Info Bar - Desktop Only */}
       <div className="hidden md:block bg-[#1E1E4E] text-white py-3 px-4 md:px-8 text-[13px] font-normal tracking-wide">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
