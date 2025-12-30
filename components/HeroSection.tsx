@@ -276,8 +276,19 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                 />
               </div>
               
-              {/* Floating Product Image */}
-              <div className="absolute -bottom-12 -left-12 w-[380px] h-[380px] animate-float">
+              {/* Floating Product Image - WOMEN (Left Side) */}
+              <div className="absolute bottom-0 -left-8 w-[320px] h-[320px] animate-float" style={{ animationDelay: "0.5s" }}>
+                <Image
+                  src="/images/proerecta-women-trans.png"
+                  alt="Proerecta Women"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 768px) 100vw, 320px"
+                />
+              </div>
+
+              {/* Floating Product Images - MEN (Right Side) */}
+              <div className="absolute -bottom-12 -right-12 w-[380px] h-[380px] animate-float">
                 <Image
                   src="/images/proerecta-klasik-trans-new.png"
                   alt="Proerecta Klasik"
@@ -286,7 +297,7 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                   sizes="(max-width: 768px) 100vw, 380px"
                 />
               </div>
-              <div className="absolute bottom-24 -left-24 w-[240px] h-[240px] animate-float" style={{ animationDelay: "1s" }}>
+              <div className="absolute bottom-24 -right-24 w-[240px] h-[240px] animate-float" style={{ animationDelay: "1s" }}>
                 <Image
                   src="/images/proerecta-shot-trans.png"
                   alt="Proerecta Shot"
@@ -295,7 +306,7 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                   sizes="(max-width: 768px) 100vw, 240px"
                 />
               </div>
-              <div className="absolute -bottom-8 left-48 w-[280px] h-[280px] animate-float" style={{ animationDelay: "2s" }}>
+              <div className="absolute -bottom-8 right-48 w-[280px] h-[280px] animate-float" style={{ animationDelay: "2s" }}>
                 <Image
                   src="/images/proerecta-long-trans.png"
                   alt="Proerecta Long"
