@@ -7,7 +7,7 @@ import { ProductDropdown } from "./ProductDropdown";
 export function DesktopStickyNav() {
   const [isVisible, setIsVisible] = useState(false);
   const { url: productsLink, trackClick: trackProductsClick } = useAffiliateLink("https://www.proerecta.cz/produkty/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
-  const { url: womenLink, trackClick: trackWomenClick } = useAffiliateLink("https://www.feminus.cz/blog/estrogen/maca-a-jeji-podivuhodne-ucinky-na-zenske-telo/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=a812cc02");
+  const { url: womenLink, trackClick: trackWomenClick } = useAffiliateLink("https://www.proerecta.cz/produkt/proerecta-women/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c");
 
   useEffect(() => {
     const handleScroll = () => {
