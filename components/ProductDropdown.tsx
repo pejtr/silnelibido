@@ -9,6 +9,7 @@ interface ProductDropdownProps {
   gender: "men" | "women";
   children: React.ReactNode;
   className?: string;
+  direction?: "up" | "down";
 }
 
 function ProductItem({ product }: { product: any }) {
@@ -43,7 +44,7 @@ function ProductItem({ product }: { product: any }) {
   );
 }
 
-export function ProductDropdown({ gender, children, className = "" }: ProductDropdownProps) {
+export function ProductDropdown({ gender, children, className = "", direction = "up" }: ProductDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Filter products based on gender
@@ -69,8 +70,14 @@ export function ProductDropdown({ gender, children, className = "" }: ProductDro
       
       {/* Dropdown Content */}
       <div 
-        className={`absolute bottom-full left-1/2 -translate-x-1/2 pb-4 w-[600px] transition-all duration-300 z-50 ${
-          isOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2"
+        className={`absolute left-1/2 -translate-x-1/2 w-[600px] transition-all duration-300 z-50 ${
+          direction === "up" 
+            ? "bottom-full pb-4" 
+            : "top-full pt-4"
+        } ${
+          isOpen 
+            ? "opacity-100 visible translate-y-0" 
+            : `opacity-0 invisible ${direction === "up" ? "translate-y-2" : "-translate-y-2"}`
         }`}
       >
         <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden p-6">

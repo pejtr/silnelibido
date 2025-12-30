@@ -1,59 +1,50 @@
 "use client";
 
-import React from 'react';
-import { Leaf, Truck, PackageCheck, RefreshCw } from 'lucide-react';
+import { Leaf, Truck, Package, RotateCcw } from "lucide-react";
 
-const BenefitsSection: React.FC = () => {
+export function BenefitsSection() {
   const benefits = [
     {
-      icon: <Leaf className="w-12 h-12 text-[#D32F2F]" />,
-      title: "Prvotřídní přírodní doplňky",
-      description: "Špičková kvalita použitých surovin zaručuje účinnost a bezpečnost produktů Proerecta."
+      icon: <Leaf className="w-8 h-8 text-[#D32F2F]" />,
+      title: "Přírodní doplňky",
+      description: "Bezpečná a účinná podpora bez chemie"
     },
     {
-      icon: <Truck className="w-12 h-12 text-[#D32F2F]" />,
-      title: "Okamžité odesílání",
-      description: "Zboží odesíláme následující den od obdržení vaší objednávky. Zásilku obdržíte nejrychleji, jak je to možné."
+      icon: <Truck className="w-8 h-8 text-[#D32F2F]" />,
+      title: "Doprava zdarma",
+      description: "Při objednávce nad 1500 Kč"
     },
     {
-      icon: <PackageCheck className="w-12 h-12 text-[#D32F2F]" />,
+      icon: <Package className="w-8 h-8 text-[#D32F2F]" />,
       title: "Diskrétní balení",
-      description: "Balíky zbytečně neoznačujeme reklamou, logem ani letáky. Jen vy víte, co je v balíčku."
+      description: "Nikdo nepozná, co je uvnitř"
     },
     {
-      icon: <RefreshCw className="w-12 h-12 text-[#D32F2F]" />,
-      title: "30 dní na vrácení zboží",
-      description: "Nic nekomplikujeme. Pokud chcete zboží vrátit, do 30 dnů ho vraťte a my vám pošleme peníze na účet."
+      icon: <RotateCcw className="w-8 h-8 text-[#D32F2F]" />,
+      title: "Garance vrácení",
+      description: "Peníze zpět, pokud nebudete spokojeni"
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#112255] mb-12">
-          Pomáháme vám žít lepší a spokojenější sexuální život
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <section className="py-12 bg-slate-50 border-t border-slate-100">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="mb-4">
+            <div key={index} className="flex flex-col items-center text-center p-4 hover:bg-white hover:shadow-md rounded-xl transition-all duration-300 group">
+              <div className="mb-4 p-3 bg-white rounded-full shadow-sm group-hover:scale-110 transition-transform border border-slate-100">
                 {benefit.icon}
               </div>
-              <h3 className="text-lg font-bold text-[#D32F2F] mb-3 uppercase">
+              <h3 className="text-lg font-bold text-[#112255] mb-2 group-hover:text-[#D32F2F] transition-colors">
                 {benefit.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-[250px]">
+              <p className="text-sm text-slate-500">
                 {benefit.description}
               </p>
             </div>
           ))}
         </div>
-        
-        <div className="w-full max-w-4xl mx-auto h-px bg-gray-300"></div>
       </div>
     </section>
   );
-};
-
-export default BenefitsSection;
+}

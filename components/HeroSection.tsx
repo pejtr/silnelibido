@@ -153,13 +153,13 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 font-bold text-[#2A2A5A] text-sm uppercase tracking-wide">
           <div className="flex items-center gap-4">
-            <ProductDropdown gender="men">
+            <ProductDropdown gender="men" direction="down">
               <a href={productsLink} className="bg-[#112255] text-white px-5 py-2 rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-md group">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 group-hover:text-blue-200 transition-colors"><path d="M16 3h5v5"/><path d="m21 3-6.75 6.75"/><circle cx="10" cy="14" r="6"/></svg>
                 PRO MUŽE
               </a>
             </ProductDropdown>
-            <ProductDropdown gender="women">
+            <ProductDropdown gender="women" direction="down">
               <a href={womenLink} className="bg-[#D65A8A] text-white px-5 py-2 rounded-full hover:scale-105 transition-transform flex items-center gap-2 shadow-md group">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 group-hover:text-pink-200 transition-colors"><path d="M12 15v7"/><path d="M9 19h6"/><circle cx="12" cy="9" r="6"/></svg>
                 PRO ŽENY
@@ -169,6 +169,9 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
           <a href="#reference" className="hover:text-[#D32F2F] transition-colors">Reference</a>
           <a href={aboutLink} className="hover:text-[#D32F2F] transition-colors">O nás</a>
           <a href={contactLink} className="hover:text-[#D32F2F] transition-colors">Kontakty</a>
+          <a href="/blog" className="hover:text-[#D32F2F] transition-colors font-bold text-[#D32F2F] flex items-center gap-1">
+            💡 Tipy
+          </a>
           <a href={blogLink} className="hover:text-[#D32F2F] transition-colors flex items-center gap-1">
             Ostatní <span className="text-[10px]">▼</span>
           </a>
@@ -208,13 +211,13 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
             
             {/* Left Column: Text */}
-            <div className="max-w-xl space-y-4 md:space-y-8 text-left relative z-10">
-              <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.1] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none">
+            <div className="max-w-xl space-y-4 md:space-y-8 text-center relative z-10 flex flex-col items-center mx-auto">
+              <h1 className="text-3xl md:text-6xl font-bold text-white md:text-[#2A2A5A] leading-[1.1] md:leading-[1.1] drop-shadow-lg md:drop-shadow-none text-center">
                 {headline.main} <br/>
                 <span className="text-white md:text-[#2A2A5A]">{headline.highlight}</span>
               </h1>
               
-              <p className="text-base md:text-xl text-white md:text-slate-600 leading-snug drop-shadow-md md:drop-shadow-none max-w-[90%] md:max-w-none">
+              <p className="text-base md:text-xl text-white md:text-slate-600 leading-snug drop-shadow-md md:drop-shadow-none max-w-[90%] md:max-w-none mx-auto">
                 {headline.sub}
               </p>
 
@@ -228,7 +231,7 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
               </div>
 
               {/* Text-based Rating */}
-              <div className="flex justify-start pt-1 pb-1">
+              <div className="flex justify-center pt-1 pb-1">
                 <div className="flex items-center gap-1.5">
                   <div className="flex text-[#FFC107]">
                     {[...Array(5)].map((_, i) => (
@@ -242,7 +245,7 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
               </div>
 
               {/* Benefit Icons */}
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
                 <div className="flex items-center gap-2 bg-white/10 md:bg-slate-100 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 md:border-slate-200">
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
                   <span className="text-xs font-medium text-white md:text-slate-700">Česká značka</span>
@@ -276,19 +279,8 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                 />
               </div>
               
-              {/* Floating Product Image - WOMEN (Left Side) */}
-              <div className="absolute bottom-0 -left-8 w-[320px] h-[320px] animate-float" style={{ animationDelay: "0.5s" }}>
-                <Image
-                  src="/images/proerecta-women-trans.png"
-                  alt="Proerecta Women"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 768px) 100vw, 320px"
-                />
-              </div>
-
-              {/* Floating Product Images - MEN (Right Side) */}
-              <div className="absolute -bottom-12 -right-12 w-[380px] h-[380px] animate-float">
+              {/* Floating Product Image */}
+              <div className="absolute -bottom-12 -left-12 w-[380px] h-[380px] animate-float">
                 <Image
                   src="/images/proerecta-klasik-trans-new.png"
                   alt="Proerecta Klasik"
@@ -297,22 +289,22 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                   sizes="(max-width: 768px) 100vw, 380px"
                 />
               </div>
-              <div className="absolute bottom-24 -right-24 w-[240px] h-[240px] animate-float" style={{ animationDelay: "1s" }}>
-                <Image
-                  src="/images/proerecta-shot-trans.png"
-                  alt="Proerecta Shot"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 768px) 100vw, 240px"
-                />
-              </div>
-              <div className="absolute -bottom-8 right-48 w-[280px] h-[280px] animate-float" style={{ animationDelay: "2s" }}>
+              <div className="absolute bottom-24 -left-24 w-[280px] h-[280px] animate-float" style={{ animationDelay: "1s" }}>
                 <Image
                   src="/images/proerecta-long-trans.png"
                   alt="Proerecta Long"
                   fill
                   className="object-contain drop-shadow-2xl"
                   sizes="(max-width: 768px) 100vw, 280px"
+                />
+              </div>
+              <div className="absolute -bottom-8 left-48 w-[240px] h-[240px] animate-float" style={{ animationDelay: "2s" }}>
+                <Image
+                  src="/images/proerecta-shot-trans.png"
+                  alt="Proerecta Shot"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 768px) 100vw, 240px"
                 />
               </div>
             </div>
