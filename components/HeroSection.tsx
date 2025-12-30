@@ -286,22 +286,22 @@ export function HeroSection({ ageTarget }: HeroSectionProps) {
                   sizes="(max-width: 768px) 100vw, 380px"
                 />
               </div>
-              <div className="absolute bottom-24 -left-24 w-[280px] h-[280px] animate-float" style={{ animationDelay: "1s" }}>
-                <Image
-                  src="/images/proerecta-long-trans.png"
-                  alt="Proerecta Long"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 768px) 100vw, 280px"
-                />
-              </div>
-              <div className="absolute -bottom-8 left-48 w-[240px] h-[240px] animate-float" style={{ animationDelay: "2s" }}>
+              <div className="absolute bottom-24 -left-24 w-[240px] h-[240px] animate-float" style={{ animationDelay: "1s" }}>
                 <Image
                   src="/images/proerecta-shot-trans.png"
                   alt="Proerecta Shot"
                   fill
                   className="object-contain drop-shadow-2xl"
                   sizes="(max-width: 768px) 100vw, 240px"
+                />
+              </div>
+              <div className="absolute -bottom-8 left-48 w-[280px] h-[280px] animate-float" style={{ animationDelay: "2s" }}>
+                <Image
+                  src="/images/proerecta-long-trans.png"
+                  alt="Proerecta Long"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 768px) 100vw, 280px"
                 />
               </div>
             </div>
