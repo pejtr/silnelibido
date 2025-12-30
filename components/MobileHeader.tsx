@@ -35,7 +35,7 @@ export function MobileHeader() {
   return (
     <div className="md:hidden">
       {/* White Header (Menu - Logo - Cart) */}
-      <div className="bg-white px-4 py-3 flex items-center justify-between relative z-50">
+      <div className="bg-white px-4 py-3 flex items-center justify-between relative z-50 shadow-sm">
         <button onClick={vibrate} className="flex flex-col items-center gap-1 text-[#2A2A5A]" aria-label="Otevřít menu">
           <Menu className="w-8 h-8" />
         </button>
@@ -58,23 +58,23 @@ export function MobileHeader() {
         </a>
       </div>
 
-      {/* Two-Button Layout (Sticky) */}
-      <div className={`w-full bg-white px-4 pb-4 pt-1 flex justify-between items-center gap-4 shadow-sm transition-all duration-300 z-[40] ${isSticky ? 'fixed top-0 left-0 w-full shadow-md' : 'sticky top-0'}`}>
+      {/* Two-Button Layout (Sticky Bottom) */}
+      <div className={`w-full bg-white/95 backdrop-blur-sm px-4 py-3 flex justify-between items-center gap-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] transition-all duration-300 z-[9999] fixed bottom-0 left-0 border-t border-slate-100`}>
          <a 
            href={productsLink} 
            onClick={vibrate} 
-           className="flex-1 bg-[#112255] text-white font-bold text-base uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
+           className="flex-1 bg-[#112255] text-white font-bold text-sm uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
          >
-           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M16 3h5v5"/><path d="m21 3-6.75 6.75"/><circle cx="10" cy="14" r="6"/></svg>
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M16 3h5v5"/><path d="m21 3-6.75 6.75"/><circle cx="10" cy="14" r="6"/></svg>
            PRO MUŽE
          </a>
          
          <a 
            href={womenLink} 
            onClick={vibrate} 
-           className="flex-1 bg-[#D65A8A] text-white font-bold text-base uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
+           className="flex-1 bg-[#D65A8A] text-white font-bold text-sm uppercase tracking-wide py-3 rounded-full flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform"
          >
-           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 15v7"/><path d="M9 19h6"/><circle cx="12" cy="9" r="6"/></svg>
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M12 15v7"/><path d="M9 19h6"/><circle cx="12" cy="9" r="6"/></svg>
            PRO ŽENY
          </a>
       </div>
