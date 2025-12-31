@@ -52,7 +52,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 bg-[oklch(0.22_0.08_275)]">
+    <div className="min-h-screen font-sans text-slate-900 bg-[#0f172a]">
+      <div className="w-full max-w-[1440px] mx-auto bg-white shadow-2xl min-h-screen flex flex-col relative">
       <Head>
         <title>Proerecta: Pevná erekce a podpora vitality</title>
         <meta name="description" content="Proerecta - přírodní doplňky stravy pro podporu erekce, libida a prostaty. Ověřené složení, rychlý nástup účinku. Diskrétní doručení do 48h." />
@@ -100,6 +101,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      </div>
       <ExitIntentPopup />
 
       {/* Scroll to Top Button */}
