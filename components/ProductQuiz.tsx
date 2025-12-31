@@ -59,7 +59,7 @@ export function ProductQuiz() {
   const [isStarted, setIsStarted] = useState(false);
 
   const currentQuestion = questions.find((q) => q.id === currentQuestionId);
-  const resultProduct = resultId ? productsData.find((p) => p.id === resultId) : null;
+  const resultProduct = resultId ? productsData.products.find((p) => p.id === resultId) : null;
 
   const handleOptionClick = (option: { nextId?: number; resultId?: string }) => {
     if (option.resultId) {
@@ -177,7 +177,7 @@ export function ProductQuiz() {
                     onClick={() => window.location.href = resultProduct.url}
                     className="bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
                   >
-                    Objednat - {resultProduct.price} {resultProduct.currency}
+                    Objednat - {resultProduct.price} Kč
                   </Button>
                   <Button 
                     variant="outline" 

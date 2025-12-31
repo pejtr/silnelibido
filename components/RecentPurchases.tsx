@@ -54,7 +54,7 @@ const GENERIC_CUSTOMERS = CUSTOMER_DATABASE;
 export function RecentPurchases() {
   const [isVisible, setIsVisible] = useState(false);
   const [customer, setCustomer] = useState(CUSTOMER_DATABASE[0]);
-  const [product, setProduct] = useState(productsData[0]);
+  const [product, setProduct] = useState(productsData.products[0]);
   const [isClosed, setIsClosed] = useState(true); // Default to true to prevent flash
   const [userRegion, setUserRegion] = useState<string | null>(null);
 
@@ -103,10 +103,10 @@ export function RecentPurchases() {
   const getRandomProduct = () => {
     // Weighted random selection - Klasik and Shot are most popular
     const rand = Math.random();
-    if (rand < 0.4) return productsData.find(p => p.id === "proerecta-klasik") || productsData[0];
-    if (rand < 0.7) return productsData.find(p => p.id === "proerecta-shot") || productsData[1];
-    if (rand < 0.85) return productsData.find(p => p.id === "proerecta-long") || productsData[2];
-    return productsData[Math.floor(Math.random() * productsData.length)];
+    if (rand < 0.4) return productsData.products.find(p => p.id === "proerecta-klasik") || productsData.products[0];
+    if (rand < 0.7) return productsData.products.find(p => p.id === "proerecta-shot") || productsData.products[1];
+    if (rand < 0.85) return productsData.products.find(p => p.id === "proerecta-long") || productsData.products[2];
+    return productsData.products[Math.floor(Math.random() * productsData.products.length)];
   };
 
   useEffect(() => {

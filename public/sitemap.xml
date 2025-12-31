@@ -1,81 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
-    <loc>https://silnelibido.cz</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Reviews Page -->
   <url>
     <loc>https://silnelibido.cz/recenze</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Blog Listing -->
   <url>
     <loc>https://silnelibido.cz/blog</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://silnelibido.cz/blog/vykonnost-v-posteli</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/5-prirodnich-zabijaku-erekce</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/prirodni-ingredience</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/testosteron-po-tricitce</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/stres-a-erekce</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/kotvicnik-zemni-zazrak-nebo-mytus</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/cviceni-pro-vitalitu</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/erekce-vs-psychika</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/strava-a-libido</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/top-7-potravin-pro-pevnou-erekci</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/spavek-a-sexualita</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/jak-stres-v-praci-zabiji-vas-sexlife</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/alkohol-a-erekce</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/kegelovy-cviky-pro-muze</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/kourime-a-sexualni-zdravi</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/afrodiziaka-ktera-skutecne-funguji</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/vztah-a-komunikace</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/ranni-erekce-co-vam-rika</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/vek-a-sexualni-zdravi</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://silnelibido.cz/blog/recenze-doplnku-stravy-na-erekci</loc>
-    <lastmod>2025-12-07T14:44:00.116Z</lastmod>
+    <loc>https://silnelibido.cz/blog/hygiena-penis</loc>
+    <lastmod>2025-12-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://silnelibido.cz/blog/kardio-cviceni-erekce</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://silnelibido.cz/blog/spanel-testosteron</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://silnelibido.cz/blog/vztah-intimita</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

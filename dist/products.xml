@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+<channel>
+<title>Proerecta Products</title>
+<link>https://silnelibido.cz</link>
+<description>Proerecta product feed for Meta Ads</description>
+
+<item>
+  <g:id>proerecta-klasik</g:id>
+  <g:title>Proerecta KLASIK</g:title>
+  <g:description>Tobolky pro okamžité použití s bylinnými extrakty. Okamžitá podpora mikrocirkulace a libida. Užijte 60 minut před sexem.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-klasik#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-klasik-new.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>399 CZK</g:price>
+  <g:custom_label_0>men</g:custom_label_0>
+</item>
+
+<item>
+  <g:id>proerecta-shot</g:id>
+  <g:title>Proerecta SHOT</g:title>
+  <g:description>Nápoj pro zrychlený nástup účinku. Užijte 30 minut před sexem.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-shot#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-shot-new.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>448 CZK</g:price>
+  <g:custom_label_0>men</g:custom_label_0>
+</item>
+
+<item>
+  <g:id>proerecta-long</g:id>
+  <g:title>Proerecta LONG</g:title>
+  <g:description>Tobolky pro dlouhodobé užívání. Podpora vitality a mikrocirkulace pro muže nad 40 let.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-long#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-long-trans.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>699 CZK</g:price>
+  <g:custom_label_0>men</g:custom_label_0>
+</item>
+
+<item>
+  <g:id>proerecta-women</g:id>
+  <g:title>Proerecta WOMEN</g:title>
+  <g:description>Rostlinné tobolky pro menstruační a menopauzální komfort. Udržují normální libido a plodnost.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-women#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-women-trans.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>599 CZK</g:price>
+  <g:custom_label_0>women</g:custom_label_0>
+</item>
+
+<item>
+  <g:id>proerecta-prostate</g:id>
+  <g:title>Proerecta PROSTATE</g:title>
+  <g:description>Dlouhodobá rostlinná péče o kondici a vitalitu prostaty a močových cest.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-prostate#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-prostate-real.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>599 CZK</g:price>
+  <g:custom_label_0>men</g:custom_label_0>
+</item>
+
+<item>
+  <g:id>proerecta-gumidci</g:id>
+  <g:title>Proerecta GUMÍDCI</g:title>
+  <g:description>Želatinové bonbony pro podporu sexuálního výkonu, výdrže a pevné erekce.</g:description>
+  <g:link>https://silnelibido.cz/?utm_source=facebook&utm_medium=cpc&utm_campaign=dynamic_ads&product_id=proerecta-gumidci#products</g:link>
+  <g:image_link>https://silnelibido.cz/images/proerecta-gumidci-trans.png</g:image_link>
+  <g:brand>Proerecta</g:brand>
+  <g:condition>new</g:condition>
+  <g:availability>in stock</g:availability>
+  <g:price>599 CZK</g:price>
+  <g:custom_label_0>men</g:custom_label_0>
+</item>
+
+</channel>
+</rss>

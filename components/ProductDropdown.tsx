@@ -50,7 +50,7 @@ export function ProductDropdown({ gender, children, className = "", direction = 
   // Filter products based on gender
   // For women: only "proerecta-women"
   // For men: everything else
-  const products = productsData.filter(product => {
+  const products = productsData.products.filter(product => {
     if (gender === "women") {
       return product.id === "proerecta-women";
     } else {

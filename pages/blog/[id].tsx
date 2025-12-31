@@ -12,14 +12,23 @@ import Head from "next/head";
 import { blogPosts } from "@/data/blogPosts";
 import { ArrowUp, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { GetStaticProps, GetStaticPaths } from 'next';
 
-export default function BlogArticlePage() {
-  const router = useRouter();
-  const { id } = router.query;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = blogPosts.map((post) => ({
+    params: { id: post.id },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const article = blogPosts.find((post) => post.id === params?.id);
+  return { props: { article } };
+};
+
+export default function BlogArticlePage({ article }: { article: typeof blogPosts[0] }) {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  const article = blogPosts.find(post => post.id === id);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +71,7 @@ export default function BlogArticlePage() {
     "@type": "BlogPosting",
     "headline": article.title,
     "description": article.excerpt,
-    "image": `https://silnelibido.cz${article.contentImage}`,
+    "image": article.image,
     "datePublished": article.date,
     "dateModified": article.date,
     "author": {
@@ -107,12 +116,12 @@ export default function BlogArticlePage() {
         <meta name="keywords" content={article.category} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
-        <meta property="og:image" content={`https://silnelibido.cz${article.contentImage}`} />
+        <meta property="og:image" content={article.image} />
         <meta property="og:url" content={`https://silnelibido.cz/blog/${article.id}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={article.title} />
         <meta name="twitter:description" content={article.excerpt} />
-        <meta name="twitter:image" content={`https://silnelibido.cz${article.contentImage}`} />
+        <meta name="twitter:image" content={article.image} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -173,7 +182,7 @@ export default function BlogArticlePage() {
           {/* Featured Image */}
           <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden mb-12 shadow-lg">
             <Image
-              src={article.contentImage}
+              src={article.image}
               alt={article.title}
               fill
               className="object-cover"

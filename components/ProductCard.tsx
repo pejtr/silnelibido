@@ -22,20 +22,20 @@ interface Package {
 interface ProductProps {
   name: string;
   price: number;
-  currency: string;
+  currency?: string;
   image: string;
   description: string;
   features: string[];
   popular?: boolean;
   url: string;
-  badge?: {
+  badge?: string | {
     text: string;
     color: string;
   };
   packages?: Package[];
 }
 
-export function ProductCard({ name, price, currency, image, description, features, popular, url, badge, packages, className }: ProductProps & { className?: string }) {
+export function ProductCard({ name, price, currency = "Kč", image, description, features, popular, url, badge, packages, className }: ProductProps & { className?: string }) {
   // Default to the first package (cheapest option)
   const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
   const { url: affiliateUrl, trackClick } = useAffiliateLink(url);
@@ -48,9 +48,9 @@ export function ProductCard({ name, price, currency, image, description, feature
       {badge && (
         <div 
           className="absolute top-4 left-4 text-white text-base font-bold px-4 py-4 rounded-full z-20 shadow-md flex items-center justify-center text-center leading-tight w-[120px] h-[120px] transform -rotate-12"
-          style={{ backgroundColor: badge.color }}
+          style={{ backgroundColor: typeof badge === 'string' ? '#D32F2F' : badge.color }}
         >
-          {badge.text}
+          {typeof badge === 'string' ? badge : badge.text}
         </div>
       )}
       {popular && !badge && (
