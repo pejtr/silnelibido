@@ -23,7 +23,7 @@ export function TopBar() {
       {/* New Notification Bar - Red Gradient */}
       <a 
         href="https://www.proerecta.cz/produkt/proerecta-shot-power/?utm_medium=affiliate&utm_campaign=affial.com&utm_source=pap&a_aid=5d5a767017fee&a_bid=fd5e6b0c"
-        className="block w-full bg-gradient-to-r from-[#B71C1C] via-[#D32F2F] to-[#B71C1C] text-white py-2 px-4 text-center text-[15px] font-medium shadow-sm relative z-20 hover:brightness-110 transition-all"
+        className="block w-full bg-gradient-to-r from-[#B71C1C] via-[#D32F2F] to-[#B71C1C] text-white py-2 px-4 text-center text-[17px] font-medium shadow-sm relative z-20 hover:brightness-110 transition-all"
       >
         <span className="inline-flex items-center gap-2 drop-shadow-sm">
           <span className="font-bold">Novinka:</span> 🔥 Seznamte se s novou verzí Proerecta Shot Power.
