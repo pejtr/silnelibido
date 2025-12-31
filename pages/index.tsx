@@ -61,7 +61,7 @@ export default function Home() {
         <meta property="og:title" content="Proerecta - Pevná erekce a silné libido" />
         <meta property="og:description" content="Přírodní doplňky stravy pro podporu mužského zdraví. Vyzkoušejte Proerecta Klasik, Long nebo Shot." />
         <meta property="og:image" content="https://silnelibido.cz/og-image.jpg" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
       </Head>
 
       <TopBar />
