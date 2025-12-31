@@ -91,7 +91,7 @@ export function ExitIntentPopup() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md border-t-4 border-t-[#D32F2F]">
+      <DialogContent className="sm:max-w-md border-t-4 border-t-[#D32F2F] bg-white z-[100]">
         <DialogHeader className="items-center text-center">
           <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
             <Gift className="w-6 h-6 text-[#D32F2F]" />
@@ -104,7 +104,7 @@ export function ExitIntentPopup() {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="flex flex-col items-center justify-center py-6 space-y-4">
+        <div className="flex flex-col items-center justify-center py-4 space-y-4">
           <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">Váš slevový kód</div>
           <div 
             className="group relative flex items-center justify-between w-full max-w-[260px] bg-slate-50 border-2 border-dashed border-[#D32F2F]/30 hover:border-[#D32F2F] rounded-xl p-4 cursor-pointer transition-all hover:bg-red-50/50"

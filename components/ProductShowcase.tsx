@@ -33,7 +33,7 @@ export function ProductShowcase({ products }: ProductShowcaseProps) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
           {products.map((product) => {
             // Handle badge which can be string or object in JSON
             const badgeText = typeof product.badge === 'object' ? product.badge?.text : product.badge;
